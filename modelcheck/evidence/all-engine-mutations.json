@@ -1,0 +1,302 @@
+[
+  {
+    "Mutation": "fair-reject-entire-unfair-scc",
+    "Source": "fair.go",
+    "Before": "if missing != 0 {",
+    "After": "if missing != 0 {\n\t\t\tcontinue",
+    "Test": "^TestFairCycleFindsHiddenFairSubcomponent$",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestFairCycleFindsHiddenFairSubcomponent$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Mutation": "fair-enable-intersection",
+    "Source": "fair.go",
+    "Before": "info.enabled |= s.graph.Enabled[node]",
+    "After": "info.enabled &= s.graph.Enabled[node]",
+    "Test": "^TestFairCycleRequiresIntermittentlyEnabledActor$",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestFairCycleRequiresIntermittentlyEnabledActor$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Mutation": "fair-age-is-actor-progress",
+    "Source": "fair.go",
+    "Before": "if e.Progress {",
+    "After": "if e.Progress || e.Age {",
+    "Test": "^TestFairCycleAgeingUsesJustice$",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestFairCycleAgeingUsesJustice$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Mutation": "fair-ignore-age-justice",
+    "Source": "fair.go",
+    "Before": " || info.ageEnabled&^info.ageProgress != 0",
+    "After": "",
+    "Test": "^TestFairCycleAgeingUsesJustice$",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestFairCycleAgeingUsesJustice$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Mutation": "fair-age-union",
+    "Source": "fair.go",
+    "Before": "info.ageEnabled &= s.graph.AgeMask[node]",
+    "After": "info.ageEnabled |= s.graph.AgeMask[node]",
+    "Test": "^TestFairCycleAgeingUsesJustice$",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestFairCycleAgeingUsesJustice$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Mutation": "fair-ignore-victim-active",
+    "Source": "fair.go",
+    "Before": "g.VictimActive[node] && !g.VictimOwns[node]",
+    "After": "!g.VictimOwns[node]",
+    "Test": "^TestFairCycleFiltersVictimAndRequiresActualCycle$",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestFairCycleFiltersVictimAndRequiresActualCycle$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Mutation": "fair-ignore-victim-ownership",
+    "Source": "fair.go",
+    "Before": "g.VictimActive[node] && !g.VictimOwns[node]",
+    "After": "g.VictimActive[node]",
+    "Test": "^TestFairCycleFiltersVictimAndRequiresActualCycle$",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestFairCycleFiltersVictimAndRequiresActualCycle$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Mutation": "fair-ignore-victim-age",
+    "Source": "fair.go",
+    "Before": " || !info.hasAged",
+    "After": "",
+    "Test": "^TestFairCycleFiltersVictimAndRequiresActualCycle$",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestFairCycleFiltersVictimAndRequiresActualCycle$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Mutation": "fair-ignore-cycle-existence",
+    "Source": "fair.go",
+    "Before": "!info.cyclic || ",
+    "After": "",
+    "Test": "^TestFairCycleFiltersVictimAndRequiresActualCycle$",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestFairCycleFiltersVictimAndRequiresActualCycle$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Mutation": "fair-omit-required-witness-actor",
+    "Source": "fair.go",
+    "Before": "if info.enabled&(uint16(1)<<uint(actor)) != 0 {",
+    "After": "if actor == 0 && info.enabled&(uint16(1)<<uint(actor)) != 0 {",
+    "Test": "^TestFairCycleIncludesEachRequiredActor$",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestFairCycleIncludesEachRequiredActor$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Mutation": "fair-disable-scc-recomputation",
+    "Source": "fair.go",
+    "Before": "pending = append(pending, s.components(survivors)...)",
+    "After": "pending = append(pending, survivors)",
+    "Test": "^TestFairCycleMatchesIndependentSubsetOracle$",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestFairCycleMatchesIndependentSubsetOracle$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Mutation": "guard-try-compares-tail-only",
+    "Source": "guard.go",
+    "Before": "match := n.Next == g.SeenNext && n.Serving == g.SeenHead && g.SeenHead == g.SeenNext",
+    "After": "match := n.Next == g.SeenHead",
+    "Test": "^TestTicketGuardPackedTryAcrossWrap$",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardPackedTryAcrossWrap$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Mutation": "guard-unlock-wrap-carries-tail",
+    "Source": "guard.go",
+    "Before": "n.Serving = (n.Serving + 1) & guardMask\n\t\t\t\tcomplete()",
+    "After": "if n.Serving == guardMask { n.Next = (n.Next + 1) & guardMask }\n\t\t\t\tn.Serving = (n.Serving + 1) & guardMask\n\t\t\t\tcomplete()",
+    "Test": "^TestTicketGuardWrapBoundaries$",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardWrapBoundaries$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Mutation": "guard-allocation-wrap-changes-head",
+    "Source": "guard.go",
+    "Before": "p.Ticket = n.Next\n\t\t\tn.Next = (n.Next + 1) & guardMask",
+    "After": "p.Ticket = n.Next\n\t\t\tif n.Next == guardMask { n.Serving = (n.Serving + 1) & guardMask }\n\t\t\tn.Next = (n.Next + 1) & guardMask",
+    "Test": "^TestTicketGuardWrapBoundaries$",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardWrapBoundaries$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Mutation": "guard-unlock-does-not-advance",
+    "Source": "guard.go",
+    "Before": "n.Serving = (n.Serving + 1) & guardMask\n\t\t\t\tcomplete()",
+    "After": "complete()",
+    "Test": "^TestTicketGuardBoundedAndFair$",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardBoundedAndFair$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  }
+]

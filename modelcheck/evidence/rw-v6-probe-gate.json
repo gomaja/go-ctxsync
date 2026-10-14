@@ -1,0 +1,340 @@
+[
+  {
+    "Config": "2x2/plain",
+    "Variant": "correct",
+    "States": 1198,
+    "Edges": 2298,
+    "Terminals": 3,
+    "ReuseStates": 66,
+    "Exhaustive": true,
+    "Seconds": 0.006301025,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "writer drain wait",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "2x2/context",
+    "Variant": "correct",
+    "States": 5519,
+    "Edges": 14467,
+    "Terminals": 3,
+    "ReuseStates": 66,
+    "Exhaustive": true,
+    "Seconds": 0.024902101,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "cancel queued reader",
+      "cancel granted reader",
+      "writer drain wait",
+      "cancel announced writer",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "2x2/mixed",
+    "Variant": "correct",
+    "States": 1404,
+    "Edges": 2827,
+    "Terminals": 3,
+    "ReuseStates": 66,
+    "Exhaustive": true,
+    "Seconds": 0.004517933,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "cancel queued reader",
+      "cancel granted reader",
+      "writer drain wait",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "2x2/try",
+    "Variant": "correct",
+    "States": 1126,
+    "Edges": 2159,
+    "Terminals": 3,
+    "ReuseStates": 66,
+    "Exhaustive": true,
+    "Seconds": 0.003751067,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "writer drain wait",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "3x1/plain",
+    "Variant": "correct",
+    "States": 1271,
+    "Edges": 2931,
+    "Terminals": 1,
+    "ReuseStates": 22,
+    "Exhaustive": true,
+    "Seconds": 0.005439045,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "writer drain wait",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "3x1/context",
+    "Variant": "correct",
+    "States": 7682,
+    "Edges": 25201,
+    "Terminals": 1,
+    "ReuseStates": 22,
+    "Exhaustive": true,
+    "Seconds": 0.036439525,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "cancel queued reader",
+      "cancel granted reader",
+      "writer drain wait",
+      "cancel announced writer",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "3x1/mixed",
+    "Variant": "correct",
+    "States": 2437,
+    "Edges": 6642,
+    "Terminals": 1,
+    "ReuseStates": 22,
+    "Exhaustive": true,
+    "Seconds": 0.010187185,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "cancel queued reader",
+      "cancel granted reader",
+      "writer drain wait",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "3x1/try",
+    "Variant": "correct",
+    "States": 889,
+    "Edges": 2031,
+    "Terminals": 1,
+    "ReuseStates": 22,
+    "Exhaustive": true,
+    "Seconds": 0.00355062,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "writer drain wait",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "3x2/plain",
+    "Variant": "correct",
+    "States": 85891,
+    "Edges": 237724,
+    "Terminals": 4,
+    "ReuseStates": 88,
+    "Exhaustive": true,
+    "Seconds": 0.349367505,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "writer drain wait",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "3x2/context",
+    "Variant": "correct",
+    "States": 1383129,
+    "Edges": 5439328,
+    "Terminals": 4,
+    "ReuseStates": 88,
+    "Exhaustive": true,
+    "Seconds": 10.143697436,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "cancel queued reader",
+      "cancel granted reader",
+      "writer drain wait",
+      "cancel announced writer",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "3x2/mixed",
+    "Variant": "correct",
+    "States": 234014,
+    "Edges": 760156,
+    "Terminals": 4,
+    "ReuseStates": 88,
+    "Exhaustive": true,
+    "Seconds": 1.092333518,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "cancel queued reader",
+      "cancel granted reader",
+      "writer drain wait",
+      "cancel announced writer",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "3x2/try",
+    "Variant": "correct",
+    "States": 36868,
+    "Edges": 98120,
+    "Terminals": 3,
+    "ReuseStates": 66,
+    "Exhaustive": true,
+    "Seconds": 0.1359057,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "writer drain wait",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "4x1/plain",
+    "Variant": "correct",
+    "States": 53010,
+    "Edges": 170394,
+    "Terminals": 3,
+    "ReuseStates": 66,
+    "Exhaustive": true,
+    "Seconds": 0.221899552,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "writer drain wait",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "4x1/context",
+    "Variant": "correct",
+    "States": 930307,
+    "Edges": 4302368,
+    "Terminals": 3,
+    "ReuseStates": 66,
+    "Exhaustive": true,
+    "Seconds": 7.025362037,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "cancel queued reader",
+      "cancel granted reader",
+      "writer drain wait",
+      "cancel announced writer",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "4x1/mixed",
+    "Variant": "correct",
+    "States": 244996,
+    "Edges": 985143,
+    "Terminals": 3,
+    "ReuseStates": 66,
+    "Exhaustive": true,
+    "Seconds": 1.196886256,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "cancel queued reader",
+      "cancel granted reader",
+      "writer drain wait",
+      "cancel announced writer",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "4x1/try",
+    "Variant": "correct",
+    "States": 18578,
+    "Edges": 58749,
+    "Terminals": 2,
+    "ReuseStates": 44,
+    "Exhaustive": true,
+    "Seconds": 0.067515702,
+    "Coverage": [
+      "reader queue",
+      "reader batch grant",
+      "writer drain wait",
+      "writer acquisition",
+      "last reader drain signal"
+    ]
+  },
+  {
+    "Config": "RW/fair/reader",
+    "Variant": "correct",
+    "States": 47250,
+    "Edges": 144318,
+    "Terminals": 0,
+    "ReuseStates": 0,
+    "Exhaustive": true,
+    "Seconds": 0.218778322,
+    "Coverage": null
+  },
+  {
+    "Config": "RW/fair/reader/cancelling",
+    "Variant": "correct",
+    "States": 328740,
+    "Edges": 1250796,
+    "Terminals": 0,
+    "ReuseStates": 0,
+    "Exhaustive": true,
+    "Seconds": 1.8847628969999999,
+    "Coverage": null
+  },
+  {
+    "Config": "RW/fair/writer",
+    "Variant": "correct",
+    "States": 18524,
+    "Edges": 58798,
+    "Terminals": 0,
+    "ReuseStates": 0,
+    "Exhaustive": true,
+    "Seconds": 0.071022984,
+    "Coverage": null
+  },
+  {
+    "Config": "RW/fair/writer/cancelling",
+    "Variant": "correct",
+    "States": 114658,
+    "Edges": 458673,
+    "Terminals": 0,
+    "ReuseStates": 0,
+    "Exhaustive": true,
+    "Seconds": 0.60212395,
+    "Coverage": null
+  }
+]

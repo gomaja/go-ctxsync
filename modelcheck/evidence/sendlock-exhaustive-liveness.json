@@ -1,0 +1,539 @@
+{
+  "Config": "sendlock/exhaustive-fair-traffic",
+  "Variant": "correct",
+  "States": 457408,
+  "Edges": 1492899,
+  "Terminals": 0,
+  "Exhaustive": true,
+  "Seconds": 0.745630862,
+  "Coverage": null,
+  "Failure": {
+    "Property": "P3/liveness: old FIFO channel queue has a fair starvation cycle",
+    "Trace": [
+      {
+        "Step": 0,
+        "Actor": -1,
+        "Action": "initial",
+        "State": "bits=0[held=false,woken=false,starving=false,waiters=0] abandoned=0 published=0 wake=[false false false false false] hand=[false false false false false] g0={entry op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={entry op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={entry op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 1,
+        "Actor": 0,
+        "Action": "entry",
+        "State": "bits=0[held=false,woken=false,starving=false,waiters=0] abandoned=0 published=0 wake=[false false false false false] hand=[false false false false false] g0={fast-CAS op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={entry op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={entry op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 2,
+        "Actor": 1,
+        "Action": "entry",
+        "State": "bits=0[held=false,woken=false,starving=false,waiters=0] abandoned=0 published=0 wake=[false false false false false] hand=[false false false false false] g0={fast-CAS op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={fast-CAS op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={entry op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 3,
+        "Actor": 2,
+        "Action": "entry",
+        "State": "bits=0[held=false,woken=false,starving=false,waiters=0] abandoned=0 published=0 wake=[false false false false false] hand=[false false false false false] g0={fast-CAS op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={fast-CAS op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={fast-CAS op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 4,
+        "Actor": 2,
+        "Action": "fast-CAS",
+        "State": "bits=1[held=true,woken=false,starving=false,waiters=0] abandoned=0 published=0 wake=[false false false false false] hand=[false false false false false] g0={fast-CAS op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={fast-CAS op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={critical op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 5,
+        "Actor": 0,
+        "Action": "fast-CAS",
+        "State": "bits=1[held=true,woken=false,starving=false,waiters=0] abandoned=0 published=0 wake=[false false false false false] hand=[false false false false false] g0={init-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={fast-CAS op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={critical op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 6,
+        "Actor": 1,
+        "Action": "fast-CAS",
+        "State": "bits=1[held=true,woken=false,starving=false,waiters=0] abandoned=0 published=0 wake=[false false false false false] hand=[false false false false false] g0={init-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={init-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={critical op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 7,
+        "Actor": 1,
+        "Action": "init-load",
+        "State": "bits=1[held=true,woken=false,starving=false,waiters=0] abandoned=0 published=0 wake=[false false false false false] hand=[false false false false false] g0={init-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={init-allocate op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={critical op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 8,
+        "Actor": 1,
+        "Action": "init-allocate",
+        "State": "bits=1[held=true,woken=false,starving=false,waiters=0] abandoned=0 published=0 wake=[false false false false false] hand=[false false false false false] g0={init-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={init-publish op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={critical op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 9,
+        "Actor": 1,
+        "Action": "init-publish",
+        "State": "bits=1[held=true,woken=false,starving=false,waiters=0] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={init-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={critical op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 10,
+        "Actor": 0,
+        "Action": "init-load",
+        "State": "bits=1[held=true,woken=false,starving=false,waiters=0] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={critical op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 11,
+        "Actor": 0,
+        "Action": "slow-load",
+        "State": "bits=1[held=true,woken=false,starving=false,waiters=0] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={slow-CAS op=0 old=1 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={critical op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 12,
+        "Actor": 0,
+        "Action": "slow-CAS",
+        "State": "bits=9[held=true,woken=false,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={critical op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 13,
+        "Actor": 2,
+        "Action": "critical",
+        "State": "bits=9[held=true,woken=false,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 14,
+        "Actor": 2,
+        "Action": "unlock-add",
+        "State": "bits=8[held=false,woken=false,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={unlock-check op=0 old=8 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 15,
+        "Actor": 2,
+        "Action": "unlock-check",
+        "State": "bits=8[held=false,woken=false,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={settle-load op=0 old=8 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 16,
+        "Actor": 2,
+        "Action": "settle-load",
+        "State": "bits=8[held=false,woken=false,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={unlock-decide op=0 old=8 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 17,
+        "Actor": 2,
+        "Action": "unlock-decide",
+        "State": "bits=8[held=false,woken=false,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={claim-wake-CAS op=0 old=8 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 18,
+        "Actor": 2,
+        "Action": "claim-wake-CAS",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={channel-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 19,
+        "Actor": 1,
+        "Action": "slow-load",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={slow-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={channel-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 20,
+        "Actor": 1,
+        "Action": "slow-CAS",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={critical op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={channel-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 21,
+        "Actor": 1,
+        "Action": "critical",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={channel-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 22,
+        "Actor": 2,
+        "Action": "channel-load",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={wake-send op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 23,
+        "Actor": 2,
+        "Action": "wake-send",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false true false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={entry op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 24,
+        "Actor": 2,
+        "Action": "entry",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false true false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={fast-CAS op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 25,
+        "Actor": 2,
+        "Action": "fast-CAS",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false true false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={init-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 26,
+        "Actor": 2,
+        "Action": "init-load",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false true false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 27,
+        "Actor": 2,
+        "Action": "slow-load",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false true false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={slow-CAS op=0 old=11 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 28,
+        "Actor": 2,
+        "Action": "slow-CAS",
+        "State": "bits=19[held=true,woken=true,starving=false,waiters=2] abandoned=0 published=2 wake=[false false true false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 29,
+        "Actor": 2,
+        "Action": "select buffered wake",
+        "State": "bits=19[held=true,woken=true,starving=false,waiters=2] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={select op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={wake-time op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 30,
+        "Actor": 0,
+        "Action": "park select",
+        "State": "bits=19[held=true,woken=true,starving=false,waiters=2] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={parked op=0 old=0 credit=0 pair=2 queue=1 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={wake-time op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 31,
+        "Actor": 2,
+        "Action": "wake-time",
+        "State": "bits=19[held=true,woken=true,starving=false,waiters=2] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={parked op=0 old=0 credit=0 pair=2 queue=1 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={wake-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 32,
+        "Actor": 2,
+        "Action": "wait exceeds 1 ms",
+        "State": "bits=19[held=true,woken=true,starving=false,waiters=2] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={parked op=0 old=0 credit=0 pair=2 queue=1 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={wake-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 33,
+        "Actor": 2,
+        "Action": "wake-load",
+        "State": "bits=19[held=true,woken=true,starving=false,waiters=2] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={parked op=0 old=0 credit=0 pair=2 queue=1 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={wake-CAS op=0 old=19 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 34,
+        "Actor": 2,
+        "Action": "wake-CAS",
+        "State": "bits=9[held=true,woken=false,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={parked op=0 old=0 credit=0 pair=2 queue=1 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 35,
+        "Actor": 1,
+        "Action": "unlock-add",
+        "State": "bits=8[held=false,woken=false,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={parked op=0 old=0 credit=0 pair=2 queue=1 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-check op=0 old=8 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 36,
+        "Actor": 1,
+        "Action": "unlock-check",
+        "State": "bits=8[held=false,woken=false,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={parked op=0 old=0 credit=0 pair=2 queue=1 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={settle-load op=0 old=8 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 37,
+        "Actor": 1,
+        "Action": "settle-load",
+        "State": "bits=8[held=false,woken=false,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={parked op=0 old=0 credit=0 pair=2 queue=1 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={unlock-decide op=0 old=8 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 38,
+        "Actor": 1,
+        "Action": "unlock-decide",
+        "State": "bits=8[held=false,woken=false,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={parked op=0 old=0 credit=0 pair=2 queue=1 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={claim-wake-CAS op=0 old=8 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 39,
+        "Actor": 1,
+        "Action": "claim-wake-CAS",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={parked op=0 old=0 credit=0 pair=2 queue=1 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={channel-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 40,
+        "Actor": 1,
+        "Action": "channel-load",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={parked op=0 old=0 credit=0 pair=2 queue=1 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={wake-send op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 41,
+        "Actor": 1,
+        "Action": "wake-send",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-time op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={entry op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 42,
+        "Actor": 0,
+        "Action": "wake-time",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={entry op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 43,
+        "Actor": 0,
+        "Action": "wait exceeds 1 ms",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={entry op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 44,
+        "Actor": 0,
+        "Action": "wake-load",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={entry op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 45,
+        "Actor": 1,
+        "Action": "entry",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={fast-CAS op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 46,
+        "Actor": 1,
+        "Action": "fast-CAS",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={init-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 47,
+        "Actor": 1,
+        "Action": "init-load",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 48,
+        "Actor": 1,
+        "Action": "slow-load",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={slow-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 49,
+        "Actor": 1,
+        "Action": "slow-CAS",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={critical op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 50,
+        "Actor": 1,
+        "Action": "critical",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={slow-CAS op=0 old=9 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 51,
+        "Actor": 2,
+        "Action": "slow-CAS",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 52,
+        "Actor": 0,
+        "Action": "wake-CAS",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 53,
+        "Actor": 1,
+        "Action": "unlock-add",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={unlock-check op=0 old=10 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 54,
+        "Actor": 0,
+        "Action": "wake-load",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={unlock-check op=0 old=10 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 55,
+        "Actor": 1,
+        "Action": "unlock-check",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={settle-load op=0 old=10 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 56,
+        "Actor": 1,
+        "Action": "settle-load",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={unlock-decide op=0 old=10 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 57,
+        "Actor": 1,
+        "Action": "unlock-decide",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={entry op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 58,
+        "Actor": 1,
+        "Action": "entry",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={fast-CAS op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 59,
+        "Actor": 1,
+        "Action": "fast-CAS",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={init-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 60,
+        "Actor": 1,
+        "Action": "init-load",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 61,
+        "Actor": 1,
+        "Action": "slow-load",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={slow-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 62,
+        "Actor": 1,
+        "Action": "slow-CAS",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={critical op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 63,
+        "Actor": 1,
+        "Action": "critical",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 64,
+        "Actor": 1,
+        "Action": "unlock-add",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={unlock-check op=0 old=10 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 65,
+        "Actor": 1,
+        "Action": "unlock-check",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={settle-load op=0 old=10 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 66,
+        "Actor": 1,
+        "Action": "settle-load",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={unlock-decide op=0 old=10 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 67,
+        "Actor": 1,
+        "Action": "unlock-decide",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={entry op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 68,
+        "Actor": 1,
+        "Action": "entry",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={fast-CAS op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 69,
+        "Actor": 1,
+        "Action": "fast-CAS",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={init-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 70,
+        "Actor": 1,
+        "Action": "init-load",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 71,
+        "Actor": 1,
+        "Action": "slow-load",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={slow-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 72,
+        "Actor": 1,
+        "Action": "slow-CAS",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={critical op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 73,
+        "Actor": 1,
+        "Action": "critical",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 74,
+        "Actor": 2,
+        "Action": "slow-load",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={slow-CAS op=0 old=11 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 75,
+        "Actor": 1,
+        "Action": "unlock-add",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={unlock-check op=0 old=10 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=11 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 76,
+        "Actor": 1,
+        "Action": "unlock-check",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={settle-load op=0 old=10 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=11 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 77,
+        "Actor": 1,
+        "Action": "settle-load",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={unlock-decide op=0 old=10 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=11 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 78,
+        "Actor": 1,
+        "Action": "unlock-decide",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={entry op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=11 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 79,
+        "Actor": 1,
+        "Action": "entry",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={fast-CAS op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=11 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 80,
+        "Actor": 1,
+        "Action": "fast-CAS",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={init-load op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=11 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 81,
+        "Actor": 1,
+        "Action": "init-load",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=11 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 82,
+        "Actor": 1,
+        "Action": "slow-load",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={slow-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-CAS op=0 old=11 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 83,
+        "Actor": 2,
+        "Action": "slow-CAS",
+        "State": "bits=10[held=false,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={slow-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 84,
+        "Actor": 1,
+        "Action": "slow-CAS",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={critical op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      },
+      {
+        "Step": 85,
+        "Actor": 1,
+        "Action": "critical",
+        "State": "bits=11[held=true,woken=true,starving=false,waiters=1] abandoned=0 published=2 wake=[false false false false false] hand=[false false false false false] g0={wake-CAS op=0 old=10 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g1={unlock-add op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=true} g2={slow-load op=0 old=0 credit=0 pair=2 queue=0 cancel=false aged=true starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+      }
+    ]
+  },
+  "CycleStart": 51,
+  "CycleLength": 34,
+  "CycleActors": [
+    true,
+    true,
+    true,
+    false
+  ]
+}

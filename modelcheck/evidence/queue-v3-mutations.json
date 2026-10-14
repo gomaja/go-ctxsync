@@ -1,0 +1,44 @@
+[
+  {
+    "Mutation": "retry-acquisition-cas",
+    "Test": "TestQueueAcquisitionCASLossRegistersWithoutRetry",
+    "Exit": 1,
+    "Result": "assertion failed as required"
+  },
+  {
+    "Mutation": "lose-ownerless-registration-wake",
+    "Test": "TestQueueRegistrationWithoutOwnerProactivelyWakesSelf",
+    "Exit": 1,
+    "Result": "assertion failed as required"
+  },
+  {
+    "Mutation": "complete-self-sender",
+    "Test": "TestQueueSendResumesPendingSender",
+    "Exit": 1,
+    "Result": "assertion failed as required"
+  },
+  {
+    "Mutation": "cancel-overwrites-held",
+    "Test": "TestQueueCancelAddPreservesConcurrentUnlock",
+    "Exit": 1,
+    "Result": "assertion failed as required"
+  },
+  {
+    "Mutation": "wake-overwrites-held",
+    "Test": "TestQueueWakeAddPreservesConcurrentBarger",
+    "Exit": 1,
+    "Result": "assertion failed as required"
+  },
+  {
+    "Mutation": "forbid-unlocked-starvation",
+    "Test": "TestQueueRegistrationCanEnterStarvationWhileUnlocked",
+    "Exit": 1,
+    "Result": "assertion failed as required"
+  },
+  {
+    "Mutation": "phase-ordered-age-mask",
+    "Test": "TestQueueSelfSenderRemainsEligibleForAgeing",
+    "Exit": 1,
+    "Result": "assertion failed as required"
+  }
+]

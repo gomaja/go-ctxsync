@@ -1,0 +1,382 @@
+[
+  {
+    "Config": "2x2/plain",
+    "Variant": "correct",
+    "States": 1601,
+    "Edges": 3034,
+    "Terminals": 3,
+    "ReuseStates": 422,
+    "Exhaustive": true,
+    "Seconds": 0.00398625,
+    "Coverage": [
+      "head requeue",
+      "starvation entry",
+      "starvation exit",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "2x2/context",
+    "Variant": "correct",
+    "States": 6751,
+    "Edges": 17200,
+    "Terminals": 3,
+    "ReuseStates": 422,
+    "Exhaustive": true,
+    "Seconds": 0.007961753,
+    "Coverage": [
+      "head requeue",
+      "cancel queue head",
+      "cancel handed ownership",
+      "cancel normal wake",
+      "starvation entry",
+      "starvation exit",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "2x2/mixed",
+    "Variant": "correct",
+    "States": 3784,
+    "Edges": 8747,
+    "Terminals": 3,
+    "ReuseStates": 422,
+    "Exhaustive": true,
+    "Seconds": 0.00487761,
+    "Coverage": [
+      "head requeue",
+      "cancel queue head",
+      "cancel handed ownership",
+      "cancel normal wake",
+      "starvation entry",
+      "starvation exit",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "2x2/try",
+    "Variant": "correct",
+    "States": 3342,
+    "Edges": 7838,
+    "Terminals": 3,
+    "ReuseStates": 422,
+    "Exhaustive": true,
+    "Seconds": 0.00329548,
+    "Coverage": [
+      "head requeue",
+      "cancel queue head",
+      "cancel handed ownership",
+      "cancel normal wake",
+      "starvation entry",
+      "starvation exit",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "3x1/plain",
+    "Variant": "correct",
+    "States": 6267,
+    "Edges": 13569,
+    "Terminals": 4,
+    "ReuseStates": 558,
+    "Exhaustive": true,
+    "Seconds": 0.008479768,
+    "Coverage": [
+      "head requeue",
+      "starvation entry",
+      "starvation exit",
+      "normal barging",
+      "lazy publication loser",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "3x1/context",
+    "Variant": "correct",
+    "States": 49628,
+    "Edges": 148761,
+    "Terminals": 4,
+    "ReuseStates": 558,
+    "Exhaustive": true,
+    "Seconds": 0.093365105,
+    "Coverage": [
+      "head requeue",
+      "cancel queue head",
+      "cancel handed ownership",
+      "cancel normal wake",
+      "starvation entry",
+      "starvation exit",
+      "normal barging",
+      "lazy publication loser",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "3x1/mixed",
+    "Variant": "correct",
+    "States": 14115,
+    "Edges": 35375,
+    "Terminals": 4,
+    "ReuseStates": 558,
+    "Exhaustive": true,
+    "Seconds": 0.021494766,
+    "Coverage": [
+      "head requeue",
+      "cancel queue head",
+      "cancel handed ownership",
+      "cancel normal wake",
+      "starvation entry",
+      "starvation exit",
+      "normal barging",
+      "lazy publication loser",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "3x1/try",
+    "Variant": "correct",
+    "States": 7836,
+    "Edges": 20131,
+    "Terminals": 3,
+    "ReuseStates": 422,
+    "Exhaustive": true,
+    "Seconds": 0.013790029,
+    "Coverage": [
+      "head requeue",
+      "cancel queue head",
+      "cancel handed ownership",
+      "cancel normal wake",
+      "starvation entry",
+      "starvation exit",
+      "normal barging",
+      "lazy publication loser",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "3x2/plain",
+    "Variant": "correct",
+    "States": 188717,
+    "Edges": 485082,
+    "Terminals": 4,
+    "ReuseStates": 558,
+    "Exhaustive": true,
+    "Seconds": 0.356346776,
+    "Coverage": [
+      "head requeue",
+      "starvation entry",
+      "starvation exit",
+      "normal barging",
+      "lazy publication loser",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "3x2/context",
+    "Variant": "correct",
+    "States": 2377509,
+    "Edges": 8436282,
+    "Terminals": 4,
+    "ReuseStates": 558,
+    "Exhaustive": true,
+    "Seconds": 5.499823096,
+    "Coverage": [
+      "head requeue",
+      "cancel queue head",
+      "cancel handed ownership",
+      "cancel normal wake",
+      "starvation entry",
+      "starvation exit",
+      "normal barging",
+      "lazy publication loser",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "3x2/mixed",
+    "Variant": "correct",
+    "States": 961650,
+    "Edges": 3176473,
+    "Terminals": 4,
+    "ReuseStates": 558,
+    "Exhaustive": true,
+    "Seconds": 1.693953492,
+    "Coverage": [
+      "head requeue",
+      "cancel queue head",
+      "cancel handed ownership",
+      "cancel normal wake",
+      "starvation entry",
+      "starvation exit",
+      "normal barging",
+      "lazy publication loser",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "3x2/try",
+    "Variant": "correct",
+    "States": 306995,
+    "Edges": 944227,
+    "Terminals": 4,
+    "ReuseStates": 558,
+    "Exhaustive": true,
+    "Seconds": 0.506673104,
+    "Coverage": [
+      "head requeue",
+      "cancel queue head",
+      "cancel handed ownership",
+      "cancel normal wake",
+      "starvation entry",
+      "starvation exit",
+      "normal barging",
+      "lazy publication loser",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "4x1/plain",
+    "Variant": "correct",
+    "States": 244347,
+    "Edges": 665340,
+    "Terminals": 5,
+    "ReuseStates": 694,
+    "Exhaustive": true,
+    "Seconds": 0.43720857,
+    "Coverage": [
+      "head requeue",
+      "starvation entry",
+      "starvation exit",
+      "normal barging",
+      "lazy publication loser",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "4x1/context",
+    "Variant": "correct",
+    "States": 4391873,
+    "Edges": 17662608,
+    "Terminals": 5,
+    "ReuseStates": 694,
+    "Exhaustive": true,
+    "Seconds": 12.128614554,
+    "Coverage": [
+      "head requeue",
+      "cancel queue head",
+      "cancel handed ownership",
+      "cancel normal wake",
+      "starvation entry",
+      "starvation exit",
+      "normal barging",
+      "lazy publication loser",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "4x1/mixed",
+    "Variant": "correct",
+    "States": 1205764,
+    "Edges": 4149752,
+    "Terminals": 5,
+    "ReuseStates": 694,
+    "Exhaustive": true,
+    "Seconds": 4.9455252,
+    "Coverage": [
+      "head requeue",
+      "cancel queue head",
+      "cancel handed ownership",
+      "cancel normal wake",
+      "starvation entry",
+      "starvation exit",
+      "normal barging",
+      "lazy publication loser",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "4x1/try",
+    "Variant": "correct",
+    "States": 296028,
+    "Edges": 925448,
+    "Terminals": 4,
+    "ReuseStates": 558,
+    "Exhaustive": true,
+    "Seconds": 0.557322131,
+    "Coverage": [
+      "head requeue",
+      "cancel queue head",
+      "cancel handed ownership",
+      "cancel normal wake",
+      "starvation entry",
+      "starvation exit",
+      "normal barging",
+      "lazy publication loser",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "3x2/head-requeue",
+    "Variant": "correct",
+    "States": 490764,
+    "Edges": 1432874,
+    "Terminals": 4,
+    "ReuseStates": 558,
+    "Exhaustive": true,
+    "Seconds": 0.761226247,
+    "Coverage": [
+      "head requeue",
+      "cancel queue head",
+      "cancel handed ownership",
+      "cancel normal wake",
+      "starvation entry",
+      "starvation exit",
+      "normal barging",
+      "lazy publication loser",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "3x2/head-cancellation-handoff",
+    "Variant": "correct",
+    "States": 1131218,
+    "Edges": 3682020,
+    "Terminals": 4,
+    "ReuseStates": 558,
+    "Exhaustive": true,
+    "Seconds": 2.35611302,
+    "Coverage": [
+      "head requeue",
+      "cancel queue head",
+      "cancel handed ownership",
+      "cancel normal wake",
+      "starvation entry",
+      "starvation exit",
+      "normal barging",
+      "lazy publication loser",
+      "targeted handoff"
+    ]
+  },
+  {
+    "Config": "queue/fair/plain-traffic",
+    "Variant": "correct",
+    "States": 28816,
+    "Edges": 78564,
+    "Terminals": 0,
+    "ReuseStates": 0,
+    "Exhaustive": true,
+    "Seconds": 0.042409154,
+    "Coverage": null
+  },
+  {
+    "Config": "queue/fair/cancelling-traffic",
+    "Variant": "correct",
+    "States": 194183,
+    "Edges": 638994,
+    "Terminals": 0,
+    "ReuseStates": 0,
+    "Exhaustive": true,
+    "Seconds": 0.377899639,
+    "Coverage": null
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "Config": "seeded/historical-starvation-exit",
+    "Variant": "leave-stale-woken",
+    "States": 8,
+    "Edges": 7,
+    "Terminals": 0,
+    "Exhaustive": false,
+    "Seconds": 0.000068725,
+    "Coverage": [
+      "starvation exit",
+      "abandoned credit settlement"
+    ],
+    "Failure": {
+      "Property": "normalization: release retained a flag, count or handoff",
+      "Trace": [
+        {
+          "Step": 0,
+          "Actor": -1,
+          "Action": "initial",
+          "State": "bits=14[held=false,woken=true,starving=true,waiters=1] abandoned=1 published=1 wake=[false true false false false] hand=[false false false false false] g0={unlock-check op=0 old=14 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=true owns=false} g1={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+        },
+        {
+          "Step": 1,
+          "Actor": 0,
+          "Action": "unlock-check",
+          "State": "bits=14[held=false,woken=true,starving=true,waiters=1] abandoned=1 published=1 wake=[false true false false false] hand=[false false false false false] g0={settle-load op=0 old=14 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=true owns=false} g1={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+        },
+        {
+          "Step": 2,
+          "Actor": 0,
+          "Action": "settle-load",
+          "State": "bits=14[held=false,woken=true,starving=true,waiters=1] abandoned=1 published=1 wake=[false true false false false] hand=[false false false false false] g0={settle-CAS op=0 old=14 credit=1 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=true owns=false} g1={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+        },
+        {
+          "Step": 3,
+          "Actor": 0,
+          "Action": "settle-CAS",
+          "State": "bits=14[held=false,woken=true,starving=true,waiters=1] abandoned=0 published=1 wake=[false true false false false] hand=[false false false false false] g0={settle-count op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=true owns=false} g1={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+        },
+        {
+          "Step": 4,
+          "Actor": 0,
+          "Action": "settle-count",
+          "State": "bits=6[held=false,woken=true,starving=true,waiters=0] abandoned=0 published=1 wake=[false true false false false] hand=[false false false false false] g0={unlock-check op=0 old=6 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=true owns=false} g1={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+        },
+        {
+          "Step": 5,
+          "Actor": 0,
+          "Action": "unlock-check",
+          "State": "bits=6[held=false,woken=true,starving=true,waiters=0] abandoned=0 published=1 wake=[false true false false false] hand=[false false false false false] g0={unlock-decide op=0 old=6 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=true owns=false} g1={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+        },
+        {
+          "Step": 6,
+          "Actor": 0,
+          "Action": "unlock-decide",
+          "State": "bits=6[held=false,woken=true,starving=true,waiters=0] abandoned=0 published=1 wake=[false true false false false] hand=[false false false false false] g0={clear-flags-CAS op=0 old=6 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=true owns=false} g1={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+        },
+        {
+          "Step": 7,
+          "Actor": 0,
+          "Action": "clear-flags-CAS",
+          "State": "bits=2[held=false,woken=true,starving=false,waiters=0] abandoned=0 published=1 wake=[false true false false false] hand=[false false false false false] g0={finished op=1 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g1={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g2={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false} g3={finished op=0 old=0 credit=0 pair=0 queue=0 cancel=false aged=false starved=false releaseStarved=false owns=false}"
+        }
+      ]
+    },
+    "CycleActors": [
+      false,
+      false,
+      false,
+      false
+    ]
+  }
+]

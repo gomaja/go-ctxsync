@@ -1,0 +1,1847 @@
+{
+  "States": 93,
+  "Edges": 179,
+  "Property": "P1: guard owner does not hold head ticket",
+  "Trace": [
+    {
+      "Next": {
+        "Next": 0,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 0,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 0,
+      "Note": "packed head/tail Load for Try"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 1,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "tail Add allocates unique ticket"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 2,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": true
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "head Load"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 4,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "ticket equality branch"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 5,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "finite guarded body"
+    },
+    {
+      "Next": {
+        "Next": 0,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 7,
+            "SeenHead": 7,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 0,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "head advances"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 7,
+            "SeenHead": 7,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 1,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "tail Add allocates unique ticket"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 7,
+            "SeenHead": 7,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 2,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": true
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "head Load"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 7,
+            "SeenHead": 7,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 4,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "ticket equality branch"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 7,
+            "SeenHead": 7,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 5,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "finite guarded body"
+    },
+    {
+      "Next": {
+        "Next": 0,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 6,
+            "SeenHead": 6,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 0,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "head advances"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 6,
+            "SeenHead": 6,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 1,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "tail Add allocates unique ticket"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 6,
+            "SeenHead": 6,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 2,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": true
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "head Load"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 6,
+            "SeenHead": 6,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 4,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "ticket equality branch"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 6,
+            "SeenHead": 6,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 5,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "finite guarded body"
+    },
+    {
+      "Next": {
+        "Next": 0,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 5,
+            "SeenHead": 5,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 0,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "head advances"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 5,
+            "SeenHead": 5,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 1,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "tail Add allocates unique ticket"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 5,
+            "SeenHead": 5,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 2,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": true
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "head Load"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 5,
+            "SeenHead": 5,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 4,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "ticket equality branch"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 5,
+            "SeenHead": 5,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 5,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "finite guarded body"
+    },
+    {
+      "Next": {
+        "Next": 0,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 4,
+            "SeenHead": 4,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 0,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "head advances"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 4,
+            "SeenHead": 4,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 1,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "tail Add allocates unique ticket"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 4,
+            "SeenHead": 4,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 2,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": true
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "head Load"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 4,
+            "SeenHead": 4,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 4,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "ticket equality branch"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 4,
+            "SeenHead": 4,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 5,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "finite guarded body"
+    },
+    {
+      "Next": {
+        "Next": 0,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 3,
+            "SeenHead": 3,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 0,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "head advances"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 3,
+            "SeenHead": 3,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 1,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "tail Add allocates unique ticket"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 3,
+            "SeenHead": 3,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 2,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": true
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "head Load"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 3,
+            "SeenHead": 3,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 4,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "ticket equality branch"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 3,
+            "SeenHead": 3,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 5,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "finite guarded body"
+    },
+    {
+      "Next": {
+        "Next": 0,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 2,
+            "SeenHead": 2,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 0,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "head advances"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 2,
+            "SeenHead": 2,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 1,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "tail Add allocates unique ticket"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 2,
+            "SeenHead": 2,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 2,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": true
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "head Load"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 2,
+            "SeenHead": 2,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 4,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "ticket equality branch"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 2,
+            "SeenHead": 2,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 5,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "finite guarded body"
+    },
+    {
+      "Next": {
+        "Next": 0,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 1,
+            "SeenHead": 1,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 0,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "head advances"
+    },
+    {
+      "Next": {
+        "Next": 1,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 9,
+            "Ticket": 0,
+            "SeenNext": 1,
+            "SeenHead": 1,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 1,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "tail Add allocates unique ticket"
+    },
+    {
+      "Next": {
+        "Next": 2,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 4,
+            "Ticket": 1,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 1,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 0,
+      "Note": "Try compare and swap"
+    },
+    {
+      "Next": {
+        "Next": 2,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 4,
+            "Ticket": 1,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 2,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": false,
+            "Ready": true
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "head Load"
+    },
+    {
+      "Next": {
+        "Next": 2,
+        "Serving": 0,
+        "G": [
+          {
+            "PC": 4,
+            "Ticket": 1,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 4,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": true,
+            "Owns": true,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          },
+          {
+            "PC": 10,
+            "Ticket": 0,
+            "SeenNext": 0,
+            "SeenHead": 0,
+            "Claimed": false,
+            "Owns": false,
+            "Ready": false
+          }
+        ]
+      },
+      "Actor": 1,
+      "Note": "ticket equality branch"
+    }
+  ]
+}

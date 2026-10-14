@@ -1,0 +1,48 @@
+[
+  {
+    "path": "send_linux.go",
+    "bytes": 37099,
+    "sha256": "42901475399e3e2e529b49aa106ad2dff6c7d9c80941f762084b9ea849e32c2c",
+    "repository": "github.com/gomaja/go-sctp"
+  },
+  {
+    "path": "sendlock_linux_test.go",
+    "bytes": 19543,
+    "sha256": "dbb3624c7a2fdb88caaf8202f0a35baad5c5bb4f84273a89c58598f2455b2a6b",
+    "repository": "github.com/gomaja/go-sctp"
+  },
+  {
+    "path": "context_lock.go",
+    "bytes": 2552,
+    "sha256": "fa12bace4093d0bd9fc41922fa79e9fbe60448d5f8161f3624adc591be63c4e7",
+    "repository": "github.com/gomaja/go-m3ua"
+  },
+  {
+    "path": "src/internal/sync/mutex.go",
+    "bytes": 7403,
+    "sha256": "0535ca03e44cb62cf3e4a511b989ffd0f08ec899d864e2a817b77c4025bec48c",
+    "repository": "go.googlesource.com/go",
+    "version": "go1.26.9"
+  },
+  {
+    "path": "src/sync/rwmutex.go",
+    "bytes": 7598,
+    "sha256": "4ecc9b2fa7771cbe37e1670e4caefd7a28939683bfe1614fcf5e9d545261d17f",
+    "repository": "go.googlesource.com/go",
+    "version": "go1.26.9"
+  },
+  {
+    "path": "src/runtime/chan.go",
+    "bytes": 27552,
+    "sha256": "65b95334e2688452efaa5ebf0dde2b94052d383ed0f281658a9a8bc20a948838",
+    "repository": "go.googlesource.com/go",
+    "version": "go1.26.9"
+  },
+  {
+    "path": "src/runtime/select.go",
+    "bytes": 15792,
+    "sha256": "93977178a5c507d2bd0bbd990613fa0c8a1d6d18b974fcbcd6c9edce6bd8b5bf",
+    "repository": "go.googlesource.com/go",
+    "version": "go1.26.9"
+  }
+]

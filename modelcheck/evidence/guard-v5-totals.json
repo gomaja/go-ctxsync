@@ -1,0 +1,17 @@
+{
+  "Configurations": 44,
+  "States": 263419,
+  "Edges": 1069253,
+  "Exhaustive": true,
+  "Passing": true,
+  "PackedTryWrap": {
+    "States": 125,
+    "Edges": 247,
+    "Passing": true
+  },
+  "SeparateTryNegative": {
+    "States": 93,
+    "Edges": 179,
+    "Transitions": 40
+  }
+}

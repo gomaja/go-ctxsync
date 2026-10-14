@@ -1,0 +1,229 @@
+[
+  {
+    "Config": "queue/fair/plain-traffic",
+    "Variant": "probe-retries-cas-loss",
+    "States": 70556,
+    "Edges": 202954,
+    "Terminals": 0,
+    "ReuseStates": 0,
+    "Exhaustive": true,
+    "Seconds": 0.22079568,
+    "Coverage": null,
+    "Failure": {
+      "Property": "P3/liveness: fair cycle never grants the uncancelled victim",
+      "Trace": [
+        {
+          "Step": 0,
+          "Actor": -1,
+          "Action": "initial",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 1,
+          "Actor": 0,
+          "Action": "queue entry",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 2,
+          "Actor": 1,
+          "Action": "queue entry",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 3,
+          "Actor": 1,
+          "Action": "fast Lock CAS",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={critical op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 4,
+          "Actor": 0,
+          "Action": "fast Lock CAS",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-context-check op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={critical op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 5,
+          "Actor": 0,
+          "Action": "queue probe-context-check",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-load op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={critical op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 6,
+          "Actor": 1,
+          "Action": "queue critical",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-load op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={unlock-Add op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 7,
+          "Actor": 1,
+          "Action": "Unlock Add and pinned mode snapshot",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={probe-load op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 8,
+          "Actor": 0,
+          "Action": "queue probe-load",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 9,
+          "Actor": 1,
+          "Action": "queue entry",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 10,
+          "Actor": 1,
+          "Action": "fast Lock CAS",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={critical op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 11,
+          "Actor": 1,
+          "Action": "queue critical",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={unlock-Add op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 12,
+          "Actor": 2,
+          "Action": "queue entry",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={unlock-Add op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 13,
+          "Actor": 0,
+          "Action": "queue probe-CAS",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-context-check op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={unlock-Add op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 14,
+          "Actor": 0,
+          "Action": "queue probe-context-check",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-load op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={unlock-Add op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 15,
+          "Actor": 1,
+          "Action": "Unlock Add and pinned mode snapshot",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={probe-load op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 16,
+          "Actor": 0,
+          "Action": "queue probe-load",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 17,
+          "Actor": 1,
+          "Action": "queue entry",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 18,
+          "Actor": 1,
+          "Action": "fast Lock CAS",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={critical op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 19,
+          "Actor": 1,
+          "Action": "queue critical",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={unlock-Add op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 20,
+          "Actor": 1,
+          "Action": "Unlock Add and pinned mode snapshot",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 21,
+          "Actor": 1,
+          "Action": "queue entry",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 22,
+          "Actor": 1,
+          "Action": "fast Lock CAS",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={critical op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 23,
+          "Actor": 1,
+          "Action": "queue critical",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={unlock-Add op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 24,
+          "Actor": 2,
+          "Action": "fast Lock CAS",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={unlock-Add op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={probe-context-check op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 25,
+          "Actor": 1,
+          "Action": "Unlock Add and pinned mode snapshot",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={probe-context-check op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 26,
+          "Actor": 1,
+          "Action": "queue entry",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={probe-context-check op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 27,
+          "Actor": 2,
+          "Action": "queue probe-context-check",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={probe-load op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 28,
+          "Actor": 2,
+          "Action": "queue probe-load",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 29,
+          "Actor": 2,
+          "Action": "queue probe-CAS",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={critical op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 30,
+          "Actor": 2,
+          "Action": "queue critical",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={unlock-Add op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 31,
+          "Actor": 2,
+          "Action": "Unlock Add and pinned mode snapshot",
+          "State": "bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 32,
+          "Actor": 1,
+          "Action": "fast Lock CAS",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={critical op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 33,
+          "Actor": 1,
+          "Action": "queue critical",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={unlock-Add op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        },
+        {
+          "Step": 34,
+          "Actor": 2,
+          "Action": "queue entry",
+          "State": "bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={probe-CAS op=0 old=0 new=1 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={unlock-Add op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}"
+        }
+      ]
+    },
+    "CycleLength": 22
+  }
+]

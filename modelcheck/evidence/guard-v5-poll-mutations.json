@@ -1,0 +1,38 @@
+[
+  {
+    "Mutation": "guard-v5-delay-matching-head",
+    "Before": "if g.Ready {",
+    "After": "if false {",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardMatchingHeadEntersWithoutPolling$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Mutation": "guard-v5-poll-without-head-load",
+    "Before": "p.PC = guardPoll\n\t\t\tout = append(out, guardEdge{Next: guardNormalize(n), Actor: i, Note: \"mismatched head may be polled again before yield\"})",
+    "After": "p.PC = guardDecide\n\t\t\tout = append(out, guardEdge{Next: guardNormalize(n), Actor: i, Note: \"mismatched head may be polled again before yield\"})",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardBoundedAndFair$",
+      "-count=1"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  }
+]

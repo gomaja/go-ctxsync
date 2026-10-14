@@ -1,0 +1,610 @@
+[
+  {
+    "mutation": "requeue-tail",
+    "test": "TestMutexStarvationFreedomAfterLostWake",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexStarvationFreedomAfterLostWake$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "nil-done-requeue-tail",
+    "test": "TestMutexStarvationFreedomAfterLostWake",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexStarvationFreedomAfterLostWake$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "fractional-try-allocation",
+    "test": "TestMutexUncontendedAllocations",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexUncontendedAllocations$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "exit-ignores-age",
+    "test": "TestMutexStarvationFreedomAfterLostWake",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexStarvationFreedomAfterLostWake$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "cancel-drops-handoff",
+    "test": "TestMutexCancelledCommittedHandoffReleasesOwnership",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexCancelledCommittedHandoffReleasesOwnership$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "cancel-leaves-node",
+    "test": "TestMutexCancellationRemovesEveryQueuePosition",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexCancellationRemovesEveryQueuePosition$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "lost-wake",
+    "test": "TestMutexStarvationFreedomAfterLostWake",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexStarvationFreedomAfterLostWake$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "lazy-publication-race",
+    "test": "TestMutexConcurrentInitializationPublishesOneQueue",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexConcurrentInitializationPublishesOneQueue$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "leave-stale-woken",
+    "test": "TestMutexCancelledCommittedWakeNormalizes",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexCancelledCommittedWakeNormalizes$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "handoff-exit-not-normalized",
+    "test": "TestMutexCancelledCommittedHandoffReleasesOwnership",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexCancelledCommittedHandoffReleasesOwnership$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "try-steals-handoff",
+    "test": "TestMutexTryRefusesReservedHandoff",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexTryRefusesReservedHandoff$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "guarded-cas-retry",
+    "test": "TestMutexSlowCASCannotHoldQueueGuardForever",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexSlowCASCannotHoldQueueGuardForever$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "pool-retains-token",
+    "test": "TestWaiterReuseClearsTokenAndLinks",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestWaiterReuseClearsTokenAndLinks$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "pool-retains-links",
+    "test": "TestWaiterReuseClearsTokenAndLinks",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestWaiterReuseClearsTokenAndLinks$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "guard-try-stale-head",
+    "test": "TestTicketGuardTryRejectsStaleFreeSnapshot",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardTryRejectsStaleFreeSnapshot$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "guard-head-wrap-carry",
+    "test": "TestTicketGuardWrapKeepsTail",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardWrapKeepsTail$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "writer-cancel-forgets-readers",
+    "test": "TestRWCancelledWriterReleasesReaders",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestRWCancelledWriterReleasesReaders$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "reader-count-undo-error",
+    "test": "TestRWCancelledGrantedReaderUndoesCount",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestRWCancelledGrantedReaderUndoesCount$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "reader-past-pending-writer",
+    "test": "TestRWPendingWriterBlocksFreshReaders",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestRWPendingWriterBlocksFreshReaders$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "reader-batch-without-reservations",
+    "test": "TestRWReleasedReaderBatchPrecedesNextWriter",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestRWReleasedReaderBatchPrecedesNextWriter$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "ownerless-registration-lost-wake",
+    "test": "TestMutexOwnerlessRegistrationWakes",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexOwnerlessRegistrationWakes$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "cancel-normal-recipient-does-not-advance",
+    "test": "TestMutexCancelledWakeAdvancesFollower",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexCancelledWakeAdvancesFollower$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "release-skip-evades-misuse-panic",
+    "test": "TestMutexIllegalUnlockOfReservedHandoffPanics",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexIllegalUnlockOfReservedHandoffPanics$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "guard-poll-budget-never-yields",
+    "test": "TestTicketGuardPollingYieldsAtBudget",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardPollingYieldsAtBudget$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "guard-poll-reuses-stale-head",
+    "test": "TestTicketGuardPollingYieldsAtBudget",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardPollingYieldsAtBudget$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "fresh-probe-ignores-starvation",
+    "test": "TestMutexFreshProbeRefusesReservedHandoff",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexFreshProbeRefusesReservedHandoff$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "fresh-probe-drops-accounting",
+    "test": "TestMutexFreshProbeAcquiresWithoutGuardAndPreservesFlags",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexFreshProbeAcquiresWithoutGuardAndPreservesFlags$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "fresh-probe-retries-before-registration",
+    "test": "TestMutexFreshProbeLossRegisters",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexFreshProbeLossRegisters$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "historical-release-reread-hands-bargers-ownership",
+    "test": "TestMutexDelayedNormalReleaseCannotHandOffBargersOwnership",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexDelayedNormalReleaseCannotHandOffBargersOwnership$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "historical-starvation-exit-leaves-stale-woken",
+    "test": "TestMutexCancelledCommittedHandoffReleasesOwnership",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestMutexCancelledCommittedHandoffReleasesOwnership$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "pending-handoff-retains-guard",
+    "test": "TestRequiredTargetedQueueLivenessGate",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestRequiredTargetedQueueLivenessGate$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  },
+  {
+    "mutation": "pending-rw-release-retains-guard",
+    "test": "TestRequiredRWContinuousTrafficGate/reader/plain",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestRequiredRWContinuousTrafficGate/reader/plain$",
+      "-count=1",
+      "-timeout",
+      "10s"
+    ],
+    "exit": 1,
+    "killed": true
+  }
+]

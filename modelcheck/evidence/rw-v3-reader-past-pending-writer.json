@@ -1,0 +1,81 @@
+[
+  {
+    "Config": "2x2/plain",
+    "Variant": "reader-past-pending-writer",
+    "States": 47,
+    "Edges": 73,
+    "Terminals": 0,
+    "ReuseStates": 0,
+    "Exhaustive": false,
+    "Seconds": 0.000222045,
+    "Coverage": [
+      "writer drain wait",
+      "writer acquisition"
+    ],
+    "Failure": {
+      "Property": "P3: fresh reader admitted past pending writer",
+      "Trace": [
+        {
+          "Step": 0,
+          "Actor": -1,
+          "Action": "initial",
+          "State": "readers=0 pending=0 guard=0 queued=[0 0 0 0] rw=[{PC:entry Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:entry Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false}] writerMutex={bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}}"
+        },
+        {
+          "Step": 1,
+          "Actor": 0,
+          "Action": "RW entry",
+          "State": "readers=0 pending=0 guard=0 queued=[0 0 0 0] rw=[{PC:reader-guard Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:entry Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false}] writerMutex={bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}}"
+        },
+        {
+          "Step": 2,
+          "Actor": 1,
+          "Action": "RW entry",
+          "State": "readers=0 pending=0 guard=0 queued=[0 0 0 0] rw=[{PC:reader-guard Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:writer-mutex Next:entry Op:0 Target:0 Owns:false Writer:true Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false}] writerMutex={bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={entry op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}}"
+        },
+        {
+          "Step": 3,
+          "Actor": 1,
+          "Action": "writer Mutex: queue entry",
+          "State": "readers=0 pending=0 guard=0 queued=[0 0 0 0] rw=[{PC:reader-guard Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:writer-mutex Next:entry Op:0 Target:0 Owns:false Writer:true Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false}] writerMutex={bits=0[held=false,woken=false,starving=false,waiters=0] published=0 g0={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={fast-CAS op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}}"
+        },
+        {
+          "Step": 4,
+          "Actor": 1,
+          "Action": "writer Mutex: fast Lock CAS",
+          "State": "readers=0 pending=0 guard=0 queued=[0 0 0 0] rw=[{PC:reader-guard Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:writer-guard Next:entry Op:0 Target:0 Owns:false Writer:true Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false}] writerMutex={bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={critical op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}}"
+        },
+        {
+          "Step": 5,
+          "Actor": 1,
+          "Action": "RW writer-guard",
+          "State": "readers=0 pending=0 guard=2 queued=[0 0 0 0] rw=[{PC:reader-guard Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:writer-inspect Next:entry Op:0 Target:0 Owns:false Writer:true Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false}] writerMutex={bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={critical op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}}"
+        },
+        {
+          "Step": 6,
+          "Actor": 1,
+          "Action": "RW writer-inspect",
+          "State": "readers=0 pending=2 guard=2 queued=[0 0 0 0] rw=[{PC:reader-guard Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:guard-release Next:critical Op:0 Target:0 Owns:true Writer:true Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:true} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false}] writerMutex={bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={critical op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}}"
+        },
+        {
+          "Step": 7,
+          "Actor": 1,
+          "Action": "RW guard-release",
+          "State": "readers=0 pending=2 guard=0 queued=[0 0 0 0] rw=[{PC:reader-guard Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:critical Next:entry Op:0 Target:0 Owns:true Writer:true Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:true} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false}] writerMutex={bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={critical op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}}"
+        },
+        {
+          "Step": 8,
+          "Actor": 0,
+          "Action": "RW reader-guard",
+          "State": "readers=0 pending=2 guard=1 queued=[0 0 0 0] rw=[{PC:reader-inspect Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:critical Next:entry Op:0 Target:0 Owns:true Writer:true Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:true} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false}] writerMutex={bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={critical op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}}"
+        },
+        {
+          "Step": 9,
+          "Actor": 0,
+          "Action": "",
+          "State": "readers=0 pending=2 guard=1 queued=[0 0 0 0] rw=[{PC:reader-inspect Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:critical Next:entry Op:0 Target:0 Owns:true Writer:true Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:true} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false} {PC:done Next:entry Op:0 Target:0 Owns:false Writer:false Cancelled:false Started:false Aged:false Signal:false Granted:false Drain:false Success:false}] writerMutex={bits=1[held=true,woken=false,starving=false,waiters=0] published=0 g0={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={critical op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=true signal=false returnError=false} g2={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}}"
+        }
+      ]
+    }
+  }
+]

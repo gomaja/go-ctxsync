@@ -1,0 +1,307 @@
+[
+  {
+    "Config": "queue/fair/plain-traffic",
+    "Variant": "correct",
+    "States": 21524,
+    "Edges": 56622,
+    "Terminals": 0,
+    "ReuseStates": 0,
+    "Exhaustive": true,
+    "Seconds": 0.035093081,
+    "Coverage": null,
+    "Failure": {
+      "Property": "P3/liveness: fair cycle never grants the uncancelled victim",
+      "Trace": [
+        {
+          "Step": 0,
+          "Actor": -1,
+          "Action": "initial",
+          "State": "{0 0 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 1,
+          "Actor": 0,
+          "Action": "queue phase 0",
+          "State": "{0 0 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 1 0 0 0 0 false false false false false false} {0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 2,
+          "Actor": 1,
+          "Action": "queue phase 0",
+          "State": "{0 0 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 1 0 0 0 0 false false false false false false} {0 0 0 1 0 0 0 0 false false false false false false} {0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 3,
+          "Actor": 2,
+          "Action": "queue phase 0",
+          "State": "{0 0 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 1 0 0 0 0 false false false false false false} {0 0 0 1 0 0 0 0 false false false false false false} {0 0 0 1 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 4,
+          "Actor": 2,
+          "Action": "fast Lock CAS",
+          "State": "{1 0 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 1 0 0 0 0 false false false false false false} {0 0 0 1 0 0 0 0 false false false false false false} {0 0 0 16 0 0 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 5,
+          "Actor": 0,
+          "Action": "fast Lock CAS",
+          "State": "{1 0 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 4 0 0 0 0 false false false false false false} {0 0 0 1 0 0 0 0 false false false false false false} {0 0 0 16 0 0 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 6,
+          "Actor": 1,
+          "Action": "fast Lock CAS",
+          "State": "{1 0 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 4 0 0 0 0 false false false false false false} {0 0 0 4 0 0 0 0 false false false false false false} {0 0 0 16 0 0 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 7,
+          "Actor": 1,
+          "Action": "queue phase 4",
+          "State": "{1 0 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 4 0 0 0 0 false false false false false false} {0 0 0 5 0 0 0 0 false false false false false false} {0 0 0 16 0 0 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 8,
+          "Actor": 1,
+          "Action": "queue phase 5",
+          "State": "{1 0 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 4 0 0 0 0 false false false false false false} {0 0 0 6 0 2 0 0 false false false false false false} {0 0 0 16 0 0 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 9,
+          "Actor": 1,
+          "Action": "publish queue CAS",
+          "State": "{1 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 4 0 0 0 0 false false false false false false} {0 0 0 8 0 2 0 0 false false false false false false} {0 0 0 16 0 0 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 10,
+          "Actor": 0,
+          "Action": "queue phase 4",
+          "State": "{1 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 8 0 2 0 0 false false false false false false} {0 0 0 8 0 2 0 0 false false false false false false} {0 0 0 16 0 0 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 11,
+          "Actor": 1,
+          "Action": "queue phase 8",
+          "State": "{1 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 2 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 8 0 2 0 0 false false false false false false} {0 0 0 9 0 2 0 0 false false false false false false} {0 0 0 16 0 0 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 12,
+          "Actor": 2,
+          "Action": "queue phase 16",
+          "State": "{1 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 2 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 8 0 2 0 0 false false false false false false} {0 0 0 9 0 2 0 0 false false false false false false} {0 0 0 17 0 0 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 13,
+          "Actor": 2,
+          "Action": "Unlock Add and pinned mode snapshot",
+          "State": "{0 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 2 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 8 0 2 0 0 false false false false false false} {0 0 0 9 0 2 0 0 false false false false false false} {0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 14,
+          "Actor": 1,
+          "Action": "queue phase 9",
+          "State": "{0 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 2 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 8 0 2 0 0 false false false false false false} {0 1 0 10 0 2 0 0 false false false false false false} {0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 15,
+          "Actor": 1,
+          "Action": "queue phase 10",
+          "State": "{1 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 8 0 2 0 0 false false false false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 16,
+          "Actor": 0,
+          "Action": "queue phase 8",
+          "State": "{1 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 1 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 9 0 2 0 0 false false false false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 17,
+          "Actor": 0,
+          "Action": "queue phase 9",
+          "State": "{1 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 1 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{1 9 0 10 0 2 0 0 false false false false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 18,
+          "Actor": 0,
+          "Action": "queue phase 10",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 1 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 11 0 2 0 0 false false false false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 19,
+          "Actor": 0,
+          "Action": "queue phase 11",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true false false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 20,
+          "Actor": 0,
+          "Action": "wait crosses 1 ms",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 21,
+          "Actor": 2,
+          "Action": "queue phase 0",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 1 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 22,
+          "Actor": 2,
+          "Action": "fast Lock CAS",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 4 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 23,
+          "Actor": 2,
+          "Action": "queue phase 4",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 8 0 2 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 24,
+          "Actor": 2,
+          "Action": "queue phase 8",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 3 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 9 0 2 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 25,
+          "Actor": 2,
+          "Action": "queue phase 9",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 3 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 16 0 2 0 0 false false false true false false} {9 17 0 10 0 2 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 26,
+          "Actor": 1,
+          "Action": "queue phase 16",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 3 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 17 0 2 0 0 false false false true false false} {9 17 0 10 0 2 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 27,
+          "Actor": 1,
+          "Action": "Unlock Add and pinned mode snapshot",
+          "State": "{8 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 3 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 8 18 0 2 0 0 false false false false false false} {9 17 0 10 0 2 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 28,
+          "Actor": 2,
+          "Action": "queue phase 10",
+          "State": "{8 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 3 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 8 18 0 2 0 0 false false false false false false} {0 0 0 9 0 2 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 29,
+          "Actor": 2,
+          "Action": "queue phase 9",
+          "State": "{8 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 3 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 8 18 0 2 0 0 false false false false false false} {8 9 0 10 0 2 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 30,
+          "Actor": 2,
+          "Action": "queue phase 10",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 8 18 0 2 0 0 false false false false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 31,
+          "Actor": 1,
+          "Action": "queue phase 18",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 2 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 8 19 0 2 0 0 false false false false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 32,
+          "Actor": 1,
+          "Action": "queue phase 19",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 33,
+          "Actor": 1,
+          "Action": "queue phase 0",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 1 0 0 0 0 false false false false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 34,
+          "Actor": 1,
+          "Action": "fast Lock CAS",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 4 0 0 0 0 false false false false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 35,
+          "Actor": 1,
+          "Action": "queue phase 4",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 8 0 2 0 0 false false false false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 36,
+          "Actor": 1,
+          "Action": "queue phase 8",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 2 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 9 0 2 0 0 false false false false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 37,
+          "Actor": 2,
+          "Action": "queue phase 16",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 2 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 9 0 2 0 0 false false false false false false} {0 0 0 17 0 2 0 0 false false false true false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 38,
+          "Actor": 2,
+          "Action": "Unlock Add and pinned mode snapshot",
+          "State": "{8 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 2 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 9 0 2 0 0 false false false false false false} {0 0 8 18 0 2 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 39,
+          "Actor": 1,
+          "Action": "queue phase 9",
+          "State": "{8 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 2 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {8 9 0 10 0 2 0 0 false false false false false false} {0 0 8 18 0 2 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 40,
+          "Actor": 1,
+          "Action": "queue phase 10",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 8 18 0 2 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 41,
+          "Actor": 2,
+          "Action": "queue phase 18",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 3 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 8 19 0 2 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 42,
+          "Actor": 2,
+          "Action": "queue phase 19",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 0 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 43,
+          "Actor": 2,
+          "Action": "queue phase 0",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 1 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 44,
+          "Actor": 2,
+          "Action": "fast Lock CAS",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 4 0 0 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 45,
+          "Actor": 2,
+          "Action": "queue phase 4",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 0 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 8 0 2 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 46,
+          "Actor": 2,
+          "Action": "queue phase 8",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 3 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 16 0 2 0 0 false false false true false false} {0 0 0 9 0 2 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        },
+        {
+          "Step": 47,
+          "Actor": 2,
+          "Action": "queue phase 9",
+          "State": "{9 2 [{[0 0 0 0] 0 0} {[0 0 0 0] 0 0} {[1 0 0 0] 3 0} {[0 0 0 0] 0 0} {[0 0 0 0] 0 0}] [{0 0 0 12 0 2 0 0 false true true false false false} {0 0 0 16 0 2 0 0 false false false true false false} {9 17 0 10 0 2 0 0 false false false false false false} {0 0 0 23 0 0 0 0 false false false false false false}]}"
+        }
+      ]
+    },
+    "CycleLength": 22
+  }
+]

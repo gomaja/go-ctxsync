@@ -1,0 +1,202 @@
+[
+  {
+    "variant": "requeue-tail",
+    "test": "TestQueueLostWakeRequeuesAtHead",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestQueueLostWakeRequeuesAtHead$",
+      "-count=1",
+      "-args",
+      "-queue-model-variant=requeue-tail"
+    ],
+    "exit": 1,
+    "assertion_killed": true,
+    "output": "--- FAIL: TestQueueLostWakeRequeuesAtHead (0.00s)\n    queue_test.go:44: a lost wake must put the old waiter ahead of the fresh one\nFAIL\nFAIL\tgithub.com/gomaja/go-ctxsync\t0.003s\nFAIL\n"
+  },
+  {
+    "variant": "exit-ignores-age",
+    "test": "TestQueueHandoffPreservesOldWait",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestQueueHandoffPreservesOldWait$",
+      "-count=1",
+      "-args",
+      "-queue-model-variant=exit-ignores-age"
+    ],
+    "exit": 1,
+    "assertion_killed": true,
+    "output": "--- FAIL: TestQueueHandoffPreservesOldWait (0.00s)\n    queue_test.go:63: an old handoff recipient with another waiter must retain starvation\nFAIL\nFAIL\tgithub.com/gomaja/go-ctxsync\t0.003s\nFAIL\n"
+  },
+  {
+    "variant": "cancel-drops-handoff",
+    "test": "TestQueueCancelledHandoffRetainsOwnership",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestQueueCancelledHandoffRetainsOwnership$",
+      "-count=1",
+      "-args",
+      "-queue-model-variant=cancel-drops-handoff"
+    ],
+    "exit": 1,
+    "assertion_killed": true,
+    "output": "--- FAIL: TestQueueCancelledHandoffRetainsOwnership (0.02s)\n    queue_test.go:75: handoff/cancellation gate: {Config:2x2/context Variant:cancel-drops-handoff States:9841 Edges:26348 Terminals:3 ReuseStates:0 Exhaustive:false Seconds:0.021224298 Coverage:[head requeue cancel queue head cancel handed ownership cancel normal wake starvation entry starvation exit normal barging targeted handoff] Failure:0x1a81c58ce2d0 CycleLength:0}\nFAIL\nFAIL\tgithub.com/gomaja/go-ctxsync\t0.024s\nFAIL\n"
+  },
+  {
+    "variant": "cancel-leaves-node",
+    "test": "TestQueueCancelledNodeIsRemoved",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestQueueCancelledNodeIsRemoved$",
+      "-count=1",
+      "-args",
+      "-queue-model-variant=cancel-leaves-node"
+    ],
+    "exit": 1,
+    "assertion_killed": true,
+    "output": "--- FAIL: TestQueueCancelledNodeIsRemoved (0.01s)\n    queue_test.go:83: cancelled waiters must leave an idle lock: {Config:2x2/context Variant:cancel-leaves-node States:3250 Edges:7537 Terminals:3 ReuseStates:0 Exhaustive:false Seconds:0.005596769 Coverage:[cancel queue head cancel normal wake normal barging] Failure:0x13cb432ac2d0 CycleLength:0}\nFAIL\nFAIL\tgithub.com/gomaja/go-ctxsync\t0.009s\nFAIL\n"
+  },
+  {
+    "variant": "omit-wake-send",
+    "test": "TestQueueNormalWakeIsNotLost",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestQueueNormalWakeIsNotLost$",
+      "-count=1",
+      "-args",
+      "-queue-model-variant=omit-wake-send"
+    ],
+    "exit": 1,
+    "assertion_killed": true,
+    "output": "--- FAIL: TestQueueNormalWakeIsNotLost (0.00s)\n    queue_test.go:91: normal wake must finish finite traffic: {Config:2x2/plain Variant:omit-wake-send States:1011 Edges:1764 Terminals:2 ReuseStates:0 Exhaustive:false Seconds:0.001535498 Coverage:[normal barging] Failure:0x3419623ac6f0 CycleLength:0}\nFAIL\nFAIL\tgithub.com/gomaja/go-ctxsync\t0.005s\nFAIL\n"
+  },
+  {
+    "variant": "overwrite-lazy-publication",
+    "test": "TestQueueLazyPublicationPreservesWaiters",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestQueueLazyPublicationPreservesWaiters$",
+      "-count=1",
+      "-args",
+      "-queue-model-variant=overwrite-lazy-publication"
+    ],
+    "exit": 1,
+    "assertion_killed": true,
+    "output": "--- FAIL: TestQueueLazyPublicationPreservesWaiters (0.01s)\n    queue_test.go:99: all waiters must use the winning queue: {Config:3x1/plain Variant:overwrite-lazy-publication States:5964 Edges:12184 Terminals:4 ReuseStates:0 Exhaustive:false Seconds:0.010842359 Coverage:[normal barging] Failure:0x30475ee982d0 CycleLength:0}\nFAIL\nFAIL\tgithub.com/gomaja/go-ctxsync\t0.015s\nFAIL\n"
+  },
+  {
+    "variant": "reread-release-mode",
+    "test": "TestQueueReleaseModeIsPinned",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestQueueReleaseModeIsPinned$",
+      "-count=1",
+      "-args",
+      "-queue-model-variant=reread-release-mode"
+    ],
+    "exit": 1,
+    "assertion_killed": true,
+    "output": "--- FAIL: TestQueueReleaseModeIsPinned (0.00s)\n    queue_test.go:114: a prior normal release must not hand off a barger's lock: {Config:seeded/queue-delayed-normal-release Variant:reread-release-mode States:39 Edges:55 Terminals:0 ReuseStates:0 Exhaustive:false Seconds:0.000325074 Coverage:[starvation exit targeted handoff] Failure:0x2c3830cac6c0 CycleLength:0}\nFAIL\nFAIL\tgithub.com/gomaja/go-ctxsync\t0.004s\nFAIL\n"
+  },
+  {
+    "variant": "try-ignores-starvation",
+    "test": "TestQueueTryCannotBargeDuringHandoff",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestQueueTryCannotBargeDuringHandoff$",
+      "-count=1",
+      "-args",
+      "-queue-model-variant=try-ignores-starvation"
+    ],
+    "exit": 1,
+    "assertion_killed": true,
+    "output": "--- FAIL: TestQueueTryCannotBargeDuringHandoff (0.00s)\n    queue_test.go:129: TryLock must reject reserved starving ownership\nFAIL\nFAIL\tgithub.com/gomaja/go-ctxsync\t0.006s\nFAIL\n"
+  },
+  {
+    "variant": "suppress-wake-while-held",
+    "test": "TestRequiredTargetedQueueLivenessGate",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestRequiredTargetedQueueLivenessGate$",
+      "-count=1",
+      "-args",
+      "-queue-model-variant=suppress-wake-while-held"
+    ],
+    "exit": 1,
+    "assertion_killed": true,
+    "output": "--- FAIL: TestRequiredTargetedQueueLivenessGate (0.20s)\n    queue_test.go:140: normal wake must survive barging and prevent a fair starvation cycle: {Config:queue/fair/plain-traffic Variant:suppress-wake-while-held States:78030 Edges:224571 Terminals:0 ReuseStates:0 Exhaustive:true Seconds:0.198791319 Coverage:[] Failure:0x15ab0bd08390 CycleLength:21}\nFAIL\nFAIL\tgithub.com/gomaja/go-ctxsync\t0.220s\nFAIL\n"
+  },
+  {
+    "variant": "cancel-woken-without-advance",
+    "test": "TestQueueSkippedReleaseCancelledRecipientAdvancesQueue",
+    "command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestQueueSkippedReleaseCancelledRecipientAdvancesQueue$",
+      "-count=1",
+      "-args",
+      "-queue-model-variant=cancel-woken-without-advance"
+    ],
+    "exit": 1,
+    "assertion_killed": true,
+    "output": "--- FAIL: TestQueueSkippedReleaseCancelledRecipientAdvancesQueue (0.00s)\n    queue_test.go:339: cancelled committed recipient must make the next uncancelled waiter ready without another owner: bits=8[held=false,woken=false,starving=false,waiters=1] published=1 q1={order=[3 0 0 0],guard=0,hand=0} g0={done op=1 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g1={done op=1 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false} g2={wait op=0 old=0 new=0 release=0 pair=1 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=true aged=false owns=false signal=false returnError=false} g3={done op=0 old=0 new=0 release=0 pair=0 target=0 mode=0 sendMode=0 resumeWait=false cancel=false started=false aged=false owns=false signal=false returnError=false}\nFAIL\nFAIL\tgithub.com/gomaja/go-ctxsync\t0.003s\nFAIL\n"
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "Variant": "probe-ignores-starvation",
+    "Test": "TestQueueFreshProbeCannotBargeDuringHandoff",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestQueueFreshProbeCannotBargeDuringHandoff$",
+      "-count=1",
+      "-args",
+      "-queue-model-variant=probe-ignores-starvation"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Variant": "probe-drops-accounting",
+    "Test": "TestQueueFreshProbePreservesNormalWakeAndCount",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestQueueFreshProbePreservesNormalWakeAndCount$",
+      "-count=1",
+      "-args",
+      "-queue-model-variant=probe-drops-accounting"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  },
+  {
+    "Variant": "probe-retries-cas-loss",
+    "Test": "TestQueueFreshProbeCASLossInitializesWithoutRetry",
+    "Command": [
+      "taskset",
+      "-c",
+      "8-23",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestQueueFreshProbeCASLossInitializesWithoutRetry$",
+      "-count=1",
+      "-args",
+      "-queue-model-variant=probe-retries-cas-loss"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true
+  }
+]
