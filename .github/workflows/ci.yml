@@ -1,0 +1,121 @@
+# Copyright 2026 gomaja. All rights reserved.
+# SPDX-License-Identifier: Apache-2.0
+
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-go@v7.0.0
+        with:
+          go-version: stable
+      - run: test -z "$(gofmt -l .)"
+      - run: git diff --check
+
+  test:
+    name: test / ${{ matrix.os }} / Go ${{ matrix.go }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, ubuntu-24.04-arm]
+        go: ['1.26.x', stable]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-go@v7.0.0
+        with:
+          go-version: ${{ matrix.go }}
+      - run: go build ./...
+      - run: go test ./... -count=1
+      - run: go test -race ./... -count=1
+      - run: go test ./... -count=10 -run 'TestMutexMixedCancellationStress|TestRWMixedCancellationStress|TestRWMutexExclusionAndOrdering'
+
+  vet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-go@v7.0.0
+        with:
+          go-version: stable
+      - name: scheduled alert query regression
+        run: python3 scripts/test_security.py
+      - run: go vet ./...
+      - name: cross vet
+        run: |
+          for target in linux/386 linux/arm linux/arm64 linux/s390x linux/ppc64le linux/riscv64 linux/mips64le darwin/amd64 windows/amd64 freebsd/amd64; do
+            GOOS="${target%/*}" GOARCH="${target#*/}" CGO_ENABLED=0 go vet ./...
+          done
+      - run: GOARCH=386 go test ./... -count=1
+
+  lint:
+    name: lint / ${{ matrix.module }}
+    strategy:
+      fail-fast: false
+      matrix:
+        module: ['.', modelcheck, benchmarks]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-go@v7.0.0
+        with:
+          go-version: stable
+      - uses: dominikh/staticcheck-action@v1.4.1
+        with:
+          version: v0.7.0-0.dev.0.20261009230814-452d5bb86b45
+          install-go: false
+          working-directory: ${{ matrix.module }}
+          cache-key: ${{ matrix.module }}
+      - uses: golangci/golangci-lint-action@v9.3.0
+        with:
+          version: latest
+          working-directory: ${{ matrix.module }}
+
+  models:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: modelcheck
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-go@v7.0.0
+        with:
+          go-version: '1.26.x'
+      - run: go build ./...
+      - run: go test ./... -count=1
+      - run: go test -race ./... -count=1
+      - run: go vet ./...
+      - run: go run . -design queue -limit 16000000
+      - run: go run . -design rw -limit 16000000
+      - run: go test . -run '^TestTicketGuard' -count=1
+
+  benchmarks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-go@v7.0.0
+        with:
+          go-version: stable
+          cache-dependency-path: benchmarks/go.sum
+      - run: go build ./...
+        working-directory: benchmarks
+      - run: go test ./... -count=1
+        working-directory: benchmarks
+      - run: go vet ./...
+        working-directory: benchmarks
+      - run: go test . -run '^$' -bench . -benchtime 1x -cpu 4,16
+        working-directory: benchmarks
