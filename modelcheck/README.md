@@ -8,14 +8,17 @@ oracles.
 
 ## Run
 
+The searches are CPU- and memory-heavy: the Mutex gate holds about 4.5 GB.
+On a shared machine, pin them to quiet CPUs with `taskset`.
+
 From the repository root, enter the checker module:
 
 ```sh
 cd modelcheck
 mkdir -p ../.scratch
-taskset -c 8-23 go run . -design queue -limit 16000000 \
+go run . -design queue -limit 16000000 \
   -output ../.scratch/queue-gate.json
-taskset -c 8-23 go run . -design rw -limit 16000000 \
+go run . -design rw -limit 16000000 \
   -output ../.scratch/rw-gate.json
 ```
 
@@ -167,11 +170,11 @@ performance measurement.
 ## Preserve the old sendLock control
 
 ```sh
-taskset -c 8-23 go run . -design sendlock \
+go run . -design sendlock \
   -scenario starvation -output ../.scratch/sendlock-witness.json
-taskset -c 8-23 go run . -design sendlock \
+go run . -design sendlock \
   -scenario liveness -limit 16000000 -output ../.scratch/sendlock-exhaustive.json
-taskset -c 8-23 go run . -design sendlock \
+go run . -design sendlock \
   -scenario bounded -limit 16000000 -output ../.scratch/sendlock-bounded.json
 ```
 
@@ -207,12 +210,12 @@ TryLock ignoring starvation, and suppressing normal wake while held. Policy
 mutations have named tests as well as searches where applicable:
 
 ```sh
-taskset -c 8-23 go test . \
+go test . \
   -run '^TestQueueLostWakeRequeuesAtHead$' -count=1 \
   -queue-model-variant=requeue-tail
-taskset -c 8-23 go run . -design queue \
+go run . -design queue \
   -scenario bounded -config 2x2/plain -variant omit-wake-send
-taskset -c 8-23 go run . -design rw \
+go run . -design rw \
   -scenario bounded -variant writer-cancel-forgets-readers
 ```
 
@@ -220,15 +223,15 @@ RW also controls reader-count undo errors and readers admitted past an announced
 writer. Historical sendLock controls remain explicitly selectable:
 
 ```sh
-taskset -c 8-23 go run . -design sendlock \
+go run . -design sendlock \
   -scenario bounded -config 3x2/plain -variant reread-release-mode
-taskset -c 8-23 go run . -design sendlock \
+go run . -design sendlock \
   -scenario exit-normalization -variant leave-stale-woken
-taskset -c 8-23 go run . -design sendlock \
+go run . -design sendlock \
   -scenario bounded -config 2x2/plain -variant omit-wake-send
-taskset -c 8-23 go run . -design sendlock \
+go run . -design sendlock \
   -scenario bounded -config 3x1/plain -variant overwrite-lazy-publication
-taskset -c 8-23 go run . -design sendlock \
+go run . -design sendlock \
   -scenario bounded -config 2x2/try -variant try-ignores-starvation
 ```
 
@@ -257,14 +260,14 @@ zip. Repository automation remains in the consumer module zip.
 Run the independent guard gates from this directory:
 
 ```sh
-taskset -c 8-23 go test . -run '^TestTicketGuard' -count=1 -v
+go test . -run '^TestTicketGuard' -count=1 -v
 ```
 
 The guard tests cover all 44 bounded/continuous configurations, packed Try
 across wrap and the separate-counter negative. `CTXSYNC_GUARD_EVIDENCE` can
 name an output file for the 40-transition separate-counter witness. Runtime
 source and continuous-traffic producer mutations run from the repository root
-with `taskset -c 8-23 python3 scripts/mutate.py`; all listed mutations must be killed.
+with `python3 scripts/mutate.py`; all listed mutations must be killed.
 The controls include nil-Done head requeue, fractional TryLock allocation and
 queue/RW guard retention at pending dead ends.
 

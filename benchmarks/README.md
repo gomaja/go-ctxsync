@@ -52,21 +52,23 @@ one read and nine writes for `10r90w`; worker phases are staggered. Thus RW
 ten when reporting a per-pair figure. Critical sections are empty in all cases.
 
 Create the output directory with `mkdir -p ../.scratch`, then run from this
-directory after the product tests and model gates pass. Do not run
-while another model search, stress run or benchmark occupies the assigned CPUs.
+directory after the product tests and model gates pass, on an otherwise idle
+machine. On a shared machine, pin the runs to quiet CPUs with `taskset` (the
+published results were measured on CPUs 8–23), or set `CTXSYNC_BENCH_CPUS` for
+`scripts/benchmark.sh`.
 From the repository root, `bash scripts/benchmark.sh 1s` builds one binary,
 records source and binary hashes and the environment, runs both sets below,
 and writes raw output and benchstat tables under `.scratch/benchmarks-*`.
 
 ```sh
-taskset -c 8-23 go test ./... -count=1
-taskset -c 8-23 go test -race ./... -count=1
+go test ./... -count=1
+go test -race ./... -count=1
 
-taskset -c 8-23 go test -run '^$' \
+go test -run '^$' \
   -bench '^BenchmarkMutex(DirectLockUnlock|Uncontended)$' \
   -benchmem -benchtime=1s -count=10 -cpu=1 > ../.scratch/bench-uncontended.txt
 
-taskset -c 8-23 go test -run '^$' \
+go test -run '^$' \
   -bench '^Benchmark(MutexParallel|RWParallel)$' \
   -benchmem -benchtime=1s -count=10 -cpu=4,16 > ../.scratch/bench-parallel.txt
 ```
