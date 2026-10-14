@@ -1,0 +1,26 @@
+go-ctxsync
+
+Copyright 2026 gomaja.
+
+Copyright in upstream-derived portions remains with the respective copyright
+holders. Modified files retain those notices and identify gomaja's changes.
+
+mutex.go and the targeted queue model in modelcheck/queue.go contain
+normal/starvation mode policy derived from Go 1.26.9 internal/sync/mutex.go,
+Copyright 2024 The Go Authors. The queue, context cancellation, pooled waiter
+protocol and bounded guarded updates include changes made for this package.
+
+rwmutex.go and modelcheck/rw.go follow the writer preference and
+reader/writer synchronization policy of Go 1.26.9 sync/rwmutex.go,
+Copyright 2009 The Go Authors. Context cancellation, reader batching and
+guarded reader accounting include changes made for this package.
+
+modelcheck/mutex.go preserves a model of the channel-based sendLock
+algorithm from go-sctp's send_linux.go, Copyright 2026 gomaja, and the
+normal/starvation policy from Go's internal/sync/mutex.go, Copyright 2024
+The Go Authors. The original model and its starvation witness are retained
+as a negative control. Source snapshots are recorded in
+modelcheck/evidence/sources.json.
+
+Go-derived portions are covered by the BSD 3-Clause license in GO_LICENSE.
+The remaining original work is covered by the Apache-2.0 license in LICENSE.
