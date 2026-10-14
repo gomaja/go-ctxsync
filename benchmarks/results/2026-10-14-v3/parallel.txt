@@ -1,0 +1,465 @@
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	51450726	        23.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	55500789	        22.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	56332458	        21.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	50385510	        24.27 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	45153385	        26.82 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	56221164	        21.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	44722185	        24.07 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	47284317	        26.20 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	52078653	        22.83 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	45954138	        24.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	34363350	        38.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	29047880	        41.16 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	29361918	        37.16 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	27999963	        37.78 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	46775288	        33.93 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	32161167	        39.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	30607033	        37.27 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	29540586	        40.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	30709948	        40.81 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	31575224	        40.69 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	53767574	        19.66 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	76918560	        19.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	58215386	        18.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	63498144	        20.64 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	61952068	        19.69 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	61552570	        18.99 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	60565300	        19.20 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	60280233	        19.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	61391521	        19.23 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	65130205	        18.80 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	42384759	        26.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	45212403	        26.95 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	47528488	        26.66 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	44850133	        26.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	44457432	        26.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	45265786	        26.39 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	44711316	        26.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	44603850	        26.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	45544180	        26.88 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	44464070	        26.85 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-4        	 4013710	       310.5 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-4        	 3589036	       317.6 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-4        	 4176346	       310.7 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-4        	 3801124	       339.5 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-4        	 3544737	       333.0 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-4        	 3755798	       331.3 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-4        	 3633859	       318.4 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-4        	 3902334	       322.1 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-4        	 3610492	       319.8 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-4        	 3698859	       325.0 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-16       	 3313164	       307.7 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-16       	 3992337	       284.6 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-16       	 4426789	       262.7 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-16       	 4399224	       283.3 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-16       	 4419640	       265.9 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-16       	 4570290	       284.4 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-16       	 4746542	       274.6 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-16       	 4407980	       260.2 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-16       	 4635642	       263.7 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-16       	 3997053	       255.6 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-4            	57926728	        19.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-4            	61871973	        20.28 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-4            	59773954	        20.34 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-4            	53852731	        19.75 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-4            	62461657	        21.20 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-4            	59415355	        20.25 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-4            	57331671	        19.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-4            	58297839	        20.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-4            	52778991	        21.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-4            	55754223	        20.63 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-16           	40152382	        29.99 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-16           	41011716	        29.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-16           	38373037	        29.95 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-16           	41098664	        29.84 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-16           	41202212	        30.37 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-16           	39820881	        30.23 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-16           	39476589	        29.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-16           	40343544	        30.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-16           	40302933	        30.18 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=retry-16           	40001762	        30.19 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	49050802	        20.79 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	52864834	        22.91 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	54854113	        19.86 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	48848038	        21.17 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	52405743	        19.77 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	57864238	        19.82 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	50839893	        19.69 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	51892551	        19.63 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	63745626	        19.85 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	53553657	        21.09 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	35132329	        33.11 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	30208705	        34.75 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	34299384	        32.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	35028310	        33.97 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	30418113	        34.99 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	37220518	        34.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	36541324	        34.07 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	35089137	        34.21 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	37417470	        34.81 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	40407687	        27.24 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	54878955	        19.76 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	55848308	        19.16 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	67506320	        18.21 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	64410996	        18.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	63377028	        18.64 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	55600705	        20.04 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	54455433	        19.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	63878940	        17.77 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	66666818	        18.94 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	67821240	        18.08 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	44541130	        27.29 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	43990214	        27.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	43653925	        27.65 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	43298146	        27.90 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	43107000	        28.04 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	43470234	        27.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	45159355	        27.97 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	43840983	        27.03 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	43352636	        27.16 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	44105901	        27.21 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-4          	 4407493	       282.8 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-4          	 4399401	       300.0 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-4          	 4184251	       276.6 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-4          	 4580312	       278.4 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-4          	 4481016	       290.2 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-4          	 3963742	       296.4 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-4          	 4599997	       285.8 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-4          	 3878490	       324.1 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-4          	 3758751	       288.6 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-4          	 4449954	       287.6 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-16         	 4053860	       289.3 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-16         	 4469553	       295.3 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-16         	 3609396	       312.9 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-16         	 3743571	       315.4 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-16         	 4073799	       294.8 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-16         	 4349139	       280.7 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-16         	 4402778	       282.5 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-16         	 4385440	       272.8 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-16         	 4341979	       296.0 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-16         	 4168984	       315.8 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-4              	55598996	        20.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-4              	57164222	        20.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-4              	54306636	        22.22 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-4              	60168009	        20.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-4              	61419223	        19.89 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-4              	62587658	        20.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-4              	54580668	        20.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-4              	60909435	        22.51 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-4              	66806689	        19.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-4              	60169267	        22.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-16             	39751891	        30.29 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-16             	40991476	        30.36 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-16             	38909787	        30.29 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-16             	39839134	        30.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-16             	39857794	        30.71 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-16             	39581335	        30.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-16             	40991384	        30.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-16             	40002979	        30.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-16             	39342994	        30.87 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=retry-16             	38994345	        30.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4           	48966332	        24.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4           	41620192	        25.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4           	45600432	        25.80 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4           	42987417	        25.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4           	50801272	        28.90 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4           	55073713	        22.20 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4           	51529578	        21.84 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4           	53790841	        22.28 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4           	52317914	        24.22 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4           	52770387	        22.78 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16          	52038648	        29.79 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16          	34246017	        30.19 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16          	46143482	        28.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16          	46876095	        29.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16          	38539546	        30.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16          	42587232	        29.79 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16          	43233152	        23.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16          	47004387	        27.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16          	45003164	        28.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16          	49899775	        26.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4              	50521752	        20.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4              	51115810	        20.94 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4              	57390801	        21.57 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4              	59291325	        19.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4              	54490826	        19.67 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4              	68575851	        21.08 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4              	60698797	        21.21 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4              	53505392	        22.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4              	53916498	        21.63 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4              	63487807	        21.99 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16             	42012884	        28.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16             	43766100	        28.07 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16             	42768902	        28.14 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16             	42996528	        28.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16             	43288035	        28.11 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16             	43714725	        27.90 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16             	43164217	        28.11 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16             	46789747	        27.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16             	41112643	        28.94 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16             	40992882	        28.75 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-4         	 2832763	       425.5 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-4         	 2874495	       423.3 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-4         	 2819154	       441.6 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-4         	 2715086	       429.2 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-4         	 3307137	       394.0 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-4         	 3126390	       384.4 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-4         	 3086811	       409.4 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-4         	 3375795	       341.6 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-4         	 3759286	       350.1 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-4         	 3798766	       363.9 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-16        	 3500383	       372.5 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-16        	 3098274	       364.1 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-16        	 3436735	       348.2 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-16        	 3668395	       359.1 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-16        	 2761082	       421.0 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-16        	 2783619	       464.2 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-16        	 3733444	       317.5 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-16        	 3634356	       310.3 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-16        	 3721411	       351.2 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-16        	 3394335	       348.2 ns/op	     175 B/op	       2 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-4             	54036572	        22.08 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-4             	55074441	        22.05 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-4             	55094295	        22.37 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-4             	52604740	        23.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-4             	52529127	        23.07 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-4             	50159947	        22.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-4             	54098043	        22.01 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-4             	54996120	        22.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-4             	52239379	        23.17 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-4             	51589706	        22.64 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-16            	46189365	        26.81 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-16            	44054295	        27.03 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-16            	43674452	        27.50 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-16            	43413699	        27.07 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-16            	43189306	        27.79 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-16            	43676000	        26.89 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-16            	43361281	        28.22 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-16            	39330704	        28.34 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-16            	44069272	        27.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-16            	40126692	        28.83 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                	 4211838	       298.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                	 3928245	       299.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                	 3929355	       300.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                	 4330154	       271.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                	 4423776	       268.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                	 4485148	       266.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                	 4388871	       273.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                	 4355728	       267.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                	 4491957	       274.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                	 4532274	       272.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16               	 4388709	       277.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16               	 4413943	       279.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16               	 4149882	       276.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16               	 4329589	       280.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16               	 3990524	       313.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16               	 4001757	       348.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16               	 3061107	       353.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16               	 4053564	       279.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16               	 4049515	       322.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16               	 3937834	       329.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4                   	 9638307	       126.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4                   	 9606354	       123.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4                   	 9738103	       122.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4                   	 9488278	       124.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4                   	 9951099	       123.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4                   	 9660928	       120.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4                   	10024489	       121.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4                   	 9630483	       126.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4                   	 9819730	       124.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4                   	 9924482	       121.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16                  	 9938679	       123.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16                  	 9923994	       122.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16                  	 9994213	       122.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16                  	 9797097	       121.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16                  	 9558879	       124.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16                  	 9870060	       123.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16                  	10036674	       124.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16                  	10055060	       124.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16                  	 9157662	       125.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16                  	10001575	       125.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-4              	  581570	      1798 ns/op	        10.00 locks/op	     604 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-4              	  641732	      1833 ns/op	        10.00 locks/op	     604 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-4              	  558526	      1862 ns/op	        10.00 locks/op	     604 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-4              	  624960	      1989 ns/op	        10.00 locks/op	     605 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-4              	  589389	      1987 ns/op	        10.00 locks/op	     605 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-4              	  608265	      1865 ns/op	        10.00 locks/op	     605 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-4              	  639678	      1814 ns/op	        10.00 locks/op	     604 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-4              	  586369	      2029 ns/op	        10.00 locks/op	     604 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-4              	  535704	      1915 ns/op	        10.00 locks/op	     605 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-4              	  579484	      1922 ns/op	        10.00 locks/op	     605 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-16             	  250266	      4618 ns/op	        10.00 locks/op	    1432 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-16             	  264246	      4933 ns/op	        10.00 locks/op	    1432 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-16             	  278778	      4702 ns/op	        10.00 locks/op	    1434 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-16             	  263175	      4622 ns/op	        10.00 locks/op	    1433 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-16             	  227356	      4690 ns/op	        10.00 locks/op	    1433 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-16             	  235562	      4867 ns/op	        10.00 locks/op	    1432 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-16             	  252157	      5214 ns/op	        10.00 locks/op	    1432 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-16             	  219750	      5708 ns/op	        10.00 locks/op	    1429 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-16             	  209527	      5343 ns/op	        10.00 locks/op	    1433 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-16             	  209646	      6109 ns/op	        10.00 locks/op	    1432 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-4                  	 8555704	       137.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-4                  	 9057309	       135.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-4                  	 9209672	       134.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-4                  	 8625910	       133.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-4                  	 9178586	       133.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-4                  	 9045673	       134.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-4                  	 8820649	       135.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-4                  	 8960820	       142.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-4                  	 8623672	       136.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-4                  	 9274240	       134.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-16                 	 8573991	       146.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-16                 	 8846305	       145.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-16                 	 8006785	       145.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-16                 	 8492602	       135.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-16                 	 8813940	       134.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-16                 	 8929076	       133.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-16                 	 9118327	       131.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-16                 	 8859876	       134.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-16                 	 9246727	       133.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-16                 	 8923398	       136.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4    	 4370712	       267.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4    	 4512484	       261.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4    	 4636418	       265.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4    	 4496854	       262.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4    	 4548920	       257.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4    	 4538382	       264.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4    	 4491852	       266.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4    	 4584865	       261.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4    	 4572738	       261.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4    	 4519434	       259.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16   	 4438999	       273.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16   	 4421397	       273.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16   	 4404374	       276.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16   	 4324312	       274.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16   	 4330159	       283.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16   	 4256510	       277.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16   	 4359192	       273.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16   	 4326068	       276.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16   	 4409806	       277.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16   	 4318785	       279.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4       	 9601441	       125.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4       	 9569794	       123.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4       	 9751704	       123.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4       	 9791282	       122.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4       	 9739503	       123.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4       	 9814543	       123.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4       	 9724872	       122.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4       	 9708144	       125.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4       	 9597988	       124.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4       	 9666256	       122.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16      	 9851311	       123.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16      	 9426114	       125.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16      	 9252183	       125.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16      	 9685707	       126.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16      	 9505760	       125.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16      	 9411603	       126.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16      	 9880000	       125.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16      	 9418124	       126.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16      	 9151648	       125.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16      	 9696492	       127.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-4  	  649473	      1752 ns/op	        10.00 locks/op	     604 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-4  	  594466	      1863 ns/op	        10.00 locks/op	     605 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-4  	  607880	      2057 ns/op	        10.00 locks/op	     605 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-4  	  519938	      2085 ns/op	        10.00 locks/op	     604 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-4  	  687032	      1740 ns/op	        10.00 locks/op	     604 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-4  	  565138	      1852 ns/op	        10.00 locks/op	     605 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-4  	  580555	      2106 ns/op	        10.00 locks/op	     604 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-4  	  556293	      2179 ns/op	        10.00 locks/op	     604 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-4  	  633241	      2147 ns/op	        10.00 locks/op	     605 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-4  	  509368	      2313 ns/op	        10.00 locks/op	     605 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-16 	  170931	      6755 ns/op	        10.00 locks/op	    1434 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-16 	  177919	      6271 ns/op	        10.00 locks/op	    1432 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-16 	  203678	      5382 ns/op	        10.00 locks/op	    1432 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-16 	  213597	      5403 ns/op	        10.00 locks/op	    1432 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-16 	  224328	      5625 ns/op	        10.00 locks/op	    1433 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-16 	  217882	      5201 ns/op	        10.00 locks/op	    1432 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-16 	  220178	      5529 ns/op	        10.00 locks/op	    1433 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-16 	  218523	      4893 ns/op	        10.00 locks/op	    1432 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-16 	  212362	      5944 ns/op	        10.00 locks/op	    1431 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-16 	  192342	      5460 ns/op	        10.00 locks/op	    1431 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-4      	 8600158	       138.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-4      	 8661354	       142.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-4      	 8247990	       146.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-4      	 8235900	       154.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-4      	 7269116	       151.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-4      	 8644345	       157.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-4      	 7165388	       148.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-4      	 7601527	       148.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-4      	 8430224	       148.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-4      	 8555187	       140.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-16     	 8426694	       142.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-16     	 8626153	       143.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-16     	 8547806	       141.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-16     	 8496926	       141.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-16     	 8541013	       143.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-16     	 8538588	       141.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-16     	 8474762	       143.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-16     	 7726314	       162.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-16     	 8393886	       153.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-16     	 7815880	       161.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4   	 3230295	       309.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4   	 4030579	       359.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4   	 3721330	       344.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4   	 3903358	       321.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4   	 3547944	       443.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4   	 3714116	       322.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4   	 3280266	       341.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4   	 3545053	       338.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4   	 3447925	       369.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4   	 3673994	       336.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16  	 3088170	       417.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16  	 3044676	       554.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16  	 2439331	       430.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16  	 3161721	       628.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16  	  883864	      1374 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16  	 3152240	       451.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16  	 3102928	       402.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16  	 2941015	       403.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16  	 3301335	       436.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16  	 3421123	       350.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4      	 8924194	       143.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4      	 9232842	       136.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4      	 9093758	       136.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4      	 9032630	       132.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4      	 8599857	       135.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4      	 8863723	       132.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4      	 9326448	       133.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4      	 9140505	       130.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4      	 9224664	       131.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4      	 9223641	       131.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16     	 9070428	       135.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16     	 8615604	       135.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16     	 8728717	       135.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16     	 8960835	       135.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16     	 8214858	       138.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16     	 8440054	       143.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16     	 8547451	       138.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16     	 8918275	       133.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16     	 8685796	       135.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16     	 9019585	       134.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-4          	  532708	      2165 ns/op	        10.00 locks/op	     604 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-4          	  505737	      2189 ns/op	        10.00 locks/op	     605 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-4          	  554767	      2119 ns/op	        10.00 locks/op	     604 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-4          	  476541	      2125 ns/op	        10.00 locks/op	     605 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-4          	  514330	      2159 ns/op	        10.00 locks/op	     605 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-4          	  530236	      2122 ns/op	        10.00 locks/op	     605 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-4          	  506646	      2093 ns/op	        10.00 locks/op	     605 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-4          	  488080	      2110 ns/op	        10.00 locks/op	     604 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-4          	  554500	      2088 ns/op	        10.00 locks/op	     603 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-4          	  458942	      2188 ns/op	        10.00 locks/op	     604 B/op	      10 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-16         	  213950	      5537 ns/op	        10.00 locks/op	    1434 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-16         	  216717	      5565 ns/op	        10.00 locks/op	    1434 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-16         	  217376	      5499 ns/op	        10.00 locks/op	    1432 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-16         	  204069	      5546 ns/op	        10.00 locks/op	    1434 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-16         	  226567	      5611 ns/op	        10.00 locks/op	    1433 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-16         	  201517	      5544 ns/op	        10.00 locks/op	    1433 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-16         	  210142	      5835 ns/op	        10.00 locks/op	    1431 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-16         	  204616	      5558 ns/op	        10.00 locks/op	    1433 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-16         	  208111	      5672 ns/op	        10.00 locks/op	    1434 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-16         	  202832	      5468 ns/op	        10.00 locks/op	    1433 B/op	      24 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=retry-4              	

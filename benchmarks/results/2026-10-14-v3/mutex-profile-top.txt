@@ -1,0 +1,39 @@
+File: locks.test
+Build ID: 951c7987d1c4023a7d83aecc11b1ff9a71564e9b
+Type: cpu
+Time: 2026-10-14 20:36:58 CEST
+Duration: 2.13s, Total samples = 23.71s (1110.79%)
+Showing nodes accounting for 22.99s, 96.96% of 23.71s total
+Dropped 43 nodes (cum <= 0.12s)
+Showing top 30 nodes out of 37
+      flat  flat%   sum%        cum   cum%
+     8.16s 34.42% 34.42%      8.16s 34.42%  runtime.procyieldAsm
+     7.52s 31.72% 66.13%      7.52s 31.72%  runtime.futex
+     2.02s  8.52% 74.65%     13.15s 55.46%  runtime.lock2
+     1.32s  5.57% 80.22%      1.32s  5.57%  runtime.osyield
+     0.96s  4.05% 84.27%      7.45s 31.42%  runtime.unlock2
+     0.30s  1.27% 85.53%      6.46s 27.25%  runtime.unlock2Wake
+     0.27s  1.14% 86.67%      0.29s  1.22%  github.com/gomaja/go-ctxsync.(*ticketGuard).Lock
+     0.24s  1.01% 87.68%      0.24s  1.01%  runtime.(*gQueue).pop (inline)
+     0.23s  0.97% 88.65%      0.23s  0.97%  sync/atomic.(*Int32).CompareAndSwap (inline)
+     0.21s  0.89% 89.54%      0.21s  0.89%  runtime.(*gQueue).pushBack (inline)
+     0.20s  0.84% 90.38%      0.20s  0.84%  sync/atomic.(*Int32).Add (inline)
+     0.19s   0.8% 91.19%      0.19s   0.8%  internal/runtime/atomic.(*Uint32).CompareAndSwap (inline)
+     0.18s  0.76% 91.94%      0.18s  0.76%  runtime.nanotime (inline)
+     0.15s  0.63% 92.58%      0.52s  2.19%  runtime.casgstatus
+     0.15s  0.63% 93.21%      8.50s 35.85%  runtime.findRunnable
+     0.14s  0.59% 93.80%      0.48s  2.02%  runtime.execute
+     0.12s  0.51% 94.31%      9.16s 38.63%  runtime.schedule
+     0.11s  0.46% 94.77%      0.35s  1.48%  runtime.globrunqgetbatch
+     0.10s  0.42% 95.19%     22.73s 95.87%  runtime.mcall
+     0.07s   0.3% 95.49%     22.59s 95.28%  runtime.goschedImpl
+     0.07s   0.3% 95.78%      1.48s  6.24%  runtime.wakep
+     0.05s  0.21% 95.99%      8.21s 34.63%  runtime.procyield (inline)
+     0.04s  0.17% 96.16%      0.36s  1.52%  github.com/gomaja/go-ctxsync.(*Mutex).lockSlow
+     0.04s  0.17% 96.33%      0.95s  4.01%  github.com/gomaja/go-ctxsync/benchmarks.BenchmarkMutexParallel.func1.1.1
+     0.03s  0.13% 96.46%      0.62s  2.61%  github.com/gomaja/go-ctxsync.(*Mutex).Lock
+     0.03s  0.13% 96.58%      0.27s  1.14%  github.com/gomaja/go-ctxsync.(*Mutex).Unlock
+     0.03s  0.13% 96.71%      1.48s  6.24%  runtime.futexsleep
+     0.02s 0.084% 96.79%      6.09s 25.69%  runtime.futexwakeup
+     0.02s 0.084% 96.88%     22.61s 95.36%  runtime.gosched_m
+     0.02s 0.084% 96.96%      1.49s  6.28%  runtime.semasleep

@@ -1,0 +1,920 @@
+{
+  "BenchmarkMutexDirectLockUnlock/impl=sync": {
+    "samples": 10,
+    "median_ns": 8.2625,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexDirectLockUnlock/impl=ctxsync": {
+    "samples": 10,
+    "median_ns": 8.413,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=LockUnlock/impl=ctxsync": {
+    "samples": 10,
+    "median_ns": 9.040500000000002,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=LockUnlock/impl=sync": {
+    "samples": 10,
+    "median_ns": 8.803,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=LockUnlock/impl=semaphore": {
+    "samples": 10,
+    "median_ns": 19.23,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=LockUnlock/impl=retry": {
+    "samples": 10,
+    "median_ns": 9.5365,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=TryLock/impl=ctxsync": {
+    "samples": 10,
+    "median_ns": 8.8845,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=TryLock/impl=sync": {
+    "samples": 10,
+    "median_ns": 8.867,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=TryLock/impl=semaphore": {
+    "samples": 10,
+    "median_ns": 18.035,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=TryLock/impl=retry": {
+    "samples": 10,
+    "median_ns": 9.3665,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=ContextBackground/impl=ctxsync": {
+    "samples": 10,
+    "median_ns": 9.2085,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=ContextBackground/impl=sync": {
+    "samples": 10,
+    "median_ns": 9.030999999999999,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=ContextBackground/impl=semaphore": {
+    "samples": 10,
+    "median_ns": 18.75,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=ContextBackground/impl=retry": {
+    "samples": 10,
+    "median_ns": 10.195,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=ContextCancellable/impl=ctxsync": {
+    "samples": 10,
+    "median_ns": 10.035,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=ContextCancellable/impl=sync": {
+    "samples": 10,
+    "median_ns": 9.75,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=ContextCancellable/impl=semaphore": {
+    "samples": 10,
+    "median_ns": 21.21,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexUncontended/operation=ContextCancellable/impl=retry": {
+    "samples": 10,
+    "median_ns": 12.425,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4": {
+    "samples": 10,
+    "median_ns": 15.215,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16": {
+    "samples": 10,
+    "median_ns": 15.495000000000001,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4": {
+    "samples": 10,
+    "median_ns": 18.235,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16": {
+    "samples": 10,
+    "median_ns": 27.185000000000002,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-4": {
+    "samples": 10,
+    "median_ns": 351.25,
+    "bytes_per_op": [
+      175
+    ],
+    "allocs_per_op": [
+      2
+    ]
+  },
+  "BenchmarkMutexParallel/operation=LockUnlock/impl=semaphore-16": {
+    "samples": 10,
+    "median_ns": 291.20000000000005,
+    "bytes_per_op": [
+      175
+    ],
+    "allocs_per_op": [
+      2
+    ]
+  },
+  "BenchmarkMutexParallel/operation=LockUnlock/impl=retry-4": {
+    "samples": 10,
+    "median_ns": 21.37,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=LockUnlock/impl=retry-16": {
+    "samples": 10,
+    "median_ns": 30.310000000000002,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4": {
+    "samples": 10,
+    "median_ns": 16.355,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16": {
+    "samples": 10,
+    "median_ns": 18.79,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4": {
+    "samples": 10,
+    "median_ns": 21.295,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16": {
+    "samples": 10,
+    "median_ns": 26.97,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-4": {
+    "samples": 10,
+    "median_ns": 397.9,
+    "bytes_per_op": [
+      173,
+      175
+    ],
+    "allocs_per_op": [
+      2
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextBackground/impl=semaphore-16": {
+    "samples": 10,
+    "median_ns": 353.54999999999995,
+    "bytes_per_op": [
+      175,
+      176
+    ],
+    "allocs_per_op": [
+      2
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextBackground/impl=retry-4": {
+    "samples": 10,
+    "median_ns": 21.634999999999998,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextBackground/impl=retry-16": {
+    "samples": 10,
+    "median_ns": 30.645000000000003,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4": {
+    "samples": 10,
+    "median_ns": 18.63,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16": {
+    "samples": 10,
+    "median_ns": 19.58,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4": {
+    "samples": 10,
+    "median_ns": 18.215,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16": {
+    "samples": 10,
+    "median_ns": 27.86,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-4": {
+    "samples": 10,
+    "median_ns": 444.6,
+    "bytes_per_op": [
+      174,
+      175
+    ],
+    "allocs_per_op": [
+      2
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextCancellable/impl=semaphore-16": {
+    "samples": 10,
+    "median_ns": 350.4,
+    "bytes_per_op": [
+      175
+    ],
+    "allocs_per_op": [
+      2
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-4": {
+    "samples": 10,
+    "median_ns": 22.880000000000003,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkMutexParallel/operation=ContextCancellable/impl=retry-16": {
+    "samples": 10,
+    "median_ns": 25.835,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4": {
+    "samples": 10,
+    "median_ns": 233.0,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16": {
+    "samples": 10,
+    "median_ns": 245.45,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4": {
+    "samples": 10,
+    "median_ns": 125.05,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16": {
+    "samples": 10,
+    "median_ns": 130.10000000000002,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-4": {
+    "samples": 10,
+    "median_ns": 2137.0,
+    "bytes_per_op": [
+      604,
+      605
+    ],
+    "allocs_per_op": [
+      10
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=semaphore-16": {
+    "samples": 10,
+    "median_ns": 5604.5,
+    "bytes_per_op": [
+      1431,
+      1432,
+      1433,
+      1434
+    ],
+    "allocs_per_op": [
+      24
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-serialized-4": {
+    "samples": 10,
+    "median_ns": 133.4,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=retry-serialized-16": {
+    "samples": 10,
+    "median_ns": 139.55,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4": {
+    "samples": 10,
+    "median_ns": 235.55,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16": {
+    "samples": 10,
+    "median_ns": 247.9,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4": {
+    "samples": 10,
+    "median_ns": 127.69999999999999,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16": {
+    "samples": 10,
+    "median_ns": 127.55000000000001,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-4": {
+    "samples": 10,
+    "median_ns": 1940.0,
+    "bytes_per_op": [
+      604,
+      605
+    ],
+    "allocs_per_op": [
+      10
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=semaphore-16": {
+    "samples": 10,
+    "median_ns": 5195.5,
+    "bytes_per_op": [
+      1432,
+      1433,
+      1434
+    ],
+    "allocs_per_op": [
+      24
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-serialized-4": {
+    "samples": 10,
+    "median_ns": 141.5,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=retry-serialized-16": {
+    "samples": 10,
+    "median_ns": 146.89999999999998,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4": {
+    "samples": 10,
+    "median_ns": 254.2,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16": {
+    "samples": 10,
+    "median_ns": 273.15,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4": {
+    "samples": 10,
+    "median_ns": 130.2,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16": {
+    "samples": 10,
+    "median_ns": 131.5,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-4": {
+    "samples": 10,
+    "median_ns": 1921.0,
+    "bytes_per_op": [
+      604,
+      605
+    ],
+    "allocs_per_op": [
+      10
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=semaphore-16": {
+    "samples": 10,
+    "median_ns": 5297.0,
+    "bytes_per_op": [
+      1432,
+      1433,
+      1434
+    ],
+    "allocs_per_op": [
+      24
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=retry-serialized-4": {
+    "samples": 10,
+    "median_ns": 283.1,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=retry-serialized-16": {
+    "samples": 10,
+    "median_ns": 354.95,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4": {
+    "samples": 10,
+    "median_ns": 343.05,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16": {
+    "samples": 10,
+    "median_ns": 348.35,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-4": {
+    "samples": 10,
+    "median_ns": 277.45,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-16": {
+    "samples": 10,
+    "median_ns": 343.35,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=semaphore-4": {
+    "samples": 10,
+    "median_ns": 2710.0,
+    "bytes_per_op": [
+      1758,
+      1759
+    ],
+    "allocs_per_op": [
+      29
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=semaphore-16": {
+    "samples": 10,
+    "median_ns": 2715.5,
+    "bytes_per_op": [
+      1759
+    ],
+    "allocs_per_op": [
+      29
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=retry-serialized-4": {
+    "samples": 10,
+    "median_ns": 287.55,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=retry-serialized-16": {
+    "samples": 10,
+    "median_ns": 351.85,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4": {
+    "samples": 10,
+    "median_ns": 361.1,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16": {
+    "samples": 10,
+    "median_ns": 362.25,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-4": {
+    "samples": 10,
+    "median_ns": 281.8,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-16": {
+    "samples": 10,
+    "median_ns": 355.25,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=semaphore-4": {
+    "samples": 10,
+    "median_ns": 2603.0,
+    "bytes_per_op": [
+      1757,
+      1758,
+      1759
+    ],
+    "allocs_per_op": [
+      29
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=semaphore-16": {
+    "samples": 10,
+    "median_ns": 2633.0,
+    "bytes_per_op": [
+      1759
+    ],
+    "allocs_per_op": [
+      29
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=retry-serialized-4": {
+    "samples": 10,
+    "median_ns": 297.95000000000005,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=retry-serialized-16": {
+    "samples": 10,
+    "median_ns": 365.35,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4": {
+    "samples": 10,
+    "median_ns": 373.79999999999995,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16": {
+    "samples": 10,
+    "median_ns": 383.85,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-4": {
+    "samples": 10,
+    "median_ns": 285.75,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-16": {
+    "samples": 10,
+    "median_ns": 345.0,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=semaphore-4": {
+    "samples": 10,
+    "median_ns": 3016.0,
+    "bytes_per_op": [
+      1758,
+      1759
+    ],
+    "allocs_per_op": [
+      29
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=semaphore-16": {
+    "samples": 10,
+    "median_ns": 2888.5,
+    "bytes_per_op": [
+      1758,
+      1759
+    ],
+    "allocs_per_op": [
+      29
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=retry-serialized-4": {
+    "samples": 10,
+    "median_ns": 504.79999999999995,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  },
+  "BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=retry-serialized-16": {
+    "samples": 10,
+    "median_ns": 679.3,
+    "bytes_per_op": [
+      0
+    ],
+    "allocs_per_op": [
+      0
+    ]
+  }
+}

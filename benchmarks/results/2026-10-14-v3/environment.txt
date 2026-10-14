@@ -1,0 +1,64 @@
+Historical measurement environment; source digests precede comment and module-layout changes.
+2026-10-14T18:16:35Z
+go version go1.26.9 linux/amd64
+linux
+amd64
+v1
+go1.26.9
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           48 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  32
+On-line CPU(s) list:                     0-31
+Vendor ID:                               AuthenticAMD
+Model name:                              AMD RYZEN AI MAX+ 395 w/ Radeon 8060S
+CPU family:                              26
+Model:                                   112
+Thread(s) per core:                      2
+Core(s) per socket:                      16
+Socket(s):                               1
+Stepping:                                0
+BogoMIPS:                                5999.61
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core ssbd ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves avx_vnni avx512_bf16 clzero xsaveerptr arat npt nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold v_vmsave_vmload avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm avx512_vp2intersect
+Virtualization:                          AMD-V
+Hypervisor vendor:                       Microsoft
+Virtualization type:                     full
+L1d cache:                               768 KiB (16 instances)
+L1i cache:                               512 KiB (16 instances)
+L2 cache:                                16 MiB (16 instances)
+L3 cache:                                32 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-31
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Vulnerable: Safe RET, no microcode
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP always-on; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+479e2fa44eac385b57e7b3373ce536c91288a0a7
+fc0851a59febf32a894243fa0f4e27587979755393aaaf8e96404c514d007d0f  ../guard.go
+70c3f4c8bc794137b72228d86bd710e3ea47cc9341ee79fd338c5549d80b62f9  ../mutex.go
+115906fe2a92bffe546244d252300e37bfde1bc22fcb9907c87fddd124d8824b  ../rwmutex.go
+be40c4dcb351ca532215eaef20f31ac14ee6fbaa56ae5cb488ec016a4ccc8ed5  ../go.mod
+8d39c7268c76844ba0fbd791a978aa82724a4ed3275f3631f1bc04f3698dfb1a  lock_test.go
+186d943f7808b560dc52c8fece06d57d6d601daaadb13585eccad4157a031d6f  go.mod
+01354b50bca53f1d7f4b1410b9caa3d59171019c56b8cfa864f5ab4449940465  go.sum
+affinity: 8-23
+samples: 10
+duration: 1s
+uncontended GOMAXPROCS: 1
+parallel GOMAXPROCS: 4,16

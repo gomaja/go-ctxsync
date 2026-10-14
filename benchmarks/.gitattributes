@@ -1,0 +1,3 @@
+# Preserve the padding in captured benchmark output.
+results/**/*.txt whitespace=-blank-at-eol
+results/**/*.log whitespace=-blank-at-eol

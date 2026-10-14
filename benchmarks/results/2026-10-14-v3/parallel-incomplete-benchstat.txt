@@ -1,0 +1,70 @@
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+                                                      │    sync     │                ctxsync                │                semaphore                │                 retry                  │
+                                                      │   sec/op    │    sec/op     vs base                 │    sec/op      vs base                  │    sec/op     vs base                  │
+MutexParallel/operation=LockUnlock-4                    19.36n ± 3%   23.78n ± 10%   +22.83% (p=0.000 n=10)   320.95n ±  4%  +1557.80% (p=0.000 n=10)   20.31n ±  4%   +4.91% (p=0.001 n=10)
+MutexParallel/operation=LockUnlock-16                   26.67n ± 1%   38.85n ±  5%   +45.67% (p=0.000 n=10)   270.25n ±  5%   +913.31% (p=0.000 n=10)   30.09n ±  1%  +12.80% (p=0.000 n=10)
+MutexParallel/operation=ContextBackground-4             18.79n ± 5%   19.86n ±  7%    +5.67% (p=0.002 n=10)   288.10n ±  4%  +1433.26% (p=0.000 n=10)   20.59n ±  9%   +9.55% (p=0.000 n=10)
+MutexParallel/operation=ContextBackground-16            27.50n ± 2%   34.14n ±  5%   +24.12% (p=0.000 n=10)   295.05n ±  7%   +972.71% (p=0.000 n=10)   30.48n ±  1%  +10.83% (p=0.000 n=10)
+MutexParallel/operation=ContextCancellable-4            21.14n ± 7%   24.39n ±  9%   +15.35% (p=0.000 n=10)   401.70n ± 13%  +1799.74% (p=0.000 n=10)   22.50n ±  3%   +6.43% (p=0.000 n=10)
+MutexParallel/operation=ContextCancellable-16           28.11n ± 2%   29.28n ± 10%         ~ (p=0.184 n=10)   355.15n ± 19%  +1163.43% (p=0.000 n=10)   27.64n ±  3%        ~ (p=0.101 n=10)
+RWParallel/mix=90r10w/operation=Plain-4                 123.5n ± 2%   273.0n ± 10%  +121.10% (p=0.000 n=10)   1890.0n ±  5%  +1430.98% (p=0.000 n=10)   135.0n ±  2%   +9.32% (p=0.000 n=10)
+RWParallel/mix=90r10w/operation=Plain-16                124.0n ± 1%   297.2n ± 17%  +139.64% (p=0.000 n=10)   4900.0n ± 16%  +3851.61% (p=0.000 n=10)   134.9n ±  8%   +8.75% (p=0.000 n=10)
+RWParallel/mix=90r10w/operation=ContextBackground-4     123.2n ± 2%   262.0n ±  2%  +112.62% (p=0.000 n=10)   2071.0n ± 15%  +1580.32% (p=0.000 n=10)   148.3n ±  5%  +20.32% (p=0.000 n=10)
+RWParallel/mix=90r10w/operation=ContextBackground-16    125.4n ± 1%   276.2n ±  1%  +120.26% (p=0.000 n=10)   5494.5n ± 14%  +4281.58% (p=0.000 n=10)   143.3n ± 13%  +14.27% (p=0.000 n=10)
+RWParallel/mix=90r10w/operation=ContextCancellable-4    133.2n ± 3%   340.2n ±  8%  +155.41% (p=0.000 n=10)   2123.5n ±  3%  +1494.22% (p=0.000 n=10)
+RWParallel/mix=90r10w/operation=ContextCancellable-16   135.2n ± 3%   433.7n ± 45%  +220.78% (p=0.000 n=10)   5552.0n ±  2%  +4006.51% (p=0.000 n=10)
+geomean                                                 54.43n        92.40n         +69.77%                   1.023µ        +1778.74%                  49.72n         +9.41%                ¹
+¹ benchmark set differs from baseline; geomeans may not be comparable
+
+                                                      │      sync      │                ctxsync                │           semaphore            │                  retry                  │
+                                                      │      B/op      │     B/op      vs base                 │     B/op      vs base          │     B/op      vs base                   │
+MutexParallel/operation=LockUnlock-4                        0.0 ± 0%         0.0 ± 0%       ~ (p=1.000 n=10) ¹     175.0 ± 0%  ? (p=0.000 n=10)       0.0 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=LockUnlock-16                       0.0 ± 0%         0.0 ± 0%       ~ (p=1.000 n=10) ¹     175.0 ± 0%  ? (p=0.000 n=10)       0.0 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextBackground-4                 0.0 ± 0%         0.0 ± 0%       ~ (p=1.000 n=10) ¹     175.0 ± 0%  ? (p=0.000 n=10)       0.0 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextBackground-16                0.0 ± 0%         0.0 ± 0%       ~ (p=1.000 n=10) ¹     175.0 ± 0%  ? (p=0.000 n=10)       0.0 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextCancellable-4                0.0 ± 0%         0.0 ± 0%       ~ (p=1.000 n=10) ¹     175.0 ± 0%  ? (p=0.000 n=10)       0.0 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextCancellable-16               0.0 ± 0%         0.0 ± 0%       ~ (p=1.000 n=10) ¹     175.0 ± 0%  ? (p=0.000 n=10)       0.0 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain-4                     0.0 ± 0%         0.0 ± 0%       ~ (p=1.000 n=10) ¹     604.5 ± 0%  ? (p=0.000 n=10)       0.0 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain-16                0.000Ki ± 0%     0.000Ki ± 0%       ~ (p=1.000 n=10) ¹   1.398Ki ± 0%  ? (p=0.000 n=10)   0.000Ki ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground-4         0.0 ± 0%         0.0 ± 0%       ~ (p=1.000 n=10) ¹     604.5 ± 0%  ? (p=0.000 n=10)       0.0 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground-16    0.000Ki ± 0%     0.000Ki ± 0%       ~ (p=1.000 n=10) ¹   1.398Ki ± 0%  ? (p=0.000 n=10)   0.000Ki ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable-4        0.0 ± 0%         0.0 ± 0%       ~ (p=1.000 n=10) ¹     604.5 ± 0%  ? (p=0.000 n=10)
+RWParallel/mix=90r10w/operation=ContextCancellable-16   0.000Ki ± 0%     0.000Ki ± 0%       ~ (p=1.000 n=10) ¹   1.399Ki ± 0%  ? (p=0.000 n=10)
+geomean                                                              ²                 +0.00%                ²     403.5       ?                                +0.00%                ³ ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+³ benchmark set differs from baseline; geomeans may not be comparable
+
+                                                      │     sync     │               ctxsync               │          semaphore           │                 retry                 │
+                                                      │  allocs/op   │ allocs/op   vs base                 │ allocs/op   vs base          │ allocs/op   vs base                   │
+MutexParallel/operation=LockUnlock-4                    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   2.000 ± 0%  ? (p=0.000 n=10)   0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=LockUnlock-16                   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   2.000 ± 0%  ? (p=0.000 n=10)   0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextBackground-4             0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   2.000 ± 0%  ? (p=0.000 n=10)   0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextBackground-16            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   2.000 ± 0%  ? (p=0.000 n=10)   0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextCancellable-4            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   2.000 ± 0%  ? (p=0.000 n=10)   0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextCancellable-16           0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   2.000 ± 0%  ? (p=0.000 n=10)   0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain-4                  0.00 ± 0%      0.00 ± 0%       ~ (p=1.000 n=10) ¹   10.00 ± 0%  ? (p=0.000 n=10)    0.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain-16                 0.00 ± 0%      0.00 ± 0%       ~ (p=1.000 n=10) ¹   24.00 ± 0%  ? (p=0.000 n=10)    0.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground-4      0.00 ± 0%      0.00 ± 0%       ~ (p=1.000 n=10) ¹   10.00 ± 0%  ? (p=0.000 n=10)    0.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground-16     0.00 ± 0%      0.00 ± 0%       ~ (p=1.000 n=10) ¹   24.00 ± 0%  ? (p=0.000 n=10)    0.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable-4     0.00 ± 0%      0.00 ± 0%       ~ (p=1.000 n=10) ¹   10.00 ± 0%  ? (p=0.000 n=10)
+RWParallel/mix=90r10w/operation=ContextCancellable-16    0.00 ± 0%      0.00 ± 0%       ~ (p=1.000 n=10) ¹   24.00 ± 0%  ? (p=0.000 n=10)
+geomean                                                            ²               +0.00%                ²   5.566       ?                              +0.00%                ³ ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+³ benchmark set differs from baseline; geomeans may not be comparable
+
+                                                      │    sync    │               ctxsync               │              semaphore              │                retry                │
+                                                      │  locks/op  │  locks/op   vs base                 │  locks/op   vs base                 │  locks/op   vs base                 │
+RWParallel/mix=90r10w/operation=Plain-4                 10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹   10.00 ± 0%       ~ (p=1.000 n=10) ¹   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain-16                10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹   10.00 ± 0%       ~ (p=1.000 n=10) ¹   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground-4     10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹   10.00 ± 0%       ~ (p=1.000 n=10) ¹   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground-16    10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹   10.00 ± 0%       ~ (p=1.000 n=10) ¹   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable-4    10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable-16   10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                                 10.00        10.00       +0.00%                    10.00       +0.00%                    10.00       +0.00%                ²
+¹ all samples are equal
+² benchmark set differs from baseline; geomeans may not be comparable

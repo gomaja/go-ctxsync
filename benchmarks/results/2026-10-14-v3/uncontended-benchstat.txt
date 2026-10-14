@@ -1,0 +1,37 @@
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+                                              │    sync     │              ctxsync               │                semaphore                │                 retry                  │
+                                              │   sec/op    │   sec/op     vs base               │    sec/op     vs base                   │    sec/op     vs base                  │
+MutexDirectLockUnlock                           8.216n ± 5%   8.250n ± 3%       ~ (p=0.928 n=10)
+MutexUncontended/operation=LockUnlock           8.793n ± 1%   8.579n ± 3%  -2.43% (p=0.043 n=10)   19.320n ± 2%  +119.72% (p=0.000 n=10)     10.035n ± 3%  +14.12% (p=0.000 n=10)
+MutexUncontended/operation=TryLock              9.384n ± 3%   8.923n ± 3%  -4.92% (p=0.005 n=10)   17.985n ± 3%   +91.65% (p=0.000 n=10)      9.816n ± 2%   +4.59% (p=0.009 n=10)
+MutexUncontended/operation=ContextBackground    10.07n ± 2%   10.17n ± 6%       ~ (p=0.254 n=10)    21.80n ± 1%  +116.38% (p=0.000 n=10)      10.96n ± 1%   +8.83% (p=0.000 n=10)
+MutexUncontended/operation=ContextCancellable   10.68n ± 1%   10.76n ± 2%       ~ (p=0.077 n=10)    22.80n ± 2%  +113.58% (p=0.000 n=10)      14.21n ± 4%  +33.16% (p=0.000 n=10)
+geomean                                         9.388n        9.287n       -1.08%                   20.39n       +110.03%                ¹    11.13n       +14.68%                ¹
+¹ benchmark set differs from baseline; geomeans may not be comparable
+
+                                              │     sync     │               ctxsync               │               semaphore               │                 retry                 │
+                                              │     B/op     │    B/op     vs base                 │    B/op     vs base                   │    B/op     vs base                   │
+MutexDirectLockUnlock                           0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=LockUnlock           0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=TryLock              0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextBackground    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextCancellable   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                                    ²               +0.00%                ²               +0.00%                ³ ²               +0.00%                ³ ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+³ benchmark set differs from baseline; geomeans may not be comparable
+
+                                              │     sync     │               ctxsync               │               semaphore               │                 retry                 │
+                                              │  allocs/op   │ allocs/op   vs base                 │ allocs/op   vs base                   │ allocs/op   vs base                   │
+MutexDirectLockUnlock                           0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=LockUnlock           0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=TryLock              0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextBackground    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextCancellable   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                                    ²               +0.00%                ²               +0.00%                ³ ²               +0.00%                ³ ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+³ benchmark set differs from baseline; geomeans may not be comparable

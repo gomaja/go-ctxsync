@@ -1,0 +1,127 @@
+fatal error: all goroutines are asleep - deadlock!
+
+goroutine 1 [chan receive, 5 minutes]:
+testing.(*B).run1(0x3bd511552c08)
+	Go/src/testing/benchmark.go:247 +0xa6
+testing.(*B).Run(0x3bd511552008, {0x5953e4?, 0x3bd511537ad0?}, 0x59fce8)
+	Go/src/testing/benchmark.go:867 +0x4de
+testing.runBenchmarks.func1(0x3bd511552008)
+	Go/src/testing/benchmark.go:726 +0x3e
+testing.(*B).runN(0x3bd511552008, 0x1)
+	Go/src/testing/benchmark.go:219 +0x190
+testing.runBenchmarks({0x59b4d5, 0x27}, 0x0?, {0x6e90e0, 0x4, 0x59b4d5?})
+	Go/src/testing/benchmark.go:735 +0x5f1
+testing.(*M).Run(0x3bd5115a6140)
+	Go/src/testing/testing.go:2459 +0xa0e
+main.main()
+	_testmain.go:64 +0x9b
+
+goroutine 903 [chan receive, 5 minutes]:
+testing.(*B).run1(0x3bd511552308)
+	Go/src/testing/benchmark.go:247 +0xa6
+testing.(*B).Run(0x3bd511552c08, {0x3bd511490160?, 0x3bd51191b6e8?}, 0x3bd5115ba0c0)
+	Go/src/testing/benchmark.go:867 +0x4de
+github.com/gomaja/go-ctxsync/benchmarks.BenchmarkRWParallel(0x3bd511552c08)
+	benchmarks/lock_test.go:311 +0xa7
+testing.(*B).runN(0x3bd511552c08, 0x1)
+	Go/src/testing/benchmark.go:219 +0x190
+testing.(*B).run1.func1()
+	Go/src/testing/benchmark.go:245 +0x48
+created by testing.(*B).run1 in goroutine 1
+	Go/src/testing/benchmark.go:238 +0x90
+
+goroutine 23392 [select]:
+github.com/gomaja/go-ctxsync/benchmarks.retryAcquire({0x5a3060, 0x3bd5115e0140}, 0x3bd511625ef8, 0x3bd511910000)
+	benchmarks/lock_test.go:175 +0xa5
+github.com/gomaja/go-ctxsync/benchmarks.(*retryRWMutex).LockContext(0x3bd511818040, {0x5a3060, 0x3bd5115e0140})
+	benchmarks/lock_test.go:150 +0x65
+github.com/gomaja/go-ctxsync/benchmarks.BenchmarkRWParallel.func1.1.1.1(0x3bd511818060)
+	benchmarks/lock_test.go:343 +0x1b6
+testing.(*B).RunParallel.func1()
+	Go/src/testing/benchmark.go:982 +0xb8
+created by testing.(*B).RunParallel in goroutine 23818
+	Go/src/testing/benchmark.go:975 +0x113
+
+goroutine 12899 [chan receive, 1 minutes]:
+testing.(*B).run1(0x3bd511552908)
+	Go/src/testing/benchmark.go:247 +0xa6
+testing.(*B).Run(0x3bd511552308, {0x3bd5115d8040?, 0x111946?}, 0x3bd5115ac990)
+	Go/src/testing/benchmark.go:867 +0x4de
+github.com/gomaja/go-ctxsync/benchmarks.BenchmarkRWParallel.func1(0x3bd511552308)
+	benchmarks/lock_test.go:313 +0xd6
+testing.(*B).runN(0x3bd511552308, 0x1)
+	Go/src/testing/benchmark.go:219 +0x190
+testing.(*B).run1.func1()
+	Go/src/testing/benchmark.go:245 +0x48
+created by testing.(*B).run1 in goroutine 903
+	Go/src/testing/benchmark.go:238 +0x90
+
+goroutine 24131 [select]:
+github.com/gomaja/go-ctxsync/benchmarks.retryAcquire({0x5a3060, 0x3bd5115e0140}, 0x3bd5119d4ef8, 0x3bd511910000)
+	benchmarks/lock_test.go:175 +0xa5
+github.com/gomaja/go-ctxsync/benchmarks.(*retryRWMutex).LockContext(0x3bd511818040, {0x5a3060, 0x3bd5115e0140})
+	benchmarks/lock_test.go:150 +0x65
+github.com/gomaja/go-ctxsync/benchmarks.BenchmarkRWParallel.func1.1.1.1(0x3bd51151c020)
+	benchmarks/lock_test.go:343 +0x1b6
+testing.(*B).RunParallel.func1()
+	Go/src/testing/benchmark.go:982 +0xb8
+created by testing.(*B).RunParallel in goroutine 23818
+	Go/src/testing/benchmark.go:975 +0x113
+
+goroutine 21053 [chan receive]:
+testing.(*B).doBench(0x3bd511553208)
+	Go/src/testing/benchmark.go:297 +0x79
+testing.(*benchState).processBench(0x3bd51148e108, 0x20?)
+	Go/src/testing/benchmark.go:766 +0x3be
+testing.(*B).run(0x3bd511553208?)
+	Go/src/testing/benchmark.go:288 +0x5b
+testing.(*B).Run(0x3bd511552908, {0x3bd51159c110?, 0x3bd5116346e8?}, 0x3bd5115e00f0)
+	Go/src/testing/benchmark.go:868 +0x4ee
+github.com/gomaja/go-ctxsync/benchmarks.BenchmarkRWParallel.func1.1(0x3bd511552908)
+	benchmarks/lock_test.go:315 +0xc5
+testing.(*B).runN(0x3bd511552908, 0x1)
+	Go/src/testing/benchmark.go:219 +0x190
+testing.(*B).run1.func1()
+	Go/src/testing/benchmark.go:245 +0x48
+created by testing.(*B).run1 in goroutine 12899
+	Go/src/testing/benchmark.go:238 +0x90
+
+goroutine 23818 [sync.WaitGroup.Wait]:
+sync.runtime_SemacquireWaitGroup(0x3bd5115ac690?, 0xe0?)
+	Go/src/runtime/sema.go:114 +0x2e
+sync.(*WaitGroup).Wait(0x3bd51159c090)
+	Go/src/sync/waitgroup.go:206 +0x85
+testing.(*B).RunParallel(0x3bd511553208, 0x3bd511528060)
+	Go/src/testing/benchmark.go:985 +0x1af
+github.com/gomaja/go-ctxsync/benchmarks.BenchmarkRWParallel.func1.1.1(0x3bd511553208)
+	benchmarks/lock_test.go:325 +0x1c5
+testing.(*B).runN(0x3bd511553208, 0xf4240)
+	Go/src/testing/benchmark.go:219 +0x190
+testing.(*B).launch(0x3bd511553208)
+	Go/src/testing/benchmark.go:357 +0x1be
+created by testing.(*B).doBench in goroutine 21053
+	Go/src/testing/benchmark.go:296 +0x66
+
+goroutine 24129 [select]:
+github.com/gomaja/go-ctxsync/benchmarks.retryAcquire({0x5a3060, 0x3bd5115e0140}, 0x3bd51166eef8, 0x3bd511910000)
+	benchmarks/lock_test.go:175 +0xa5
+github.com/gomaja/go-ctxsync/benchmarks.(*retryRWMutex).LockContext(0x3bd511818040, {0x5a3060, 0x3bd5115e0140})
+	benchmarks/lock_test.go:150 +0x65
+github.com/gomaja/go-ctxsync/benchmarks.BenchmarkRWParallel.func1.1.1.1(0x3bd5115ba1a0)
+	benchmarks/lock_test.go:343 +0x1b6
+testing.(*B).RunParallel.func1()
+	Go/src/testing/benchmark.go:982 +0xb8
+created by testing.(*B).RunParallel in goroutine 23818
+	Go/src/testing/benchmark.go:975 +0x113
+
+goroutine 24130 [select]:
+github.com/gomaja/go-ctxsync/benchmarks.retryAcquire({0x5a3060, 0x3bd5115e0140}, 0x3bd51153fef8, 0x3bd511910000)
+	benchmarks/lock_test.go:175 +0xa5
+github.com/gomaja/go-ctxsync/benchmarks.(*retryRWMutex).LockContext(0x3bd511818040, {0x5a3060, 0x3bd5115e0140})
+	benchmarks/lock_test.go:150 +0x65
+github.com/gomaja/go-ctxsync/benchmarks.BenchmarkRWParallel.func1.1.1.1(0x3bd51151c040)
+	benchmarks/lock_test.go:343 +0x1b6
+testing.(*B).RunParallel.func1()
+	Go/src/testing/benchmark.go:982 +0xb8
+created by testing.(*B).RunParallel in goroutine 23818
+	Go/src/testing/benchmark.go:975 +0x113

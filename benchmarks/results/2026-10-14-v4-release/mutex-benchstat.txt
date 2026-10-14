@@ -1,0 +1,25 @@
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+                                      │     sync     │                ctxsync                 │
+                                      │    sec/op    │    sec/op      vs base                 │
+MutexParallel/operation=LockUnlock-4    20.68n ± 12%    28.61n ± 19%   +38.38% (p=0.002 n=10)
+MutexParallel/operation=LockUnlock-16   27.30n ±  1%   115.35n ± 32%  +322.53% (p=0.000 n=10)
+geomean                                 23.76n          57.45n        +141.80%
+
+                                      │     sync     │               ctxsync               │
+                                      │     B/op     │    B/op     vs base                 │
+MutexParallel/operation=LockUnlock-4    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=LockUnlock-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                            ²               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                                      │     sync     │               ctxsync               │
+                                      │  allocs/op   │ allocs/op   vs base                 │
+MutexParallel/operation=LockUnlock-4    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=LockUnlock-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                            ²               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean

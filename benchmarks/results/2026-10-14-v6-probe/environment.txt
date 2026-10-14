@@ -1,0 +1,13 @@
+Historical measurement environment; source digests precede comment and module-layout changes.
+go version go1.26.9 linux/amd64
+base revision: bounded guard polling candidate; measured sources include the fresh-call probe
+affinity: 8-23
+GOMAXPROCS:4,16
+samples:10
+duration:1s
+benchmark source:the original benchmark comparator
+6714a7afc56b5dd6d675c372a1a22d6e31817565cf07300d4bb6b2d56741df9c  mutex.go
+0214b5c962ca6013ecffcebfba554320a100afb42c27973dadea42324b678e22  guard.go
+115906fe2a92bffe546244d252300e37bfde1bc22fcb9907c87fddd124d8824b  rwmutex.go
+8d39c7268c76844ba0fbd791a978aa82724a4ed3275f3631f1bc04f3698dfb1a  .scratch/v4-mutex-bench/lock_test.go
+8ed12879a90d53714a94dac96845b52c22c47954b03b8917fd95d4845fd8f714  .scratch/locks-v6-mutex.test
