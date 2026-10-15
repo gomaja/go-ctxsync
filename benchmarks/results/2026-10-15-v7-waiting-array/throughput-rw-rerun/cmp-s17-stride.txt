@@ -1,0 +1,72 @@
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+                                                                   │ base-s17.txt │          stride-s17.txt           │
+                                                                   │    sec/op    │   sec/op     vs base              │
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                 232.8n ±  4%   244.4n ± 4%  +4.96% (p=0.014 n=8)
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16                238.5n ±  2%   257.5n ± 7%  +7.97% (p=0.026 n=8)
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4     236.5n ± 13%   247.2n ± 3%       ~ (p=0.328 n=8)
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16    255.4n ±  7%   252.0n ± 4%       ~ (p=0.938 n=8)
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4    268.5n ±  7%   274.6n ± 6%       ~ (p=0.798 n=8)
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16   281.2n ± 13%   288.1n ± 7%       ~ (p=0.505 n=8)
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                 360.9n ±  5%   362.9n ± 4%       ~ (p=0.425 n=8)
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                353.6n ±  4%   363.2n ± 5%       ~ (p=0.161 n=8)
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4     363.7n ±  3%   372.0n ± 4%       ~ (p=0.130 n=8)
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16    373.8n ±  5%   382.5n ± 5%       ~ (p=0.328 n=8)
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4    393.2n ±  9%   400.4n ± 4%       ~ (p=0.593 n=8)
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16   407.3n ±  6%   415.6n ± 6%       ~ (p=0.169 n=8)
+geomean                                                              307.1n         315.4n       +2.70%
+
+                                                                   │ base-s17.txt │           stride-s17.txt           │
+                                                                   │   locks/op   │  locks/op   vs base                │
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                   10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16                  10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4       10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16      10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4      10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16     10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                   10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                  10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4       10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16      10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4      10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16     10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=8) ¹
+geomean                                                                10.00        10.00       +0.00%
+¹ all samples are equal
+
+                                                                   │ base-s17.txt │           stride-s17.txt           │
+                                                                   │     B/op     │    B/op     vs base                │
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16                0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4     0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4     0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+geomean                                                                         ²               +0.00%               ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                                                                   │ base-s17.txt │           stride-s17.txt           │
+                                                                   │  allocs/op   │ allocs/op   vs base                │
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16                0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4     0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4     0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=8) ¹
+geomean                                                                         ²               +0.00%               ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean

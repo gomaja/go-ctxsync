@@ -1,0 +1,7 @@
+2026-10-15T16:28:27Z
+go version go1.26.9 linux/amd64
+ 18:28:27 up 1 day, 10:25,  2 users,  load average: 5.99, 4.87, 6.70
+823438727da6fb288ffa4655ef92a62ff590b809560a376863ce6428008ff7b1  final64.race.test
+b89d00c3193b82bb9d4fa1db10f6a330858f40eda304afdea7433e8d847759a2  <instrumented copies>/instrt64.race.test
+3a011f04b216344262d8033de0e56193273d22d543ea505360e25e69aebc1b64  repro_test.go
+ 18:28:39 up 1 day, 10:25,  2 users,  load average: 5.40, 4.79, 6.64

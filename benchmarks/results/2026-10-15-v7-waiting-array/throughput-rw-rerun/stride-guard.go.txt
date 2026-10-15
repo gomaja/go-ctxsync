@@ -1,0 +1,130 @@
+// Copyright 2026 gomaja. All rights reserved.
+// SPDX-License-Identifier: Apache-2.0
+
+package ctxsync
+
+import (
+	"runtime"
+	"sync/atomic"
+	"unsafe"
+)
+
+const guardTailUnit uint64 = 1 << 32
+const guardPollBudget = 64
+const guardWaitSlots = 4096
+
+// guardWait holds the words watched by claims that are not next in line:
+// a ticket lock augmented with a waiting array (Dice and Kogan, "TWA - Ticket
+// Locks Augmented with a Waiting Array", Euro-Par 2019). Claims of one guard
+// that are fewer than 4096 apart watch distinct slots; any other collision
+// only causes a spurious recheck.
+var guardWait [guardWaitSlots]atomic.Uint32
+
+// testHookGuardYield observes each Gosched in Lock: the waiting ticket,
+// whether it is watching its slot rather than the head, and the loads made
+// since its previous yield.
+var testHookGuardYield func(g *ticketGuard, ticket uint32, slot bool, polls int)
+
+// testHookGuardSlot runs after a claim decides to wait on its slot and before
+// it reads that slot.
+var testHookGuardSlot func(g *ticketGuard, ticket uint32)
+
+// ticketGuard admits short accounting sections in ticket order. Packing both
+// counters makes TryLock's snapshot safe across uint32 wrap. The protocol
+// requires fewer than 2^32 outstanding guard claims. No operation allocates
+// or starts a goroutine; see modelcheck/guard.go for the atomic model.
+//
+// Only the claim next in line polls the packed word, yielding after at most
+// 64 mismatching loads. A later claim reads its slot, rechecks the head, and
+// then polls only that slot until the release that makes it next in line
+// increments it. Under the race detector, an atomic Load of an address that
+// has synchronization state read-locks that state, while Add and
+// CompareAndSwap write-lock it, and new readers are admitted while a writer
+// waits. When every claim polled the packed word, release and ticket
+// allocation stalled for seconds (issue #1). See
+// modelcheck/evidence/model-v7-guard-review.md.
+type ticketGuard struct{ word atomic.Uint64 }
+
+func (g *ticketGuard) waitSlot(ticket uint32) *atomic.Uint32 {
+	return &guardWait[(uint32(uintptr(unsafe.Pointer(g))>>3)+ticket*17)%guardWaitSlots]
+}
+
+func (g *ticketGuard) Lock() {
+	ticket := uint32(g.word.Add(guardTailUnit)>>32) - 1
+	for polls := 0; ; {
+		head := uint32(g.word.Load())
+		if head == ticket {
+			return
+		}
+		if ticket-head > 1 {
+			g.waitTurn(ticket)
+			polls = 0
+			continue
+		}
+		polls++
+		if polls < guardPollBudget {
+			continue
+		}
+		if testHookGuardYield != nil {
+			testHookGuardYield(g, ticket, false, polls)
+		}
+		runtime.Gosched()
+		polls = 0
+	}
+}
+
+// waitTurn returns after ticket's slot changes, or at once if the head has
+// already made ticket next in line. Reading the slot before rechecking the
+// head ensures that a release between the two still changes the slot.
+func (g *ticketGuard) waitTurn(ticket uint32) {
+	if testHookGuardSlot != nil {
+		testHookGuardSlot(g, ticket)
+	}
+	slot := g.waitSlot(ticket)
+	seen := slot.Load()
+	if ticket-uint32(g.word.Load()) <= 1 {
+		return
+	}
+	for polls := 1; slot.Load() == seen; polls++ {
+		if polls < guardPollBudget {
+			continue
+		}
+		if testHookGuardYield != nil {
+			testHookGuardYield(g, ticket, true, polls)
+		}
+		runtime.Gosched()
+		polls = 0
+	}
+}
+
+var testHookGuardTry func(*ticketGuard)
+
+func (g *ticketGuard) TryLock() bool {
+	old := g.word.Load()
+	if uint32(old) != uint32(old>>32) {
+		return false
+	}
+	if testHookGuardTry != nil {
+		testHookGuardTry(g)
+	}
+	return g.word.CompareAndSwap(old, old+guardTailUnit)
+}
+
+func (g *ticketGuard) Unlock() {
+	for {
+		old := g.word.Load()
+		// Head wrap must not carry into the independently allocated tail.
+		head := uint32(old) + 1
+		if g.word.CompareAndSwap(old, old&0xffffffff00000000|uint64(head)) {
+			// The claim after the new head is now next in line. If it was
+			// allocated before this release, it may be watching its slot.
+			if uint32(old>>32)-head > 1 {
+				g.waitSlot(head + 1).Add(1)
+			}
+			return
+		}
+		// While this head is held, each competing caller can allocate only
+		// one ticket, then waits. TryLock cannot allocate behind a held head.
+		// Thus retries are finite under the outstanding-claim bound.
+	}
+}

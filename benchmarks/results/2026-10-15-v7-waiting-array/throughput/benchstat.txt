@@ -1,0 +1,210 @@
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+                                                                   │    base.txt    │                fix.txt                │
+                                                                   │     sec/op     │     sec/op      vs base               │
+MutexDirectLockUnlock/impl=sync                                      8.727n ±  184%    8.905n ±   6%       ~ (p=0.631 n=10)
+MutexDirectLockUnlock/impl=ctxsync                                   9.050n ±   59%    8.768n ±   2%       ~ (p=0.190 n=10)
+MutexUncontended/operation=LockUnlock/impl=ctxsync                   9.184n ±   44%    9.086n ±   2%       ~ (p=0.436 n=10)
+MutexUncontended/operation=LockUnlock/impl=sync                      8.975n ±   86%    8.953n ±   9%       ~ (p=0.912 n=10)
+MutexUncontended/operation=LockUnlock/impl=semaphore                 19.64n ±   53%    20.05n ±   6%       ~ (p=0.481 n=10)
+MutexUncontended/operation=LockUnlock/impl=retry                     9.955n ±   65%   10.155n ±   7%       ~ (p=0.631 n=10)
+MutexUncontended/operation=TryLock/impl=ctxsync                      8.865n ±   44%    9.248n ±   9%       ~ (p=0.853 n=10)
+MutexUncontended/operation=TryLock/impl=sync                         9.093n ±   56%    9.347n ±   5%       ~ (p=0.796 n=10)
+MutexUncontended/operation=TryLock/impl=semaphore                    18.63n ±   43%    19.27n ±   6%       ~ (p=0.447 n=10)
+MutexUncontended/operation=TryLock/impl=retry                        10.07n ±   54%    10.13n ±   6%       ~ (p=0.838 n=10)
+MutexUncontended/operation=ContextBackground/impl=ctxsync            9.552n ±  104%    9.901n ±   7%       ~ (p=0.517 n=10)
+MutexUncontended/operation=ContextBackground/impl=sync               9.230n ±   73%    9.778n ±   8%       ~ (p=0.315 n=10)
+MutexUncontended/operation=ContextBackground/impl=semaphore          19.58n ±   64%    20.91n ±   6%       ~ (p=0.190 n=10)
+MutexUncontended/operation=ContextBackground/impl=retry              10.31n ±   92%    10.51n ±   6%       ~ (p=0.753 n=10)
+MutexUncontended/operation=ContextCancellable/impl=ctxsync           10.14n ±  238%    10.39n ±   4%       ~ (p=0.579 n=10)
+MutexUncontended/operation=ContextCancellable/impl=sync              10.08n ±   43%    10.56n ±   6%       ~ (p=0.481 n=10)
+MutexUncontended/operation=ContextCancellable/impl=semaphore         21.68n ±   66%    22.75n ±   9%       ~ (p=0.579 n=10)
+MutexUncontended/operation=ContextCancellable/impl=retry             13.10n ±   84%    13.53n ±  17%       ~ (p=0.684 n=10)
+MutexParallel/operation=LockUnlock/impl=ctxsync-4                    15.62n ±   54%    15.90n ±   5%       ~ (p=0.671 n=10)
+MutexParallel/operation=LockUnlock/impl=ctxsync-16                   15.79n ±  245%    16.39n ±  12%       ~ (p=0.436 n=10)
+MutexParallel/operation=LockUnlock/impl=sync-4                       20.28n ±   15%    18.99n ±  17%       ~ (p=0.631 n=10)
+MutexParallel/operation=LockUnlock/impl=sync-16                      27.96n ±    8%    27.74n ±   1%       ~ (p=0.393 n=10)
+MutexParallel/operation=ContextBackground/impl=ctxsync-4             16.31n ±   27%    16.43n ±   6%       ~ (p=0.739 n=10)
+MutexParallel/operation=ContextBackground/impl=ctxsync-16            17.14n ±  186%    17.43n ±  17%       ~ (p=0.987 n=10)
+MutexParallel/operation=ContextBackground/impl=sync-4                19.04n ±   83%    17.71n ±  19%       ~ (p=0.271 n=10)
+MutexParallel/operation=ContextBackground/impl=sync-16               28.39n ±   14%    28.27n ±   4%       ~ (p=0.404 n=10)
+MutexParallel/operation=ContextCancellable/impl=ctxsync-4            17.57n ±  201%    18.40n ±   6%       ~ (p=0.190 n=10)
+MutexParallel/operation=ContextCancellable/impl=ctxsync-16           19.71n ±  160%    20.62n ±   7%       ~ (p=0.190 n=10)
+MutexParallel/operation=ContextCancellable/impl=sync-4               17.19n ±   51%    17.22n ±  22%       ~ (p=0.971 n=10)
+MutexParallel/operation=ContextCancellable/impl=sync-16              28.75n ±    5%    29.05n ±   2%       ~ (p=0.383 n=10)
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                 238.1n ±  468%    251.4n ±  18%       ~ (p=0.218 n=10)
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16                238.1n ± 1599%    261.1n ±  34%       ~ (p=0.075 n=10)
+RWParallel/mix=90r10w/operation=Plain/impl=sync-4                    123.3n ±   58%    124.2n ±  11%       ~ (p=0.853 n=10)
+RWParallel/mix=90r10w/operation=Plain/impl=sync-16                   126.7n ±   18%    124.8n ±  15%       ~ (p=0.755 n=10)
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4     233.2n ±  666%    251.8n ±  23%       ~ (p=0.063 n=10)
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16    240.1n ± 1455%    258.1n ± 176%       ~ (p=0.105 n=10)
+RWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4        127.7n ±   59%    128.2n ±   7%       ~ (p=0.971 n=10)
+RWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16       130.5n ±   32%    131.0n ±   9%       ~ (p=0.838 n=10)
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4    269.9n ±  335%    282.2n ±   9%       ~ (p=0.190 n=10)
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16   273.0n ± 1863%    282.6n ±  24%       ~ (p=0.393 n=10)
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4       134.0n ±    4%    132.4n ±   4%       ~ (p=0.481 n=10)
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16      135.3n ±   10%    136.8n ±  19%       ~ (p=0.684 n=10)
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                 354.8n ±    6%    371.1n ±   6%       ~ (p=0.123 n=10)
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                356.1n ±    7%    366.7n ±  12%       ~ (p=0.218 n=10)
+RWParallel/mix=10r90w/operation=Plain/impl=sync-4                    281.9n ±    6%    280.0n ±   3%       ~ (p=0.579 n=10)
+RWParallel/mix=10r90w/operation=Plain/impl=sync-16                   345.0n ±    9%    339.7n ±  10%       ~ (p=0.447 n=10)
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4     357.3n ±    4%    371.6n ±   5%  +4.02% (p=0.009 n=10)
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16    362.0n ±    4%    377.2n ±  10%  +4.19% (p=0.029 n=10)
+RWParallel/mix=10r90w/operation=ContextBackground/impl=sync-4        279.9n ±    7%    288.2n ±   5%       ~ (p=0.190 n=10)
+RWParallel/mix=10r90w/operation=ContextBackground/impl=sync-16       357.8n ±    5%    352.6n ±   5%       ~ (p=0.912 n=10)
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4    409.6n ±    5%    402.6n ±  15%       ~ (p=0.796 n=10)
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16   404.1n ±    5%    421.0n ±  31%       ~ (p=0.165 n=10)
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-4       290.0n ±    4%    294.1n ±   4%       ~ (p=0.912 n=10)
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-16      359.0n ±    6%    350.7n ±   9%       ~ (p=0.393 n=10)
+geomean                                                              50.63n            51.60n         +1.91%
+
+                                                                   │   base.txt   │               fix.txt               │
+                                                                   │     B/op     │    B/op     vs base                 │
+MutexDirectLockUnlock/impl=sync                                      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexDirectLockUnlock/impl=ctxsync                                   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=LockUnlock/impl=ctxsync                   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=LockUnlock/impl=sync                      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=LockUnlock/impl=semaphore                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=LockUnlock/impl=retry                     0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=TryLock/impl=ctxsync                      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=TryLock/impl=sync                         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=TryLock/impl=semaphore                    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=TryLock/impl=retry                        0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextBackground/impl=ctxsync            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextBackground/impl=sync               0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextBackground/impl=semaphore          0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextBackground/impl=retry              0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextCancellable/impl=ctxsync           0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextCancellable/impl=sync              0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextCancellable/impl=semaphore         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextCancellable/impl=retry             0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=LockUnlock/impl=ctxsync-4                    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=LockUnlock/impl=ctxsync-16                   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=LockUnlock/impl=sync-4                       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=LockUnlock/impl=sync-16                      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextBackground/impl=ctxsync-4             0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextBackground/impl=ctxsync-16            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextBackground/impl=sync-4                0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextBackground/impl=sync-16               0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextCancellable/impl=ctxsync-4            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextCancellable/impl=ctxsync-16           0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextCancellable/impl=sync-4               0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextCancellable/impl=sync-16              0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16                0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain/impl=sync-4                    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain/impl=sync-16                   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4     0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4        0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=sync-4                    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=sync-16                   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4     0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=sync-4        0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=sync-16       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-4       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-16      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                                                         ²               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                                                                   │   base.txt   │               fix.txt               │
+                                                                   │  allocs/op   │ allocs/op   vs base                 │
+MutexDirectLockUnlock/impl=sync                                      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexDirectLockUnlock/impl=ctxsync                                   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=LockUnlock/impl=ctxsync                   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=LockUnlock/impl=sync                      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=LockUnlock/impl=semaphore                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=LockUnlock/impl=retry                     0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=TryLock/impl=ctxsync                      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=TryLock/impl=sync                         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=TryLock/impl=semaphore                    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=TryLock/impl=retry                        0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextBackground/impl=ctxsync            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextBackground/impl=sync               0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextBackground/impl=semaphore          0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextBackground/impl=retry              0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextCancellable/impl=ctxsync           0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextCancellable/impl=sync              0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextCancellable/impl=semaphore         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexUncontended/operation=ContextCancellable/impl=retry             0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=LockUnlock/impl=ctxsync-4                    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=LockUnlock/impl=ctxsync-16                   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=LockUnlock/impl=sync-4                       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=LockUnlock/impl=sync-16                      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextBackground/impl=ctxsync-4             0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextBackground/impl=ctxsync-16            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextBackground/impl=sync-4                0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextBackground/impl=sync-16               0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextCancellable/impl=ctxsync-4            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextCancellable/impl=ctxsync-16           0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextCancellable/impl=sync-4               0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+MutexParallel/operation=ContextCancellable/impl=sync-16              0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16                0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain/impl=sync-4                    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain/impl=sync-16                   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4     0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4        0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=sync-4                    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=sync-16                   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4     0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=sync-4        0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=sync-16       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4    0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-4       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-16      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                                                         ²               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                                                                   │  base.txt  │               fix.txt               │
+                                                                   │  locks/op  │  locks/op   vs base                 │
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4                 10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16                10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain/impl=sync-4                    10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=Plain/impl=sync-16                   10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4     10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16    10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4        10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16       10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4    10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16   10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4       10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16      10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                 10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=sync-4                    10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=Plain/impl=sync-16                   10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4     10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16    10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=sync-4        10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextBackground/impl=sync-16       10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4    10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16   10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-4       10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+RWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-16      10.00 ± 0%   10.00 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                                              10.00        10.00       +0.00%
+¹ all samples are equal

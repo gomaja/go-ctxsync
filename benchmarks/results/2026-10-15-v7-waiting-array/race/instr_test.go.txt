@@ -1,0 +1,94 @@
+package ctxsyncx
+
+import (
+	"context"
+	"errors"
+	"fmt"
+	"sort"
+	"testing"
+	"time"
+)
+
+func pct(xs []int64, p float64) int64 {
+	if len(xs) == 0 {
+		return 0
+	}
+	s := append([]int64(nil), xs...)
+	sort.Slice(s, func(i, j int) bool { return s[i] < s[j] })
+	return s[int(p*float64(len(s)-1))]
+}
+
+func TestInstrumentedCancellation(t *testing.T) {
+	const waiters = 128
+	var mu Mutex
+	mu.Lock()
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+	_ = ctx.Done()
+	started := make(chan struct{}, waiters)
+	results := make(chan error, waiters)
+	for range waiters {
+		go func() {
+			started <- struct{}{}
+			err := mu.LockContext(ctx)
+			if err == nil {
+				mu.Unlock()
+			}
+			results <- err
+		}()
+	}
+	for range waiters {
+		<-started
+	}
+	time.Sleep(100 * time.Millisecond)
+	cancelAt := since()
+	cancel()
+	var lastAt int64
+	for i := range waiters {
+		select {
+		case err := <-results:
+			if !errors.Is(err, context.Canceled) {
+				t.Fatalf("waiter %d: %v", i, err)
+			}
+		case <-time.After(120 * time.Second):
+			t.Fatalf("only %d/%d returned in 120s", i, waiters)
+		}
+		lastAt = since()
+	}
+	q := mu.queue.Load()
+	n := uint32(q.guard.word.Load())
+	var claim, wait, rel, gap, hold []int64
+	var regEnd int64
+	type row struct{ k int; gap, rel, claim, wait int64; polls, yields int64; phase string }
+	var rows []row
+	for k := 0; k < int(n); k++ {
+		r := Recs[k]
+		phase := "reg"
+		if r.Acquired > cancelAt {
+			phase = "cancel"
+		} else {
+			regEnd = r.ReleaseEnd
+		}
+		claim = append(claim, r.ClaimEnd-r.ClaimStart)
+		wait = append(wait, r.Acquired-r.ClaimEnd)
+		rel = append(rel, r.ReleaseEnd-r.ReleaseStart)
+		hold = append(hold, r.ReleaseStart-r.Acquired)
+		g := int64(0)
+		if k > 0 {
+			g = r.Acquired - max(Recs[k-1].ReleaseEnd, r.ClaimEnd)
+			gap = append(gap, g)
+		}
+		rows = append(rows, row{k, g, r.ReleaseEnd - r.ReleaseStart, r.ClaimEnd - r.ClaimStart, r.Acquired - r.ClaimEnd, r.Polls, r.Yields, phase})
+	}
+	ms := func(v int64) string { return fmt.Sprintf("%.3fms", float64(v)/1e6) }
+	t.Logf("tickets=%d registration done at %s (since start), cancel at %s, all returned %s after cancel", n, ms(regEnd), ms(cancelAt), ms(lastAt-cancelAt))
+	t.Logf("ticket Add latency  p50=%s p99=%s max=%s", ms(pct(claim, .5)), ms(pct(claim, .99)), ms(pct(claim, 1)))
+	t.Logf("release CAS latency p50=%s p99=%s max=%s", ms(pct(rel, .5)), ms(pct(rel, .99)), ms(pct(rel, 1)))
+	t.Logf("hold (body) time    p50=%s p99=%s max=%s", ms(pct(hold, .5)), ms(pct(hold, .99)), ms(pct(hold, 1)))
+	t.Logf("handoff gap         p50=%s p99=%s max=%s", ms(pct(gap, .5)), ms(pct(gap, .99)), ms(pct(gap, 1)))
+	sort.Slice(rows, func(i, j int) bool { return rows[i].gap+rows[i].rel+rows[i].claim > rows[j].gap+rows[j].rel+rows[j].claim })
+	for _, r := range rows[:min(8, len(rows))] {
+		t.Logf("slow ticket %d (%s): gap=%s releaseCAS=%s addLatency=%s wait=%s polls=%d yields=%d", r.k, r.phase, ms(r.gap), ms(r.rel), ms(r.claim), ms(r.wait), r.polls, r.yields)
+	}
+	mu.Unlock()
+}
