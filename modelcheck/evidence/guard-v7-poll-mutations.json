@@ -1,0 +1,381 @@
+[
+  {
+    "Mutation": "far-claim-polls-head",
+    "Before": "(c.Policy == guardConservativePolicy || !g.Ahead)",
+    "After": "true",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardFarClaimStartsSlotProtocol$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:205: a far claim must read its slot before yielding or loading the head again",
+      "--- FAIL: TestTicketGuardFarClaimStartsSlotProtocol"
+    ]
+  },
+  {
+    "Mutation": "rank-recomputed-at-decide",
+    "Before": "(c.Policy == guardConservativePolicy || !g.Ahead)",
+    "After": "(c.Policy == guardConservativePolicy || (g.Ticket-s.Serving-1)&guardMask == 0)",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardHeadLoadRecordsEarlierClaimsAcrossWrap$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:256: head advance changed the saved branch: ready=false ahead=false got 1 successors",
+      "--- FAIL: TestTicketGuardHeadLoadRecordsEarlierClaimsAcrossWrap"
+    ]
+  },
+  {
+    "Mutation": "slot-read-skips-recheck",
+    "Before": "p.PC = guardRecheck\n\t\t\tif c.Policy",
+    "After": "p.PC = guardSlotPoll\n\t\t\tif c.Policy",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardSlotReadRecheckAndDelayedNotify$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:442: actor 2 has no successor at phase 12 from {Next:3 Serving:0 Slots:[0 0 0 0 0 0 0 0] G:[{PC:7 Ticket:0 SeenNext:3 SeenHead:0 SeenSlot:0 NotifyTicket:0 Claimed:true Owns:true Ready:false Ahead:false CollisionUsed:false} {PC:1 Ticket:1 SeenNext:0 SeenHead:0 SeenSlot:0 NotifyTicket:0 Claimed:true Owns:false Ready:false Ahead:false CollisionUsed:false} {PC:11 Ticket:2 SeenNext:0 SeenHead:0 SeenSlot:0 NotifyTicket:0 Claimed:true Owns:false Ready:false Ahead:false CollisionUsed:false} {PC:10 Ticket:0 SeenNext:0 SeenHead:0 SeenSlot:0 NotifyTicket:0 Claimed:false Owns:false Ready:false Ahead:false CollisionUsed:false}]}",
+      "--- FAIL: TestTicketGuardSlotReadRecheckAndDelayedNotify"
+    ]
+  },
+  {
+    "Mutation": "recheck-does-not-return-when-next",
+    "Before": "if (g.Ticket-n.Serving)&guardMask <= 1 {",
+    "After": "if false {",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardRecheckCoversReleaseBeforeAndAfterSlotRead$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:496: actor 2 has no successor at phase 1 from {Next:2 Serving:0 Slots:[0 0 0 0 0 0 0 0] G:[{PC:15 Ticket:0 SeenNext:0 SeenHead:0 SeenSlot:0 NotifyTicket:1 Claimed:false Owns:false Ready:false Ahead:false CollisionUsed:false} {PC:1 Ticket:0 SeenNext:0 SeenHead:0 SeenSlot:0 NotifyTicket:0 Claimed:true Owns:false Ready:false Ahead:false CollisionUsed:false} {PC:12 Ticket:1 SeenNext:0 SeenHead:0 SeenSlot:0 NotifyTicket:0 Claimed:true Owns:false Ready:false Ahead:false CollisionUsed:false} {PC:10 Ticket:0 SeenNext:0 SeenHead:0 SeenSlot:0 NotifyTicket:0 Claimed:false Owns:false Ready:false Ahead:false CollisionUsed:false}]}",
+      "--- FAIL: TestTicketGuardRecheckCoversReleaseBeforeAndAfterSlotRead"
+    ]
+  },
+  {
+    "Mutation": "recheck-precedes-slot-read",
+    "Before": "p.PC = guardSlotLoad\n\t\t\t\t\tif c.Policy",
+    "After": "p.PC = guardRecheckFirst\n\t\t\t\t\tif c.Policy",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardFarClaimStartsSlotProtocol$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:205: a far claim must read its slot before yielding or loading the head again",
+      "--- FAIL: TestTicketGuardFarClaimStartsSlotProtocol"
+    ]
+  },
+  {
+    "Mutation": "release-omits-slot-add",
+    "Before": "n.Slots[g.NotifyTicket]++",
+    "After": "_ = g.NotifyTicket",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardSlotReadRecheckAndDelayedNotify$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:467: notification must change the saved comparison without changing the waiting phase",
+      "--- FAIL: TestTicketGuardSlotReadRecheckAndDelayedNotify"
+    ]
+  },
+  {
+    "Mutation": "release-notifies-newHead+2",
+    "Before": "target := (n.Serving + 1) & guardMask",
+    "After": "target := (n.Serving + 2) & guardMask",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardReleaseNotifyConditionUsesCASSnapshot$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:523: release must notify newHead+1 exactly when already allocated",
+      "--- FAIL: TestTicketGuardReleaseNotifyConditionUsesCASSnapshot"
+    ]
+  },
+  {
+    "Mutation": "release-notifies-only-above-two",
+    "Before": "threshold := uint8(1)",
+    "After": "threshold := uint8(2)",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardReleaseNotifyConditionUsesCASSnapshot$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:521: actor 0 has no successor at phase 15 from {Next:3 Serving:0 Slots:[0 0 0 0 0 0 0 0] G:[{PC:7 Ticket:0 SeenNext:3 SeenHead:0 SeenSlot:0 NotifyTicket:0 Claimed:true Owns:true Ready:false Ahead:false CollisionUsed:false} {PC:10 Ticket:0 SeenNext:0 SeenHead:0 SeenSlot:0 NotifyTicket:0 Claimed:false Owns:false Ready:false Ahead:false CollisionUsed:false} {PC:10 Ticket:0 SeenNext:0 SeenHead:0 SeenSlot:0 NotifyTicket:0 Claimed:false Owns:false Ready:false Ahead:false CollisionUsed:false} {PC:10 Ticket:0 SeenNext:0 SeenHead:0 SeenSlot:0 NotifyTicket:0 Claimed:false Owns:false Ready:false Ahead:false CollisionUsed:false}]}",
+      "--- FAIL: TestTicketGuardReleaseNotifyConditionUsesCASSnapshot"
+    ]
+  },
+  {
+    "Mutation": "unchanged-slot-reloads-head",
+    "Before": "if n.Slots[g.Ticket] != g.SeenSlot {",
+    "After": "if true {",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardSlotReadRecheckAndDelayedNotify$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:453: unchanged slot must not reload the head",
+      "--- FAIL: TestTicketGuardSlotReadRecheckAndDelayedNotify"
+    ]
+  },
+  {
+    "Mutation": "slot-yield-never-repolls",
+    "Before": "case guardSlotYield:\n\t\t\tp.PC = guardSlotPoll",
+    "After": "case guardSlotYield:\n\t\t\tp.PC = guardSlotYield",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardSlotReadRecheckAndDelayedNotify$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:469: actor 2 has no successor at phase 13 from {Next:2 Serving:0 Slots:[0 0 0 0 0 0 0 0] G:[{PC:10 Ticket:0 SeenNext:0 SeenHead:0 SeenSlot:0 NotifyTicket:0 Claimed:false Owns:false Ready:false Ahead:false CollisionUsed:false} {PC:1 Ticket:0 SeenNext:0 SeenHead:0 SeenSlot:0 NotifyTicket:0 Claimed:true Owns:false Ready:false Ahead:false CollisionUsed:false} {PC:14 Ticket:1 SeenNext:0 SeenHead:0 SeenSlot:255 NotifyTicket:0 Claimed:true Owns:false Ready:false Ahead:false CollisionUsed:false} {PC:10 Ticket:0 SeenNext:0 SeenHead:0 SeenSlot:0 NotifyTicket:0 Claimed:false Owns:false Ready:false Ahead:false CollisionUsed:false}]}",
+      "--- FAIL: TestTicketGuardSlotReadRecheckAndDelayedNotify"
+    ]
+  },
+  {
+    "Mutation": "slot-normalization-loses-inequality",
+    "Before": "g.SeenSlot -= s.Slots[g.Ticket]",
+    "After": "g.SeenSlot = 0",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardSlotNormalizationPreservesEqualityAndTargets$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:541: normalization must rotate observed slots and delayed targets together, preserving inequality",
+      "--- FAIL: TestTicketGuardSlotNormalizationPreservesEqualityAndTargets"
+    ]
+  },
+  {
+    "Mutation": "notify-target-does-not-rotate",
+    "Before": "g.NotifyTicket = (g.NotifyTicket - shift) & guardMask",
+    "After": "g.NotifyTicket &= guardMask",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardSlotNormalizationPreservesEqualityAndTargets$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:541: normalization must rotate observed slots and delayed targets together, preserving inequality",
+      "--- FAIL: TestTicketGuardSlotNormalizationPreservesEqualityAndTargets"
+    ]
+  },
+  {
+    "Mutation": "dead-head-observation-retained",
+    "Before": "g.Ready, g.Ahead = false, false",
+    "After": "g.Ready = false",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardNormalizeClearsDeadLoadObservations$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:277: phase 0 must retain load observations only at Decide: {PC:0 Ticket:0 SeenNext:0 SeenHead:0 SeenSlot:0 NotifyTicket:0 Claimed:false Owns:false Ready:false Ahead:true CollisionUsed:false}",
+      "--- FAIL: TestTicketGuardNormalizeClearsDeadLoadObservations"
+    ]
+  },
+  {
+    "Mutation": "collision-does-not-invalidate-slot",
+    "Before": "n.Slots[g.Ticket]++",
+    "After": "_ = g.Ticket",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardCollisionInvalidatesSampleWithoutActorProgress$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:579: environmental collision must invalidate the comparison without scheduling a claimant",
+      "--- FAIL: TestTicketGuardCollisionInvalidatesSampleWithoutActorProgress"
+    ]
+  },
+  {
+    "Mutation": "notification-bound-unchecked",
+    "Before": "if s.Slots[g.Ticket]-g.SeenSlot > 7 {",
+    "After": "if false {",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardSlotInvariantRejectsBrokenProtocolStates/too-many-slot-increments$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:611: broken slot protocol must fail the safety invariant",
+      "--- FAIL: TestTicketGuardSlotInvariantRejectsBrokenProtocolStates",
+      "    --- FAIL: TestTicketGuardSlotInvariantRejectsBrokenProtocolStates/too-many-slot-increments"
+    ]
+  },
+  {
+    "Mutation": "required-controls-disabled",
+    "Before": "var out []guardEdge",
+    "After": "if c.Policy >= guardNotifyBeforeRelease {\n\t\tc.Policy = guardProductPolicy\n\t}\n\tvar out []guardEdge",
+    "Command": [
+      "taskset",
+      "-c",
+      "0-3",
+      "go",
+      "test",
+      ".",
+      "-run",
+      "^TestTicketGuardSlotProtocolControls$",
+      "-count=1",
+      "-v"
+    ],
+    "Exit": 1,
+    "AssertionKilled": true,
+    "AssertionOutput": [
+      "    guard_test.go:310: notify-before-release-cas must admit a fair lost-notification cycle: states=1188 edges=3511 result={Cycle:<nil> Exhaustive:true Components:518 Pruned:846} err=<nil>",
+      "    guard_test.go:310: far-without-head-recheck must admit a fair lost-notification cycle: states=1188 edges=3511 result={Cycle:<nil> Exhaustive:true Components:518 Pruned:846} err=<nil>",
+      "    guard_test.go:310: head-recheck-before-slot-load must admit a fair lost-notification cycle: states=1188 edges=3511 result={Cycle:<nil> Exhaustive:true Components:518 Pruned:846} err=<nil>",
+      "    guard_test.go:310: notify-newHead+2 must admit a fair lost-notification cycle: states=1188 edges=3511 result={Cycle:<nil> Exhaustive:true Components:518 Pruned:846} err=<nil>",
+      "    guard_test.go:310: notify-only-tail-newHead>2 must admit a fair lost-notification cycle: states=1188 edges=3511 result={Cycle:<nil> Exhaustive:true Components:518 Pruned:846} err=<nil>",
+      "    guard_test.go:330: all five slot-protocol controls must save a witness",
+      "--- FAIL: TestTicketGuardSlotProtocolControls",
+      "    --- FAIL: TestTicketGuardSlotProtocolControls/notify-before-release-cas",
+      "    --- FAIL: TestTicketGuardSlotProtocolControls/far-without-head-recheck",
+      "    --- FAIL: TestTicketGuardSlotProtocolControls/head-recheck-before-slot-load",
+      "    --- FAIL: TestTicketGuardSlotProtocolControls/notify-newHead+2",
+      "    --- FAIL: TestTicketGuardSlotProtocolControls/notify-only-tail-newHead>2"
+    ]
+  }
+]

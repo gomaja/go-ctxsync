@@ -1,0 +1,65 @@
+{
+  "ProductPolicy": {
+    "Configurations": 44,
+    "States": 1096107,
+    "Edges": 4523269,
+    "Exhaustive": true,
+    "Passing": true,
+    "Bounded": {
+      "Configurations": 30,
+      "States": 225243,
+      "Edges": 866543,
+      "Exhaustive": true,
+      "Passing": true
+    },
+    "ContinuousTraffic": {
+      "Configurations": 14,
+      "States": 870864,
+      "Edges": 3656726,
+      "Exhaustive": true,
+      "Passing": true
+    }
+  },
+  "ConservativePolicy": {
+    "Configurations": 44,
+    "States": 263419,
+    "Edges": 1069253,
+    "Exhaustive": true,
+    "Passing": true,
+    "Bounded": {
+      "Configurations": 30,
+      "States": 79007,
+      "Edges": 297235,
+      "Exhaustive": true,
+      "Passing": true
+    },
+    "ContinuousTraffic": {
+      "Configurations": 14,
+      "States": 184412,
+      "Edges": 772018,
+      "Exhaustive": true,
+      "Passing": true
+    }
+  },
+  "CollisionPolicy": {
+    "Configurations": 44,
+    "States": 2546337,
+    "Edges": 12447903,
+    "Exhaustive": true,
+    "Passing": true,
+    "Bounded": {
+      "Configurations": 30,
+      "States": 369727,
+      "Edges": 1592023,
+      "Exhaustive": true,
+      "Passing": true
+    },
+    "ContinuousTraffic": {
+      "Configurations": 14,
+      "States": 2176610,
+      "Edges": 10855880,
+      "Exhaustive": true,
+      "Passing": true
+    }
+  }
+}

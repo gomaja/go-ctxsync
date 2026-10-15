@@ -140,14 +140,32 @@ The queue and RW graphs abstract short guard acquisitions and releases. The
 implementation discharges the guard progress assumption with FIFO atomic
 tickets, rather than assuming Go's `sync.Mutex` is fair. The product packs a
 32-bit next counter and 32-bit serving counter into one atomic Uint64. Lock
-Adds to next and checks serving until its ticket reaches the head, yielding
-with Gosched while waiting. TryLock checks the complete idle word and CASes
-that same snapshot with next incremented, so counter wrap cannot turn a stale
-partial snapshot into a successful acquisition. Unlock CASes a serving-only
-increment without carrying into next. The independent guard model checks these
-atomic steps, counter wrap and its unsafe partial-snapshot negative control
-separately from the ownership queue policy. The counter protocol requires
-fewer than 2^32 outstanding claims.
+Adds to next and checks serving until its ticket reaches the head. Only the
+claim next in line may poll continuously, yielding after at most 64 mismatches.
+A far claim reads its waiting-array slot, rechecks the head, then polls only
+that slot until its value changes. Reading the slot before the head recheck
+prevents a missed notification. Unlock first CASes a serving-only increment
+without carrying into next, then separately increments the slot of newHead+1
+if `tail - newHead > 1` at the successful CAS. TryLock checks the complete idle
+word and CASes that same snapshot with next incremented, so counter wrap cannot
+turn a stale partial snapshot into a successful acquisition. The counter
+protocol requires fewer than 2^32 outstanding claims.
+
+The independent guard graph separates the initial head Load and branch, slot
+Load, head recheck, slot polling, yield, release CAS and delayed notification.
+The next claim can either poll again or yield after a mismatch; an unchanged
+slot likewise permits polling or yield. Native 64-load budgets are conservatively
+unbounded. Slot comparisons use eight-bit counters with value normalization
+that preserves equality, ticket wrap and pending notification targets. The
+collision family allows one optional environmental increment per saved slot
+read; increments of unwatched slots have no observable effect. Its safety
+invariant bounds increments before a fresh sample, excluding an artificial ABA.
+Arbitrary collision traffic and a full wrap of the product's 64-bit slot
+counters are outside scope.
+The historical conservative policy retains both mismatch edges without slots
+and reproduces the iteration-5 totals. See
+[iteration 7](evidence/model-v7-guard-review.md) for the three complete gates,
+refinement assumptions and five fair lost-notification controls.
 
 Under strong actor fairness and bounded guarded bodies, an earlier owner must
 finish and advance serving; once a ticket reaches the head, later tickets
@@ -263,10 +281,29 @@ Run the independent guard gates from this directory:
 go test . -run '^TestTicketGuard' -count=1 -v
 ```
 
-The guard tests cover all 44 bounded/continuous configurations, packed Try
-across wrap and the separate-counter negative. `CTXSYNC_GUARD_EVIDENCE` can
-name an output file for the 40-transition separate-counter witness. Runtime
-source and continuous-traffic producer mutations run from the repository root
+The guard tests cover all 44 bounded/continuous configurations under the
+product protocol, all 44 with bounded slot collisions, and all 44 under the
+historical conservative policy. Each family checks safety, pending dead ends
+and fair starvation cycles. Packed Try across wrap and the separate-counter
+overlap control remain. The five waiting-array controls notify before the CAS,
+omit the head recheck, reverse the slot-read/recheck order, notify newHead+2,
+or require `tail - newHead > 2`; each saves a fair lost-notification witness.
+`CTXSYNC_GUARD_TOTALS_EVIDENCE` names the output file for all three families;
+`CTXSYNC_GUARD_CONTROLS_EVIDENCE` names the combined controls file.
+`CTXSYNC_GUARD_EVIDENCE` still names an output file for the 40-transition
+separate-counter witness. Regenerate the current records with:
+
+```sh
+CTXSYNC_GUARD_TOTALS_EVIDENCE=evidence/guard-v7-totals.json \
+CTXSYNC_GUARD_CONTROLS_EVIDENCE=evidence/guard-v7-slot-controls.json \
+go test . -run '^TestTicketGuard' -count=1 -v
+```
+
+Current records are [guard-v7-totals.json](evidence/guard-v7-totals.json),
+[slot controls](evidence/guard-v7-slot-controls.json) and
+[polling mutations](evidence/guard-v7-poll-mutations.json).
+[guard-v5-totals.json](evidence/guard-v5-totals.json) retains the historical graph.
+Runtime source and continuous-traffic producer mutations run from the repository root
 with `python3 scripts/mutate.py`; all listed mutations must be killed.
 The controls include nil-Done head requeue, fractional TryLock allocation and
 queue/RW guard retention at pending dead ends.

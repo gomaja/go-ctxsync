@@ -10,12 +10,13 @@ phases. A negative result is a required control, not a passing protocol.
 | --- | --- |
 | Current Mutex safety, completion, reuse and fair-cycle gates | [queue-v6-probe-gate.json](queue-v6-probe-gate.json) |
 | Current composed RWMutex gates | [rw-v6-probe-gate.json](rw-v6-probe-gate.json) |
-| Independent packed ticket guard, 44 configurations and wrap checks | [guard-v5-totals.json](guard-v5-totals.json), [separate-counter witness](guard-v5-separate-try-wrap.json) |
+| Current waiting-array guard, 44 configurations in each of product, collision and conservative families; five lost-notification controls | [model-v7-guard-review.md](model-v7-guard-review.md), [guard-v7-totals.json](guard-v7-totals.json), [slot witnesses](guard-v7-slot-controls.json), [polling mutations](guard-v7-poll-mutations.json) |
+| Historical conservative packed ticket guard, 44 configurations and wrap checks | [guard-v5-totals.json](guard-v5-totals.json), [separate-counter witness](guard-v5-separate-try-wrap.json) |
 | Old sendLock starvation, exact 34-transition cycle | [directed witness](starvation.json), [exhaustive search](sendlock-exhaustive-liveness.json) |
 | Why wake suppression while a barger holds is unsafe | [queue-iteration-1.json](queue-iteration-1.json), [named suppression control](queue-v3-suppress-wake-while-held.json) |
 | Fairness criterion, ticket capacity and composition argument | [model-v3-review.md](model-v3-review.md) |
 | Normal-wake release shortcut and cancellation advancement | [model-v4-review.md](model-v4-review.md), [Mutex gate](queue-v4-release-gate.json), [RWMutex gate](rw-v4-release-gate.json), [broken advancement](queue-v4-release-cancel-woken.json) |
-| Fresh head polling and cooperative yield | [model-v5-guard-review.md](model-v5-guard-review.md), [polling mutations](guard-v5-poll-mutations.json) |
+| Historical unrestricted fresh head polling and cooperative yield | [model-v5-guard-review.md](model-v5-guard-review.md), [polling mutations](guard-v5-poll-mutations.json) |
 | Single fresh-call probe, full-state preservation and bounded retry | [model-v6-probe-review.md](model-v6-probe-review.md), [ignoring starvation](queue-v6-probe-starvation.json), [dropping accounting](queue-v6-probe-accounting.json), [retry cycle](queue-v6-probe-retry-liveness.json), [new named controls](queue-v6-probe-named-controls.json), [prior named controls](queue-v6-prior-named-controls.json) |
 | Queue accounting and age assertion controls | [queue-v3-mutations.json](queue-v3-mutations.json) |
 | Named fairness-engine and guard assertion controls | [all-engine-mutations.json](all-engine-mutations.json) |
@@ -58,3 +59,19 @@ focused test command. Run package mutations separately from the repository root
 with `taskset -c 8-23 python3 scripts/mutate.py`. Historical timing observations
 are not performance claims. Runtime tests and benchmark measurements remain
 separate from the finite graph checks.
+
+Regenerate the iteration-7 guard totals and five replayed full-state witnesses:
+
+```sh
+CTXSYNC_GUARD_TOTALS_EVIDENCE=evidence/guard-v7-totals.json \
+CTXSYNC_GUARD_CONTROLS_EVIDENCE=evidence/guard-v7-slot-controls.json \
+taskset -c 8-23 go test . -run '^TestTicketGuard' -count=1 -v
+```
+
+The guard collision family permits at most one environmental slot increment
+per saved read; it does not model arbitrary collision traffic or a full native
+32-bit slot-counter wrap between reads. Each protocol control fails with a
+fair two-transition cycle at an unchanged slot after the victim reaches head.
+The mutation file records 16 temporary source changes, their focused commands,
+exit codes and assertion output. It changes neither product code nor queue/RW
+models. The iteration-7 records replace the rejected distance-based guard model.
