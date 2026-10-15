@@ -1,0 +1,7682 @@
+[
+  {
+    "Variant": "notify-before-release-cas",
+    "Config": {
+      "Actors": 3,
+      "Try": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "Repeat": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "Policy": 2,
+      "Collisions": false
+    },
+    "States": 1134,
+    "Edges": 3360,
+    "Exhaustive": true,
+    "Property": "fair starvation: lost notification leaves head claim polling an unchanged slot",
+    "CycleStart": 19,
+    "CycleLength": 2,
+    "Initial": {
+      "Next": 0,
+      "Serving": 0,
+      "Slots": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "G": [
+        {
+          "PC": 0,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        },
+        {
+          "PC": 0,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        },
+        {
+          "PC": 0,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        },
+        {
+          "PC": 10,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        }
+      ]
+    },
+    "Trace": [
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "tail Add allocates unique ticket"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 2,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": true,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "head Load"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 4,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "ticket equality branch"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "finite guarded body"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "tail Add allocates unique ticket"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 1,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "tail Add allocates unique ticket"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 2,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": true,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "head Load"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 11,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "ticket equality branch"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 11,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 16,
+              "Ticket": 0,
+              "SeenNext": 3,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "packed head/tail Load for Unlock"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 11,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 7,
+              "Ticket": 0,
+              "SeenNext": 3,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "broken slot Add before release CAS"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 12,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 7,
+              "Ticket": 0,
+              "SeenNext": 3,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "slot Load remembers notification value"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 7,
+              "Ticket": 0,
+              "SeenNext": 3,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "head Load rechecks whether claim is now next or head"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 7,
+              "Ticket": 0,
+              "SeenNext": 3,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "slot Load compares remembered value"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "packed CAS advances head without carrying into tail"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 2,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": true,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "head Load"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 4,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "ticket equality branch"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "finite guarded body"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 7,
+              "Ticket": 0,
+              "SeenNext": 2,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "packed head/tail Load for Unlock"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "packed CAS advances head without carrying into tail"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "Gosched while watching slot"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "slot Load compares remembered value"
+      }
+    ]
+  },
+  {
+    "Variant": "far-without-head-recheck",
+    "Config": {
+      "Actors": 3,
+      "Try": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "Repeat": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "Policy": 3,
+      "Collisions": false
+    },
+    "States": 1060,
+    "Edges": 3140,
+    "Exhaustive": true,
+    "Property": "fair starvation: lost notification leaves head claim polling an unchanged slot",
+    "CycleStart": 17,
+    "CycleLength": 2,
+    "Initial": {
+      "Next": 0,
+      "Serving": 0,
+      "Slots": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "G": [
+        {
+          "PC": 0,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        },
+        {
+          "PC": 0,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        },
+        {
+          "PC": 0,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        },
+        {
+          "PC": 10,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        }
+      ]
+    },
+    "Trace": [
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "tail Add allocates unique ticket"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 2,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": true,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "head Load"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 4,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "ticket equality branch"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "finite guarded body"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "tail Add allocates unique ticket"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 1,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "tail Add allocates unique ticket"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 2,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": true,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "head Load"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 11,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "ticket equality branch"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 11,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 7,
+              "Ticket": 0,
+              "SeenNext": 3,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "packed head/tail Load for Unlock"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 11,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 15,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 1,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "packed CAS advances head without carrying into tail"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 11,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "slot Add notifies newHead+1 after release CAS"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "slot Load remembers notification value"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 2,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": true,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "head Load"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 4,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "ticket equality branch"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "finite guarded body"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 7,
+              "Ticket": 0,
+              "SeenNext": 2,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "packed head/tail Load for Unlock"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "packed CAS advances head without carrying into tail"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "slot Load compares remembered value"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "Gosched while watching slot"
+      }
+    ]
+  },
+  {
+    "Variant": "head-recheck-before-slot-load",
+    "Config": {
+      "Actors": 3,
+      "Try": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "Repeat": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "Policy": 4,
+      "Collisions": false
+    },
+    "States": 1213,
+    "Edges": 3583,
+    "Exhaustive": true,
+    "Property": "fair starvation: lost notification leaves head claim polling an unchanged slot",
+    "CycleStart": 18,
+    "CycleLength": 2,
+    "Initial": {
+      "Next": 0,
+      "Serving": 0,
+      "Slots": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "G": [
+        {
+          "PC": 0,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        },
+        {
+          "PC": 0,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        },
+        {
+          "PC": 0,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        },
+        {
+          "PC": 10,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        }
+      ]
+    },
+    "Trace": [
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "tail Add allocates unique ticket"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 2,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": true,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "head Load"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 4,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "ticket equality branch"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "finite guarded body"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "tail Add allocates unique ticket"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 1,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "tail Add allocates unique ticket"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 2,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": true,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "head Load"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 17,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "ticket equality branch"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 11,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "broken head recheck before slot Load"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 11,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 7,
+              "Ticket": 0,
+              "SeenNext": 3,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "packed head/tail Load for Unlock"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 11,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 15,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 1,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "packed CAS advances head without carrying into tail"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 11,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "slot Add notifies newHead+1 after release CAS"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "slot Load remembers notification value"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 2,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": true,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "head Load"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 4,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "ticket equality branch"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "finite guarded body"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 7,
+              "Ticket": 0,
+              "SeenNext": 2,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "packed head/tail Load for Unlock"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "packed CAS advances head without carrying into tail"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "slot Load compares remembered value"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "Gosched while watching slot"
+      }
+    ]
+  },
+  {
+    "Variant": "notify-newHead+2",
+    "Config": {
+      "Actors": 3,
+      "Try": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "Repeat": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "Policy": 5,
+      "Collisions": false
+    },
+    "States": 1163,
+    "Edges": 3485,
+    "Exhaustive": true,
+    "Property": "fair starvation: lost notification leaves head claim polling an unchanged slot",
+    "CycleStart": 18,
+    "CycleLength": 2,
+    "Initial": {
+      "Next": 0,
+      "Serving": 0,
+      "Slots": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "G": [
+        {
+          "PC": 0,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        },
+        {
+          "PC": 0,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        },
+        {
+          "PC": 0,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        },
+        {
+          "PC": 10,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        }
+      ]
+    },
+    "Trace": [
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "tail Add allocates unique ticket"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 2,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": true,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "head Load"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 4,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "ticket equality branch"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "finite guarded body"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "tail Add allocates unique ticket"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 1,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "tail Add allocates unique ticket"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 2,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": true,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "head Load"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 11,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "ticket equality branch"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 12,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "slot Load remembers notification value"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "head Load rechecks whether claim is now next or head"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 7,
+              "Ticket": 0,
+              "SeenNext": 3,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "packed head/tail Load for Unlock"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 15,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 2,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "packed CAS advances head without carrying into tail"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "slot Add notifies newHead+1 after release CAS"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 2,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": true,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "head Load"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 4,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "ticket equality branch"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "finite guarded body"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 7,
+              "Ticket": 0,
+              "SeenNext": 2,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "packed head/tail Load for Unlock"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "packed CAS advances head without carrying into tail"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "slot Load compares remembered value"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "Gosched while watching slot"
+      }
+    ]
+  },
+  {
+    "Variant": "notify-only-tail-newHead\u003e2",
+    "Config": {
+      "Actors": 3,
+      "Try": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "Repeat": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "Policy": 6,
+      "Collisions": false
+    },
+    "States": 951,
+    "Edges": 2841,
+    "Exhaustive": true,
+    "Property": "fair starvation: lost notification leaves head claim polling an unchanged slot",
+    "CycleStart": 18,
+    "CycleLength": 2,
+    "Initial": {
+      "Next": 0,
+      "Serving": 0,
+      "Slots": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "G": [
+        {
+          "PC": 0,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        },
+        {
+          "PC": 0,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        },
+        {
+          "PC": 0,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        },
+        {
+          "PC": 10,
+          "Ticket": 0,
+          "SeenNext": 0,
+          "SeenHead": 0,
+          "SeenSlot": 0,
+          "NotifyTicket": 0,
+          "Claimed": false,
+          "Owns": false,
+          "Ready": false,
+          "Ahead": false,
+          "CollisionUsed": false
+        }
+      ]
+    },
+    "Trace": [
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "tail Add allocates unique ticket"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 2,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": true,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "head Load"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 4,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "ticket equality branch"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "finite guarded body"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 0,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "tail Add allocates unique ticket"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 1,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "tail Add allocates unique ticket"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 2,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": true,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "head Load"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 11,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "ticket equality branch"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 12,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "slot Load remembers notification value"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "head Load rechecks whether claim is now next or head"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "slot Load compares remembered value"
+      },
+      {
+        "Next": {
+          "Next": 3,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 2,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 7,
+              "Ticket": 0,
+              "SeenNext": 3,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "packed head/tail Load for Unlock"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 1,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 1,
+        "Note": "packed CAS advances head without carrying into tail"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 2,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": true,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "head Load"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 4,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "ticket equality branch"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 6,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "finite guarded body"
+      },
+      {
+        "Next": {
+          "Next": 2,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 1,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 7,
+              "Ticket": 0,
+              "SeenNext": 2,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": true,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "packed head/tail Load for Unlock"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 2,
+        "Note": "packed CAS advances head without carrying into tail"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 13,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "Gosched while watching slot"
+      },
+      {
+        "Next": {
+          "Next": 1,
+          "Serving": 0,
+          "Slots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "G": [
+            {
+              "PC": 14,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": true,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            },
+            {
+              "PC": 10,
+              "Ticket": 0,
+              "SeenNext": 0,
+              "SeenHead": 0,
+              "SeenSlot": 0,
+              "NotifyTicket": 0,
+              "Claimed": false,
+              "Owns": false,
+              "Ready": false,
+              "Ahead": false,
+              "CollisionUsed": false
+            }
+          ]
+        },
+        "Actor": 0,
+        "Note": "slot Load compares remembered value"
+      }
+    ]
+  }
+]

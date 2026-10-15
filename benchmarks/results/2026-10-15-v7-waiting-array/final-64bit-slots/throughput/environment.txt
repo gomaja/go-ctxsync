@@ -1,0 +1,10 @@
+2026-10-15T16:27:57Z
+go version go1.26.9 linux/amd64
+ 18:27:57 up 1 day, 10:24,  2 users,  load average: 3.57, 4.40, 6.62
+affinity: 16-31
+count: 8
+benchtime: 500ms
+2f502e418b3ea912cde0fd1768bb9be7b415aa5a2e6d0b59dc2eb190accd6faf  base.test
+ec4ecec6ccbff24ddd727933d021de1132b7f61f14d3ca4b5829bfe37463f40d  final32.test
+f9944ffbf597317c117069eac0eea2dc8ab44d9acd71f66c68e7f2bc087c4594  final64.test
+ 18:33:57 up 1 day, 10:30,  2 users,  load average: 6.42, 8.68, 8.26

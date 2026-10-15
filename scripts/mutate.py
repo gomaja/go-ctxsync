@@ -44,8 +44,8 @@ MUTATIONS = [
      "w.prev, w.next, w.mode = nil, nil, 0", "w.mode = 0"),
     ("guard-try-stale-head", "TestTicketGuardTryRejectsStaleFreeSnapshot", "guard.go",
      "return g.word.CompareAndSwap(old, old+guardTailUnit)", "current := g.word.Load()\n\tif uint32(current>>32) != uint32(old>>32) { return false }\n\treturn g.word.CompareAndSwap(current, current+guardTailUnit)"),
-    ("guard-head-wrap-carry", "TestTicketGuardWrapKeepsTail", "guard.go",
-     "newWord := old&0xffffffff00000000 | uint64(uint32(old)+1)", "newWord := old + 1"),
+    ("guard-head-wrap-carry", "TestTicketGuardReleaseNotifiesNextClaim", "guard.go",
+     "old&0xffffffff00000000|uint64(head)", "old + 1"),
     ("writer-cancel-forgets-readers", "TestRWCancelledWriterReleasesReaders", "rwmutex.go",
      "rw.pending = false\n\t\trw.grantReadersLocked()", "rw.pending = false"),
     ("reader-count-undo-error", "TestRWCancelledGrantedReaderUndoesCount", "rwmutex.go",
@@ -61,9 +61,25 @@ MUTATIONS = [
     ("release-skip-evades-misuse-panic", "TestMutexIllegalUnlockOfReservedHandoffPanics", "mutex.go",
      "if (released+mutexLocked)&mutexLocked == 0 {", "if false {"),
     ("guard-poll-budget-never-yields", "TestTicketGuardPollingYieldsAtBudget", "guard.go",
-     "spins++", "spins = 0"),
+     "polls++\n\t\tif polls < guardPollBudget {", "polls = 0\n\t\tif polls < guardPollBudget {"),
     ("guard-poll-reuses-stale-head", "TestTicketGuardPollingYieldsAtBudget", "guard.go",
-     "for spins := 0; uint32(g.word.Load()) != ticket; {", "seen := uint32(g.word.Load())\n\tfor spins := 0; seen != ticket; {"),
+     "for polls := 0; ; {\n\t\thead := uint32(g.word.Load())", "head := uint32(g.word.Load())\n\tfor polls := 0; ; {"),
+    ("guard-poll-skips-gosched", "TestTicketGuardYieldsLetOthersRun", "guard.go",
+     "testHookGuardYield(g, ticket, false, polls)\n\t\t}\n\t\truntime.Gosched()", "testHookGuardYield(g, ticket, false, polls)\n\t\t}\n\t\t_ = runtime.Gosched"),
+    ("guard-slot-skips-gosched", "TestTicketGuardYieldsLetOthersRun", "guard.go",
+     "testHookGuardYield(g, ticket, true, polls)\n\t\t}\n\t\truntime.Gosched()", "testHookGuardYield(g, ticket, true, polls)\n\t\t}\n\t\t_ = runtime.Gosched"),
+    ("guard-later-claims-poll-head", "TestTicketGuardFarClaimWaitsForItsSlot", "guard.go",
+     "for polls := 1; slot.Load() == seen; polls++ {", "_ = seen\n\tfor polls := 1; uint32(g.word.Load()) != ticket; polls++ {"),
+    ("guard-slot-omits-head-recheck", "TestTicketGuardNotificationBeforeSlotRead", "guard.go",
+     "if ticket-uint32(g.word.Load()) <= 1 {\n\t\treturn\n\t}", ""),
+    ("guard-release-omits-notify", "TestTicketGuardReleaseNotifiesNextClaim", "guard.go",
+     "g.waitSlot(head + 1).Add(1)", "_ = g.waitSlot(head + 1)"),
+    ("guard-release-notifies-wrong-slot", "TestTicketGuardReleaseNotifiesNextClaim", "guard.go",
+     "g.waitSlot(head + 1).Add(1)", "g.waitSlot(head + 2).Add(1)"),
+    ("guard-release-notifies-unallocated-claim", "TestTicketGuardReleaseNotifiesNextClaim", "guard.go",
+     "if uint32(old>>32)-head > 1 {", "if uint32(old>>32)-head > 0 {"),
+    ("guard-slot-budget-never-yields", "TestTicketGuardLaterClaimsWaitOnSlots", "guard.go",
+     "for polls := 1; slot.Load() == seen; polls++ {", "for polls := 1; slot.Load() == seen; {"),
     ("fresh-probe-ignores-starvation", "TestMutexFreshProbeRefusesReservedHandoff", "mutex.go",
      "if probe&(mutexLocked|mutexStarving) == 0 {", "if probe&mutexLocked == 0 {"),
     ("fresh-probe-drops-accounting", "TestMutexFreshProbeAcquiresWithoutGuardAndPreservesFlags", "mutex.go",
@@ -107,7 +123,7 @@ def main():
         if original.count(old) != 1:
             raise SystemExit(f"{name}: expected one mutation site, got {original.count(old)}")
         source.write_text(original.replace(old, new, 1))
-        command = ["taskset", "-c", "8-23", "go", "test", ".", "-run", f"^{test}$", "-count=1", "-timeout", "10s"]
+        command = ["taskset", "-c", "8-23", "go", "test", ".", "-v", "-run", f"^{test}$", "-count=1", "-timeout", "10s"]
         result = subprocess.run(command, cwd=target, capture_output=True, text=True)
         log = OUTPUT / f"{name}.log"
         log.write_text(result.stdout + result.stderr)
@@ -116,6 +132,18 @@ def main():
         expected = {
             "nil-done-requeue-tail": "aged waiter lost priority",
             "fractional-try-allocation": "total allocations",
+            "guard-poll-budget-never-yields": "next claim did not yield at its budget or did not observe the released head",
+            "guard-poll-reuses-stale-head": "next claim did not yield at its budget or did not observe the released head",
+            "guard-try-stale-head": "a stale free snapshot acquired a future ticket before the current head",
+            "guard-head-wrap-carry": "guard not idle after three releases",
+            "guard-poll-skips-gosched": "intervals between its yields",
+            "guard-slot-skips-gosched": "intervals between its yields",
+            "guard-later-claims-poll-head": "timed out waiting for ticket 2 to keep watching its slot",
+            "guard-slot-omits-head-recheck": "guard claims did not finish",
+            "guard-release-omits-notify": "first release changed slots",
+            "guard-release-notifies-wrong-slot": "first release changed slots",
+            "guard-release-notifies-unallocated-claim": "release notified a claim that does not exist",
+            "guard-slot-budget-never-yields": "timed out waiting for yields while the guard is held",
             "pending-handoff-retains-guard": "pending queue victim at a dead end",
             "pending-rw-release-retains-guard": "pending RW victim at a dead end",
         }.get(name)

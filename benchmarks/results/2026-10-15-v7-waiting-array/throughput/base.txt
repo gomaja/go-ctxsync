@@ -1,0 +1,690 @@
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexDirectLockUnlock/impl=sync         	90960476	        24.81 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexDirectLockUnlock/impl=ctxsync      	25550761	        50.00 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=ctxsync         	30022278	        49.07 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=sync            	132661341	         8.547 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=semaphore       	63830367	        19.23 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=retry           	126237369	         9.631 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=ctxsync            	137962306	         8.645 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=sync               	137075193	         8.922 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=semaphore          	64754361	        17.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=retry              	100000000	        10.29 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=ctxsync  	118854802	         9.507 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=sync     	133493233	         9.007 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=semaphore         	63245762	        19.21 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=retry             	120015805	        10.03 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=ctxsync          	122339625	         9.828 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=sync             	121126653	        10.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=semaphore        	55197872	        22.23 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=retry            	87136148	        13.91 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	72060957	        15.82 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	74796632	        16.24 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	57445752	        20.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	43368331	        28.03 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	71918041	        16.65 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	57638484	        17.93 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	47813346	        22.24 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	42232198	        28.09 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4  	65980465	        18.48 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16 	56845720	        20.23 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4     	58595589	        20.32 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16    	42303816	        28.87 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4          	 4949442	       241.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16         	 4796829	       251.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4             	 9256984	       126.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16            	 9305871	       130.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4          	 4787229	       244.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16         	 4714660	       254.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4             	 9283478	       128.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16            	 8868482	       137.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4         	 3990349	       282.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16        	 4002727	       288.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4            	 8994014	       134.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16           	 8646732	       137.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                      	 3382143	       358.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                     	 3223536	       368.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-4                         	 4016043	       297.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-16                        	 3170772	       372.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4          	 3234511	       369.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16         	 3195058	       376.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-4             	 4086088	       298.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-16            	 3189354	       378.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4         	 2924810	       411.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16        	 2852430	       426.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-4            	 4007523	       302.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-16           	 3211927	       382.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexDirectLockUnlock/impl=sync         	136675134	         8.831 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexDirectLockUnlock/impl=ctxsync      	136313324	         8.926 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=ctxsync         	135401409	         8.858 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=sync            	135359569	         9.544 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=semaphore       	59330335	        19.83 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=retry           	122064879	        10.28 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=ctxsync            	136390905	         8.911 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=sync               	135249442	         9.014 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=semaphore          	63840235	        18.81 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=retry              	121066094	         9.763 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=ctxsync  	127676569	         9.294 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=sync     	131963246	         9.213 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=semaphore         	63925341	        20.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=retry             	100000000	        10.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=ctxsync          	100000000	        10.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=sync             	100000000	        10.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=semaphore        	55824902	        21.71 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=retry            	79319155	        14.29 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	77005902	        15.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	72908952	        16.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	58162453	        23.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	42435057	        28.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	71235932	        16.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	70919935	        17.61 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	50955697	        21.07 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	40277288	        29.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4  	65578417	        18.86 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16 	63272740	        20.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4     	53361864	        23.62 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16    	40912622	        30.25 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4          	 4992482	       247.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16         	 4423058	       252.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4             	 9302077	       129.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16            	 8977976	       131.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4          	 4945304	       246.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16         	 4667622	       276.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4             	 9108126	       143.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16            	 8922703	       139.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4         	 4223066	       283.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16        	 4075454	       293.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4            	 8763319	       137.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16           	 8648516	       140.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                      	 3324531	       366.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                     	 3271762	       367.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-4                         	 4086969	       298.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-16                        	 3181489	       376.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4          	 3230742	       367.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16         	 3196509	       377.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-4             	 3971752	       297.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-16            	 3167550	       375.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4         	 2973189	       409.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16        	 2891012	       411.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-4            	 3985662	       297.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-16           	 2987798	       381.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexDirectLockUnlock/impl=sync         	138587073	         8.720 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexDirectLockUnlock/impl=ctxsync      	133095193	         8.881 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=ctxsync         	128626698	         9.873 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=sync            	124866187	         9.472 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=semaphore       	60711040	        21.39 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=retry           	100000000	        10.26 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=ctxsync            	128151220	         9.121 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=sync               	133696160	         8.984 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=semaphore          	66725762	        18.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=retry              	124441874	         9.858 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=ctxsync  	124973366	         9.596 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=sync     	129255519	         9.087 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=semaphore         	63041644	        19.40 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=retry             	100000000	        10.25 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=ctxsync          	121991610	         9.943 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=sync             	100000000	        10.00 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=semaphore        	58798893	        20.57 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=retry            	100000000	        12.32 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	77133640	        15.18 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	75126112	        15.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	67135987	        17.80 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	43909740	        27.90 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	73952796	        16.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	72588346	        16.79 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	73589983	        17.20 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	41952091	        28.40 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4  	67715427	        17.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16 	65231798	        18.86 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4     	71065947	        16.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16    	41176593	        28.80 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4          	 5224614	       227.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16         	 5073282	       233.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4             	 9763130	       122.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16            	 9663033	       125.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4          	 5165595	       231.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16         	 4974106	       236.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4             	 9413977	       125.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16            	 9368414	       130.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4         	 4619011	       252.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16        	 4529263	       260.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4            	 9436158	       131.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16           	 9088897	       131.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                      	 3587613	       363.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                     	 3098006	       379.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-4                         	 4194745	       284.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-16                        	 3497822	       343.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4          	 3316178	       356.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16         	 3313080	       360.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-4             	 4317040	       280.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-16            	 3266530	       355.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4         	 2935255	       409.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16        	 2923203	       404.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-4            	 4088104	       296.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-16           	 3409366	       355.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexDirectLockUnlock/impl=sync         	130277632	         8.302 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexDirectLockUnlock/impl=ctxsync      	144679335	         8.350 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=ctxsync         	135899220	         8.724 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=sync            	135959925	         8.578 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=semaphore       	61745161	        18.86 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=retry           	125601283	         9.760 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=ctxsync            	138792217	         8.731 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=sync               	128372018	         9.820 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=semaphore          	64502367	        19.19 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=retry              	122121752	        10.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=ctxsync  	121974662	         9.489 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=sync     	127710285	         9.289 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=semaphore         	63967155	        20.00 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=retry             	100000000	        10.03 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=ctxsync          	100000000	        10.76 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=sync             	88527400	        11.35 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=semaphore        	59824027	        23.04 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=retry            	91762692	        13.11 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	73682496	        16.21 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	77125798	        15.76 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	69503864	        20.00 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	45074036	        26.67 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	73419237	        16.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	71159325	        16.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	70371705	        17.35 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	42666991	        27.88 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4  	68764857	        17.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16 	66391190	        19.85 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4     	61854853	        16.66 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16    	43931666	        27.86 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4          	 5307944	       225.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16         	 5194792	       232.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4             	 9890112	       121.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16            	 9716458	       123.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4          	 5163958	       231.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16         	 5075834	       237.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4             	 9804530	       125.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16            	 9282987	       127.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4         	 4635692	       260.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16        	 4423016	       270.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4            	 9051721	       132.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16           	 8812094	       134.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                      	 3502274	       346.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                     	 3450915	       350.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-4                         	 4350184	       274.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-16                        	 3531536	       343.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4          	 3371782	       355.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16         	 3359157	       357.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-4             	 4299517	       275.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-16            	 3404792	       360.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4         	 2978358	       397.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16        	 3092882	       390.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-4            	 4223712	       286.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-16           	 3413212	       363.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexDirectLockUnlock/impl=sync         	100000000	        26.32 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexDirectLockUnlock/impl=ctxsync      	100000000	        14.35 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=ctxsync         	92240881	        13.20 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=sync            	92741758	        25.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=semaphore       	42546396	        29.97 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=retry           	87729404	        16.40 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=ctxsync            	100000000	        12.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=sync               	100000000	        14.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=semaphore          	48158982	        26.66 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=retry              	91118850	        19.80 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=ctxsync  	96793918	        19.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=sync     	98370750	        35.45 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=semaphore         	43545604	        32.05 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=retry             	100000000	        19.81 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=ctxsync          	39895452	        70.99 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=sync             	93611198	        14.39 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=semaphore        	42205082	        35.89 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=retry            	53742956	        24.09 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	59206921	        24.05 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	23828958	        54.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	53511592	        21.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	38357986	        30.19 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	60463125	        28.14 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	29132540	        48.99 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	24993094	        43.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	34521229	        32.40 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4  	33110751	        52.89 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16 	37636850	        75.34 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4     	41614560	        41.58 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16    	36596685	        34.68 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4          	  766044	      1960 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16         	 1000000	      6163 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4             	 8639173	       194.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16            	 8221820	       149.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4          	 1000000	      1787 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16         	 1000000	      3732 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4             	 8132082	       202.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16            	 7794073	       172.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4         	 1000000	      1173 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16        	  567318	      5359 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4            	 8284506	       140.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16           	 8695702	       135.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                      	 3390854	       350.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                     	 3399279	       352.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-4                         	 4350577	       282.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-16                        	 3501586	       346.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4          	 3306868	       357.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16         	 3308146	       363.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-4             	 4292644	       279.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-16            	 3428791	       362.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4         	 2994342	       419.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16        	 2872732	       396.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-4            	 3946860	       283.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-16           	 3449419	       352.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexDirectLockUnlock/impl=sync         	143190927	         8.136 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexDirectLockUnlock/impl=ctxsync      	145597082	         8.283 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=ctxsync         	136301576	         8.552 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=sync            	138301543	         8.532 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=semaphore       	59648200	        18.99 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=retry           	125720217	         9.606 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=ctxsync            	133450773	         8.685 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=sync               	135703261	         8.761 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=semaphore          	68156440	        18.01 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=retry              	125868320	         9.585 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=ctxsync  	128922237	         9.338 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=sync     	133671572	         9.079 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=semaphore         	60260581	        18.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=retry             	120985611	         9.967 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=ctxsync          	122651679	         9.733 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=sync             	122990217	         9.680 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=semaphore        	59338159	        20.37 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=retry            	100000000	        11.94 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	78182965	        15.22 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	74313334	        15.51 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	63674407	        17.91 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	43109287	        27.70 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	72250545	        16.11 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	70515583	        16.53 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	69240057	        17.23 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	42421834	        27.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4  	67449844	        17.43 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16 	67323066	        18.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4     	62971059	        16.09 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16    	41902122	        28.47 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4          	 5277091	       225.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16         	 5162592	       233.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4             	 9785450	       123.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16            	 9328341	       125.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4          	 5211871	       230.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16         	 5040699	       238.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4             	 9502872	       128.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16            	 9253263	       130.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4         	 4576980	       260.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16        	 4490768	       266.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4            	 9079276	       133.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16           	 9004954	       133.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                      	 3515342	       342.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                     	 3447049	       351.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-4                         	 4303309	       278.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-16                        	 3580100	       333.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4          	 3349476	       356.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16         	 3334147	       358.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-4             	 4436090	       274.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-16            	 3578293	       342.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4         	 3046728	       391.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16        	 3085419	       390.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-4            	 4208707	       291.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-16           	 3445424	       349.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexDirectLockUnlock/impl=sync         	138763227	         9.387 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexDirectLockUnlock/impl=ctxsync      	127786551	         9.490 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=ctxsync         	100000000	        10.13 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=sync            	129818157	         8.864 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=semaphore       	63300510	        19.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=retry           	124054086	         9.374 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=ctxsync            	142651969	         8.398 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=sync               	139023222	         8.650 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=semaphore          	68411080	        17.44 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=retry              	129187347	         9.265 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=ctxsync  	132722270	         9.050 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=sync     	137864619	         8.695 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=semaphore         	64902332	        18.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=retry             	100000000	        10.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=ctxsync          	126998050	         9.435 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=sync             	126816260	         9.502 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=semaphore        	60309480	        20.11 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=retry            	100000000	        11.70 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	81210501	        15.04 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	78808116	        15.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	61276831	        21.03 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	44051654	        28.11 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	74151717	        16.25 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	71738468	        17.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	50760261	        20.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	44204102	        27.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4  	69374170	        17.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16 	68766462	        18.81 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4     	67723605	        17.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16    	37749202	        29.10 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4          	 5234256	       271.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16         	 5112996	       242.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4             	 9279138	       120.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16            	10085172	       122.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4          	 5169556	       227.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16         	 5200599	       235.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4             	 9786980	       123.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16            	 9444415	       127.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4         	 4668069	       257.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16        	 4530370	       263.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4            	 9164632	       131.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16           	 8767281	       134.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                      	 3491865	       341.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                     	 3445306	       346.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-4                         	 4342435	       273.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-16                        	 3593488	       331.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4          	 3450152	       353.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16         	 3390904	       357.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-4             	 4392050	       275.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-16            	 3585952	       334.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4         	 3146672	       377.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16        	 3115612	       381.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-4            	 4349619	       277.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-16           	 3509695	       341.0 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexDirectLockUnlock/impl=sync         	144816964	         8.179 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexDirectLockUnlock/impl=ctxsync      	139077238	        10.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=ctxsync         	125449845	         9.057 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=sync            	125641104	         9.057 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=semaphore       	63768741	        19.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=retry           	115960100	         9.723 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=ctxsync            	132515708	         8.819 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=sync               	135733702	         9.202 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=semaphore          	67651018	        18.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=retry              	123641470	         9.715 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=ctxsync  	100000000	        10.05 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=sync     	125894313	         9.248 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=semaphore         	62562337	        19.33 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=retry             	100000000	        10.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=ctxsync          	120852704	        10.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=sync             	119062339	         9.855 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=semaphore        	59397504	        21.42 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=retry            	100000000	        12.38 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	77781943	        16.37 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	74098398	        15.35 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	66368329	        17.77 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	43344404	        27.46 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	73621130	        16.06 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	73671834	        16.39 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	72436735	        16.90 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	42131413	        28.51 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4  	67899040	        16.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16 	64837639	        18.38 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4     	72787320	        16.83 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16    	43076550	        28.41 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4          	 5293999	       220.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16         	 5359735	       225.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4             	 9925363	       119.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16            	 9838389	       123.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4          	 5316798	       228.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16         	 5173462	       232.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4             	 9849793	       123.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16            	 9560720	       126.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4         	 4633213	       258.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16        	 4062150	       269.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4            	 8629574	       132.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16           	 8816926	       134.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                      	 3575275	       341.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                     	 3549080	       341.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-4                         	 4206154	       281.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-16                        	 3035979	       368.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4          	 3315620	       352.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16         	 3360111	       350.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-4             	 4352090	       278.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-16            	 3510170	       339.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4         	 3197823	       409.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16        	 3100351	       409.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-4            	 3991180	       288.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-16           	 3120446	       376.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexDirectLockUnlock/impl=sync         	132240482	         8.733 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexDirectLockUnlock/impl=ctxsync      	136180892	         8.530 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=ctxsync         	134030800	         9.310 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=sync            	132365263	         8.894 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=semaphore       	61419417	        20.05 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=retry           	100000000	        10.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=ctxsync            	122820051	         9.690 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=sync               	129873163	         9.172 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=semaphore          	66055276	        18.92 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=retry              	100000000	        10.29 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=ctxsync  	122022930	        10.05 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=sync     	126015764	         9.805 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=semaphore         	60477103	        19.77 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=retry             	100000000	        10.55 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=ctxsync          	100000000	        10.18 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=sync             	100000000	        10.01 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=semaphore        	55371158	        21.64 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=retry            	95277204	        13.09 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	76789010	        15.41 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	75810134	        15.82 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	65239546	        17.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	43620496	        27.54 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	74402528	        16.17 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	65283855	        16.96 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	67921984	        17.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	41643272	        28.39 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4  	66899420	        17.59 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16 	60434563	        19.57 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4     	68413884	        17.08 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16    	41022886	        28.69 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4          	 5229901	       234.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16         	 4582798	       232.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4             	 9613539	       123.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16            	 9468505	       127.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4          	 5118346	       234.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16         	 4829900	       241.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4             	 9438350	       126.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16            	 9102198	       125.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4         	 4451253	       279.4 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16        	 4626248	       275.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4            	 8863796	       134.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16           	 8025512	       148.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                      	 2981445	       376.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                     	 3313632	       359.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-4                         	 4317301	       280.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-16                        	 3511269	       335.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4          	 3355146	       362.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16         	 3232959	       371.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-4             	 4338762	       289.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-16            	 3386958	       349.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4         	 3022814	       423.7 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16        	 2980657	       403.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-4            	 4287484	       285.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-16           	 3343548	       351.1 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexDirectLockUnlock/impl=sync         	141793764	         8.252 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexDirectLockUnlock/impl=ctxsync      	133789819	         9.175 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=ctxsync         	131674260	         9.044 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=sync            	100000000	        16.71 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=semaphore       	39339892	        47.75 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=LockUnlock/impl=retry           	75609046	        17.34 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=ctxsync            	100000000	        22.00 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=sync               	91635915	        14.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=semaphore          	47797064	        29.57 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=TryLock/impl=retry              	92293422	        15.56 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=ctxsync  	95957110	        24.82 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=sync     	99330339	        16.01 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=semaphore         	25365937	        82.47 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextBackground/impl=retry             	45968140	        44.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=ctxsync          	83916922	        34.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=sync             	89063888	        20.49 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=semaphore        	43219822	       106.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexUncontended/operation=ContextCancellable/impl=retry            	60296007	        31.03 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-4          	46124727	        27.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=ctxsync-16         	37346006	        63.10 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-4             	33260085	        36.12 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=LockUnlock/impl=sync-16            	27478591	        39.31 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-4   	55636674	        20.66 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=ctxsync-16  	56864943	        89.54 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-4      	70968105	        34.74 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextBackground/impl=sync-16     	28437633	        42.25 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-4  	23804800	        55.85 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=ctxsync-16 	57882895	        51.23 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-4     	91454024	        25.94 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMutexParallel/operation=ContextCancellable/impl=sync-16    	38500422	        26.88 ns/op	       0 B/op	       0 allocs/op
+PASS
+goos: linux
+goarch: amd64
+pkg: github.com/gomaja/go-ctxsync/benchmarks
+cpu: AMD RYZEN AI MAX+ 395 w/ Radeon 8060S          
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-4          	 1214125	      1352 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=ctxsync-16         	  696792	      4045 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-4             	 7826041	       207.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=Plain/impl=sync-16            	 4915231	       257.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-4          	 1000000	      2016 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=ctxsync-16         	  361648	      5316 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-4             	 5173878	       261.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextBackground/impl=sync-16            	 7190310	       297.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-4         	  491182	      2819 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=ctxsync-16        	  972957	      7836 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-4            	 5890747	       233.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=90r10w/operation=ContextCancellable/impl=sync-16           	 4089636	       333.3 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-4                      	 1000000	      1057 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=ctxsync-16                     	  998778	      1739 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-4                         	 2891322	       433.9 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=Plain/impl=sync-16                        	 2489503	       670.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-4          	 1731476	      1342 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=ctxsync-16         	  775454	      1408 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-4             	 2928771	       369.8 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextBackground/impl=sync-16            	 2908118	       359.6 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-4         	 1000000	      1303 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=ctxsync-16        	  398988	      3735 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-4            	 2325711	       455.5 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+BenchmarkRWParallel/mix=10r90w/operation=ContextCancellable/impl=sync-16           	 3085532	       373.2 ns/op	        10.00 locks/op	       0 B/op	       0 allocs/op
+PASS

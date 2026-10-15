@@ -1,0 +1,58 @@
+package ctxsync
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "runtime"
+    "strconv"
+    "sync"
+    "sync/atomic"
+    "testing"
+    "time"
+)
+
+func r1env(key string, fallback int) int {
+    if os.Getenv(key)=="" { return fallback }
+    n, err:=strconv.Atoi(os.Getenv(key)); if err!=nil { panic(err) }; return n
+}
+
+func TestR1CancellationRegime(t *testing.T) {
+    procs,n,load:=r1env("R1_PROCS",16),r1env("R1_WAITERS",128),r1env("R1_LOAD",0)
+    old:=runtime.GOMAXPROCS(procs); defer runtime.GOMAXPROCS(old)
+    var m Mutex
+    m.Lock()
+    ctx,cancel:=context.WithCancel(context.Background()); defer cancel()
+    done:=make(chan error,n)
+    for range n { go func(){ err:=m.LockContext(ctx); if err==nil {m.Unlock()}; done<-err }() }
+    deadline:=time.Now().Add(60*time.Second)
+    for m.state.Load()/mutexWaiter!=int32(n) {
+        if time.Now().After(deadline) {t.Fatal("registration incomplete")}
+        runtime.Gosched()
+    }
+    // Reading the guarded list after the final registration also waits for its release.
+    q:=m.queue.Load(); q.guard.Lock(); q.guard.Unlock()
+    var stop atomic.Bool
+    var bg sync.WaitGroup
+    for range load { bg.Go(func(){ var x uint64; for !stop.Load() {for range 10000 {x=x*1664525+1013904223}}; if x==1 {fmt.Println(x)} }) }
+    if load>0 { time.Sleep(30*time.Millisecond) }
+    start:=time.Now(); cancel()
+    for range n {if err:=<-done; err!=context.Canceled {t.Fatalf("result=%v",err)}}
+    elapsed:=time.Since(start)
+    stop.Store(true); bg.Wait()
+    m.Unlock()
+    t.Logf("R1 cancellation procs=%d waiters=%d load=%d elapsed_ns=%d",procs,n,load,elapsed.Nanoseconds())
+}
+
+func TestR1GuardDrain(t *testing.T) {
+    procs,n:=r1env("R1_PROCS",16),r1env("R1_WAITERS",128)
+    old:=runtime.GOMAXPROCS(procs); defer runtime.GOMAXPROCS(old)
+    var g ticketGuard
+    g.Lock()
+    done:=make(chan struct{},n)
+    for range n {go func(){g.Lock();g.Unlock();done<-struct{}{}}()}
+    for uint32(g.word.Load()>>32)!=uint32(n+1) {runtime.Gosched()}
+    start:=time.Now();g.Unlock()
+    for range n {<-done}
+    t.Logf("R1 guard-drain procs=%d waiters=%d elapsed_ns=%d",procs,n,time.Since(start).Nanoseconds())
+}

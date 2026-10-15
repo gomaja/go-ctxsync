@@ -1,0 +1,15 @@
+2026-10-15T05:58:06Z
+go version go1.26.9 linux/amd64
+affinity: 16-31
+samples: 10 (alternating base, fix)
+duration: 1s
+uncontended GOMAXPROCS: 1
+parallel GOMAXPROCS: 4,16
+base: de26fb453109b0339aa9815a91cc867036e0aa79
+fix: a2c523e118fd8cfcf4767f3d4385e1e3a4ce31e0 + working tree
+23bfdcc4e015b1c9b76b4edd11c288533f6fea890d983fe7538dc154561d4dc9  <base checkout>/guard.go
+13295fe57488bf720916deccbf7309ffc235b73c59b7f5a5edf69258f591bcd0  <fix checkout>/guard.go
+e6d3842682d147eceeb8214cac90f6cd8a4d8c156a09863c96a72fbb6b2a3152  base.test
+ec4ecec6ccbff24ddd727933d021de1132b7f61f14d3ca4b5829bfe37463f40d  fix.test
+ 07:58:06 up 23:55,  2 users,  load average: 35.02, 17.14, 18.74
+ 08:27:01 up 1 day, 24 min,  2 users,  load average: 26.56, 28.91, 24.67

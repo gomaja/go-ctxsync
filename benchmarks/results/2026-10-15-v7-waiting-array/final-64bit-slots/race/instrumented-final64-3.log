@@ -1,0 +1,16 @@
+=== RUN   TestInstrumentedCancellation
+    instr_test.go:84: tickets=256 registration done at 15.209ms (since start), cancel at 112.849ms, all returned 6.210ms after cancel
+    instr_test.go:85: ticket Add latency  p50=0.001ms p99=0.002ms max=0.003ms
+    instr_test.go:86: release CAS latency p50=0.002ms p99=0.038ms max=0.609ms
+    instr_test.go:87: hold (body) time    p50=0.005ms p99=0.061ms max=0.579ms
+    instr_test.go:88: handoff gap         p50=0.003ms p99=0.605ms max=1.700ms
+    instr_test.go:91: slow ticket 249 (cancel): gap=1.700ms releaseCAS=0.002ms addLatency=0.000ms wait=5.494ms polls=0 yields=0
+    instr_test.go:91: slow ticket 110 (reg): gap=0.799ms releaseCAS=0.002ms addLatency=0.000ms wait=3.283ms polls=0 yields=0
+    instr_test.go:91: slow ticket 226 (cancel): gap=0.703ms releaseCAS=0.004ms addLatency=0.000ms wait=2.718ms polls=0 yields=0
+    instr_test.go:91: slow ticket 88 (reg): gap=-0.001ms releaseCAS=0.609ms addLatency=0.001ms wait=0.660ms polls=0 yields=0
+    instr_test.go:91: slow ticket 90 (reg): gap=0.605ms releaseCAS=0.003ms addLatency=0.001ms wait=1.114ms polls=0 yields=0
+    instr_test.go:91: slow ticket 218 (cancel): gap=0.563ms releaseCAS=0.002ms addLatency=0.001ms wait=1.887ms polls=0 yields=0
+    instr_test.go:91: slow ticket 22 (reg): gap=0.559ms releaseCAS=0.002ms addLatency=0.001ms wait=0.901ms polls=0 yields=0
+    instr_test.go:91: slow ticket 112 (reg): gap=0.432ms releaseCAS=0.003ms addLatency=0.001ms wait=3.695ms polls=0 yields=0
+--- PASS: TestInstrumentedCancellation (0.11s)
+PASS

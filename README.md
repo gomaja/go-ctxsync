@@ -112,23 +112,42 @@ reservation. Read paths have an internal guard cost in addition to reader
 accounting.
 
 Both short accounting guards use FIFO tickets, with next and serving counters
-packed into one atomic Uint64. An Add to the upper next counter assigns a ticket;
-the caller checks the lower serving counter, yielding with Gosched after at
-most 64 mismatching loads until its ticket reaches the head. Every poll reads
-the head afresh. TryLock CASes the complete idle word, preserving its
-snapshot across counter wrap. Unlock CASes the serving increment without
-carrying into next. While the head remains held, each competing caller can
-claim only one ticket before waiting, so those CAS retries are finite under
-the protocol's bound of fewer than 2^32 outstanding claims. The guard creates
-no goroutines and allocates nothing.
+packed into one atomic Uint64. An Add to the upper next counter assigns a ticket.
+Only the next claim polls the packed word, yielding with Gosched after at most
+64 mismatching loads. Later claims watch per-claim slots in a static 4096-entry
+array shared by all guards. Each reads its slot before rechecking the head,
+then polls that slot, yielding after at most 64 loads. The release that makes
+an allocated claim next in line increments its slot. A changed slot prompts a
+fresh head check; hash collisions only cause spurious rechecks. Slots are
+64-bit counters, so a claim misses its notification only if its slot is
+incremented a multiple of 2^64 times while it is not looking. This follows
+Dice and Kogan's [TWA - Ticket Locks Augmented with a Waiting Array](https://arxiv.org/abs/1810.01573v4)
+(Euro-Par 2019).
+
+In Go 1.26.9's race runtime, an atomic Load of an address with synchronization
+state read-locks that state, while Add and CompareAndSwap write-lock it; new
+readers are admitted while a writer waits. When every waiter polled the packed
+word, release and ticket allocation stalled for seconds
+([issue #1](https://github.com/gomaja/go-ctxsync/issues/1)). Moving later claims
+to slots limits that contention on the packed word. See the
+[guard review](modelcheck/evidence/model-v7-guard-review.md) for the runtime
+evidence and the model's scope.
+
+TryLock CASes the complete idle word, preserving its snapshot across counter
+wrap. Unlock CASes the serving increment without carrying into next. While
+the head remains held, each competing caller can claim only one ticket before
+waiting, so those CAS retries are finite under the protocol's bound of fewer
+than 2^32 outstanding claims. The guard creates no goroutines and allocates
+nothing; the waiting array is static storage.
 
 With strongly fair actor scheduling, every earlier ticket eventually advances:
 its owner has a bounded accounting body, and later tickets cannot pass its
-serving position. This supplies the guard progress argument without assuming
-the fairness of Go's `sync.Mutex`. FIFO applies only to these short internal
-sections; user lock ownership still follows normal barging and starvation
-handoff. Waiting yields execution time but has a polling cost, which the
-contention benchmarks include.
+serving position. Reading the slot before rechecking the head prevents a
+release notification from being lost. This supplies the guard progress
+argument without assuming the fairness of Go's `sync.Mutex`. FIFO applies only
+to these short internal sections; user lock ownership still follows normal
+barging and starvation handoff. Waiting costs atomic loads and scheduler
+yields, which the contention benchmarks include.
 
 The one-millisecond threshold controls the queue policy. It is not a maximum
 acquisition latency. Progress also depends on lock holders releasing their
@@ -209,6 +228,13 @@ guarded reader accounting. The measured read-mostly RW cases take about
 use the `retry-serialized` comparator. See [complete raw results and benchstat](benchmarks/results/2026-10-14-final)
 for every context/RW case and statistical comparisons. Earlier failed candidates
 remain in adjacent result directories.
+
+The table predates the waiting-array guard. Interleaved runs against its
+predecessor found no significant change in any Mutex case, while contended RW
+cases took up to about 9% longer in the quietest run, mostly in read-mostly
+mixes. Under the race detector, cancelling 128 queued callers dropped from
+18–38 seconds to milliseconds. See the
+[waiting-array measurements](benchmarks/results/2026-10-15-v7-waiting-array).
 
 ## License
 

@@ -1,0 +1,47 @@
+package repro
+
+import (
+	"context"
+	"errors"
+	"testing"
+	"time"
+
+	"github.com/gomaja/go-ctxsync"
+)
+
+func TestContendedCancellation(t *testing.T) {
+	const waiters = 128
+	var mu ctxsync.Mutex
+	mu.Lock()
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+	_ = ctx.Done()
+	started := make(chan struct{}, waiters)
+	results := make(chan error, waiters)
+	for range waiters {
+		go func() {
+			started <- struct{}{}
+			err := mu.LockContext(ctx)
+			if err == nil {
+				mu.Unlock()
+			}
+			results <- err
+		}()
+	}
+	for range waiters {
+		<-started
+	}
+	time.Sleep(100 * time.Millisecond)
+	cancel()
+	for i := range waiters {
+		select {
+		case err := <-results:
+			if !errors.Is(err, context.Canceled) {
+				t.Fatalf("waiter %d: %v", i, err)
+			}
+		case <-time.After(3 * time.Second):
+			t.Fatalf("only %d/%d cancellable acquisitions returned", i, waiters)
+		}
+	}
+	mu.Unlock()
+}

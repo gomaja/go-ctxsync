@@ -2,7 +2,8 @@
 
 These arguments apply to the current checker source. Historical counts below
 refer to the packed guard before the optional polling edge; current guard
-counts are in `guard-v5-totals.json`.
+counts are in `guard-v7-totals.json` (iteration 7); `guard-v5-totals.json` is the
+historical iteration-5 record.
 
 ## Fair-cycle criterion and time abstraction
 

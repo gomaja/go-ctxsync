@@ -1,0 +1,9 @@
+Reconstructed after the run; the driver itself did not write an environment record.
+Invocation: ./run.sh 16-31 8 500ms s17   (affinity 16-31, 8 samples, 500 ms each)
+Started: 2026-10-15 17:55:58 +0200, load average 8.98, 11.89, 9.95 (uptime printed immediately before the run)
+Finished: 2026-10-15 18:00:28 +0200 (benchstat output timestamps); no load reading was taken at the end.
+go version go1.26.9 linux/amd64; AMD RYZEN AI MAX+ 395 w/ Radeon 8060S, 32 CPUs
+Binaries (SHA-256):
+2f502e418b3ea912cde0fd1768bb9be7b415aa5a2e6d0b59dc2eb190accd6faf  base.test    built from de26fb4 (another checkout path than throughput/, so the digest differs)
+ec4ecec6ccbff24ddd727933d021de1132b7f61f14d3ca4b5829bfe37463f40d  final.test   identical to throughput/ fix.test (32-bit slots, guard digest 13295fe5...)
+680a8ab8f38aa9dea1ebc696ed87a25ba5a327245e874f3c19b9904d468a2d87  stride.test  stride-17 slot hash, otherwise identical (stride-guard.go.txt)

@@ -1,0 +1,88 @@
+// Copyright 2026 gomaja. All rights reserved.
+// SPDX-License-Identifier: Apache-2.0
+
+package ctxsync
+
+import (
+	"runtime"
+	"sync/atomic"
+)
+
+const guardTailUnit uint64 = 1 << 32
+const guardPollBudget = 64
+
+// testHookGuardYield observes each Gosched in Lock: the number of claims still
+// ahead of the caller, and the head loads since its previous yield.
+var testHookGuardYield func(g *ticketGuard, ahead uint32, polls int)
+
+// ticketGuard admits short accounting sections in ticket order. Packing both
+// counters makes TryLock's snapshot safe across uint32 wrap. The protocol
+// requires fewer than 2^32 outstanding guard claims. No operation allocates
+// or starts a goroutine; see modelcheck/guard.go for the atomic model.
+//
+// Only the claim next in line polls continuously, yielding after at most 64
+// mismatches. A claim with k earlier claims still ahead yields k times
+// between head loads. Under the race detector every atomic Load of the word
+// takes that address's synchronization lock for reading, and Add and
+// CompareAndSwap must wait for its readers to drain; when every waiter polled,
+// release and ticket allocation stalled for seconds (issue #1). The model
+// permits arbitrary fresh polling and yields; native tests check this policy.
+// See modelcheck/evidence/model-v7-guard-review.md.
+type ticketGuard struct{ word atomic.Uint64 }
+
+func (g *ticketGuard) Lock() {
+	ticket := uint32(g.word.Add(guardTailUnit)>>32) - 1
+	for polls := 0; ; {
+		head := uint32(g.word.Load())
+		if head == ticket {
+			return
+		}
+		polls++
+		if ahead := ticket - head - 1; ahead != 0 {
+			// Each earlier claim needs at least one handoff before this one.
+			for range ahead {
+				if testHookGuardYield != nil {
+					testHookGuardYield(g, ahead, polls)
+				}
+				runtime.Gosched()
+				polls = 0
+			}
+			continue
+		}
+		if polls < guardPollBudget {
+			continue
+		}
+		if testHookGuardYield != nil {
+			testHookGuardYield(g, 0, polls)
+		}
+		runtime.Gosched()
+		polls = 0
+	}
+}
+
+var testHookGuardTry func(*ticketGuard)
+
+func (g *ticketGuard) TryLock() bool {
+	old := g.word.Load()
+	if uint32(old) != uint32(old>>32) {
+		return false
+	}
+	if testHookGuardTry != nil {
+		testHookGuardTry(g)
+	}
+	return g.word.CompareAndSwap(old, old+guardTailUnit)
+}
+
+func (g *ticketGuard) Unlock() {
+	for {
+		old := g.word.Load()
+		// Head wrap must not carry into the independently allocated tail.
+		newWord := old&0xffffffff00000000 | uint64(uint32(old)+1)
+		if g.word.CompareAndSwap(old, newWord) {
+			return
+		}
+		// While this head is held, each competing caller can allocate only
+		// one ticket, then waits. TryLock cannot allocate behind a held head.
+		// Thus retries are finite under the outstanding-claim bound.
+	}
+}
